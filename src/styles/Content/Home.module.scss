@@ -1,0 +1,584 @@
+.bodymain {
+  width: 100%;
+
+  .followussec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 540px;
+
+    .goldline {
+      width: 100%;
+      height: 2px;
+      background: transparent linear-gradient(90deg, #A6872D 0%, #EFE27C 100%) 0% 0% no-repeat padding-box;;
+      margin-top: 75px;
+    }
+
+    .instagram {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-right: 5px;
+      }
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-top: 70px;
+    }
+  }
+
+  .skullwatchsec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .angle {
+      width: 18px;
+
+      &.left {
+        margin-right: 170px;
+      }
+
+      &.right {
+        margin-left: 170px;
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        margin-top: 30px;
+      }
+
+      h4 {
+        color: black;
+        font-size: 30px;
+        font-weight: normal;
+        bottom: 110px;
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
+
+      a {
+        bottom: 50px;
+        width: 300px;
+        color: white;
+        background-color: black;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .womensec {
+    background-image: url("/src/assets/img/2346.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    h4 {
+      color: white;
+      font-size: 48px;
+      position: absolute;
+      font-weight: normal;
+      bottom: 110px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    a {
+      position: absolute;
+      bottom: 50px;
+      border: 1px solid white;
+      width: 300px;
+      color: white;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  .watchessec {
+    background-image: url("/src/assets/img/tamara-bellis-IwVRO3TLjLc-unsplash.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    h4 {
+      color: white;
+      font-size: 48px;
+      position: absolute;
+      font-weight: normal;
+      bottom: 110px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    a {
+      position: absolute;
+      bottom: 50px;
+      border: 1px solid white;
+      width: 300px;
+      color: white;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  .nikeshoesec {
+    background-image: url("/src/assets/img/967888 white.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    h4 {
+      font-size: 48px;
+      position: absolute;
+      bottom: 130px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      margin: 0 auto;
+      font-weight: normal;
+    }
+
+    .salebuttons {
+      width: 620px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        margin-top: 490px;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+
+  .youngcouplesec {
+    background-image: url("/src/assets/img/young-couple-standing-by-building.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+
+    .salebuttons {
+      width: 620px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        margin-top: 490px;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.women {
+          color: white;
+          border: 1px solid white;
+          height: 38px;
+        }
+
+        &.men {
+          color: black;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  .activewearsec {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+
+    .fabcsec {
+      position: relative;
+      margin-left: 101px;
+      margin-top: 30px;
+
+      h4 {
+        font-size: 48px;
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      a {
+        color: white;
+        background-color: black;
+        position: absolute;
+        bottom: 50px;
+        border: 1px solid black;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    .snapshot {
+      margin-top: 26px;
+      margin-right: 101px;
+    }
+  }
+
+  .activewearwomensec {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+
+    .fabcsec {
+      position: relative;
+      margin-right: 101px;
+      margin-top: 30px;
+
+      h4 {
+        font-size: 48px;
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      a {
+        color: white;
+        background-color: black;
+        position: absolute;
+        bottom: 50px;
+        border: 1px solid black;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    .snapshot {
+      margin-top: 26px;
+      margin-left: 101px;
+      margin-bottom: 26px;
+    }
+  }
+
+  .fw22sec {
+    background-image: url("/src/assets/img/12345.png");
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    h4 {
+      font-size: 48px;
+      position: absolute;
+      font-weight: normal;
+      bottom: 110px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    a {
+      position: absolute;
+      bottom: 50px;
+      border: 1px solid black;
+      width: 300px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  .salesec {
+    background-image: url("/src/assets/img/repeat-grid.svg");
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .salebuttons {
+      display: flex;
+      justify-content: space-between;
+      width: 620px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-family: gothic;
+        font-size: 14px;
+        margin-top: 20px;
+        color: white;
+        background-color: black;
+        width: 300px;
+        height: 40px;
+        border-radius: 0;
+      }
+    }
+
+    .goldcard {
+      height: 400px;
+      width: 568px;
+      background: transparent linear-gradient(270deg, #EFE27C 0%, #A6872D 100%) 0% 0% no-repeat padding-box;
+      box-shadow: 0px 0px 50px #00000033;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      h1 {
+        font-size: 60px;
+        margin-bottom: 0;
+        margin-top: 38px;
+      }
+
+      h2 {
+        letter-spacing: 15px;
+        font-size: 180px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 48px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .bodymain {
+    .salesec {
+      height: 430px;
+
+      .salebuttons {
+        width: 90%;
+
+        a {
+          width: 170px;
+        }
+      }
+
+      .goldcard {
+        width: 90%;
+        height: 310px;
+
+        h1 {
+          font-size: 50px;
+        }
+
+        h2 {
+          font-size: 120px;
+        }
+
+        h4 {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .youngcouplesec {
+      height: 430px;
+      background-size: cover;
+      background-position: center;
+
+      .salebuttons {
+        width: 90%;
+
+        a {
+          margin-top: 360px;
+          width: 170px;
+        }
+      }
+    }
+
+    .fw22sec {
+      background-position: center;
+      background-size: cover;
+      height: 430px;
+    }
+
+    .activewearsec {
+      height: 1180px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .fabcsec {
+        margin-left: 0;
+
+        a {
+          position: relative;
+        }
+      }
+
+      .snapshot {
+        margin-top: 30px;
+        margin-right: 0;
+        width: 90%;
+      }
+    }
+
+    .nikeshoesec {
+      background-size: cover;
+      background-position: center;
+
+      .salebuttons {
+        width: 90%;
+
+        a {
+          width: 170px;
+        }
+      }
+    }
+
+    .womensec {
+      height: 430px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .activewearwomensec {
+      height: 1180px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .fabcsec {
+        margin-right: 0;
+
+        a {
+          position: relative;
+        }
+      }
+
+      .snapshot {
+        margin-top: 0;
+        margin-left: 0;
+        width: 90%;
+      }
+    }
+
+    .skullwatchsec {
+      .angle {
+        width: 18px;
+
+        &.left {
+          margin-right: 10px;
+        }
+
+        &.right {
+          margin-left: 10px;
+        }
+      }
+
+      div {
+        h4 {
+          font-size: 25px;
+        }
+      }
+    }
+
+    .watchessec {
+      height: 430px;
+      background-size: cover;
+
+      h4 {
+        font-size: 30px;
+      }
+    }
+
+    .followussec {
+      img {
+        margin-right: 5px;
+        width: 100%;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+}

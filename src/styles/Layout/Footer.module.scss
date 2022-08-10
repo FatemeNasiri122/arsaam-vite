@@ -1,0 +1,130 @@
+.footer-main {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: 960px;
+
+    .copyright {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 50px;
+
+      img {
+        margin-left: 15px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+
+      .col {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          font-size: 14px;
+        }
+
+        * {
+          margin-bottom: 15px;
+          cursor: pointer;
+        }
+
+        h4 {
+          margin-top: 30px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .gold-line {
+      width: 100%;
+      height: 2px;
+      background: transparent linear-gradient(90deg, #A6872D 0%, #EFE27C 100%) 0% 0% no-repeat padding-box;
+      margin-top: 30px;
+    }
+
+    .gold-line-rev {
+      width: 100%;
+      height: 2px;
+      background: transparent linear-gradient(270deg, #A6872D 0%, #EFE27C 100%) 0% 0% no-repeat padding-box;
+      margin-top: 30px;
+    }
+
+    .footer-top {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+
+      .signup-input {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 372px;
+
+        ::-webkit-input-placeholder {
+          font-family: gothic;
+        }
+
+        ::-moz-placeholder {
+          font-family: gothic;
+        }
+
+        :-ms-input-placeholder {
+          font-family: gothic;
+        }
+
+        ::-webkit-input-placeholder {
+          font-family: gothic;
+        }
+
+        ::placeholder {
+          font-family: gothic;
+        }
+
+        input {
+          width: 100%;
+          height: 50px;
+          border: 1px solid #D9D9D9;
+          padding-left: 20px;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          right: 5px;
+          font-size: 12px;
+          width: 80px;
+          height: 40px;
+          color: white;
+          background-color: black;
+        }
+      }
+
+      .singup-txt {
+        h3 {
+          font-size: 30px;
+          font-weight: normal;
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+
+        p {
+          margin-top: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
