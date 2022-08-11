@@ -1,5 +1,9 @@
 import React from 'react';
-
+import instagram from '../assets/img/029-instagram.svg'
+import facebook from '../assets/img/036-facebook.svg'
+import telegram from '../assets/img/telegram.svg'
+import linkdin from '../assets/img/027-linkedin.svg'
+import twitter from '../assets/img/008-twitter.svg'
 
 export default function Footer() {
     return <div className="footer-main">
@@ -46,14 +50,17 @@ export default function Footer() {
             <div className="gold-line-rev"/>
             <div className="copyright">
                 <p>Copyright © 2022 ARSAAM - All rights reserved.</p>
+
                 <div>
-                    <img src="img/029-instagram.svg" alt=""/>
-                    <img src="img/036-facebook.svg" alt=""/>
-                    <img src="img/telegram.svg" alt=""/>
-                    <img src="img/027-linkedin.svg" alt=""/>
-                    <img src="img/008-twitter.svg" alt=""/>
+                    <img src={instagram} alt=""/>
+                    <img src={facebook} alt=""/>
+                    <img src={telegram} alt=""/>
+                    <img src={linkdin} alt=""/>
+                    <img src={twitter} alt=""/>
                 </div>
             </div>
         </div>
     </div>
 }
+
+

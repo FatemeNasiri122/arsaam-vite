@@ -1,6 +1,7 @@
 .bodymain {
+  text-transform: uppercase;
   width: 100%;
-
+  overflow: hidden;
   .followussec {
     display: flex;
     justify-content: center;
@@ -8,6 +9,7 @@
     flex-direction: column;
     width: 100%;
     height: 540px;
+
 
     .goldline {
       width: 100%;
@@ -30,6 +32,7 @@
     h2 {
       font-weight: normal;
       margin-top: 70px;
+      margin-bottom: 15px;
     }
   }
 
@@ -71,6 +74,7 @@
       }
 
       a {
+        padding: 10px;
         bottom: 50px;
         width: 300px;
         color: white;
@@ -194,7 +198,7 @@
       justify-content: space-between;
 
       a {
-        margin-top: 490px;
+        margin: 490px 10px 0;
         width: 300px;
         height: 40px;
         display: flex;
@@ -221,13 +225,12 @@
       justify-content: space-between;
 
       a {
-        margin-top: 490px;
+        margin: 490px 10px 0;
         width: 300px;
         height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
-
         &.women {
           color: white;
           border: 1px solid white;
@@ -247,12 +250,15 @@
     height: 600px;
     display: flex;
     justify-content: center;
-
+    padding: 0 10px;
     .fabcsec {
+      width: 301px;
       position: relative;
       margin-left: 101px;
       margin-top: 30px;
-
+      img{
+        width: 100%;
+      }
       h4 {
         font-size: 48px;
         font-weight: normal;
@@ -279,10 +285,18 @@
       }
     }
 
-    .snapshot {
-      margin-top: 26px;
+    .snapshotcontainer{
+      width: 372px;
+      height: 548px;
       margin-right: 101px;
+      .snapshot {
+        width: 100%;
+        height: 100%;
+        margin-top: 26px;
+
+      }
     }
+
   }
 
   .activewearwomensec {
@@ -367,7 +381,8 @@
   }
 
   .salesec {
-    background-image: url("/src/assets/img/repeat-grid.svg");
+    background: url("/src/assets/img/repeat-grid.svg") no-repeat;
+    background-size: cover;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -386,7 +401,7 @@
         text-transform: uppercase;
         font-family: gothic;
         font-size: 14px;
-        margin-top: 20px;
+        margin: 20px 10px 0;
         color: white;
         background-color: black;
         width: 300px;
@@ -427,6 +442,26 @@
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .activewearwomensec{
+    .fabcsec{
+      margin-right: 10px !important;
+    }
+    .snapshot{
+      margin-left: 10px !important;
+    }
+  }
+  .followussec {
+    img {
+      margin-right: 5px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .bodymain {
@@ -450,10 +485,11 @@
         }
 
         h2 {
-          font-size: 120px;
+          font-size: 90px;
         }
 
         h4 {
+
           font-size: 20px;
         }
       }
@@ -475,6 +511,7 @@
     }
 
     .fw22sec {
+      text-align: center;
       background-position: center;
       background-size: cover;
       height: 430px;
@@ -488,17 +525,19 @@
 
       .fabcsec {
         margin-left: 0;
-
         a {
           position: relative;
         }
       }
-
-      .snapshot {
-        margin-top: 30px;
-        margin-right: 0;
+      .snapshotcontainer{
+        margin: auto;
         width: 90%;
+        .snapshot {
+          margin-top: 30px;
+          margin-right: 0;
+        }
       }
+
     }
 
     .nikeshoesec {
@@ -556,6 +595,8 @@
 
       div {
         h4 {
+          text-align: center;
+          padding: 20px;
           font-size: 25px;
         }
       }
@@ -566,14 +607,18 @@
       background-size: cover;
 
       h4 {
+        text-align: center;
         font-size: 30px;
       }
     }
 
     .followussec {
+      height: 350px;
+      text-align: center;
       img {
         margin-right: 5px;
         width: 100%;
+
       }
 
       h2 {

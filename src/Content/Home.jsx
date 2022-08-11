@@ -25,7 +25,9 @@ export default function Home() {
             <a>Discover</a>
         </div>
         <div className={classes.activewearsec}>
-            <img src="src/assets/img/snapshot.png" className={classes.snapshot} alt=""/>
+            <div className={classes.snapshotcontainer}>
+                <img src="src/assets/img/snapshot.png" className={classes.snapshot} alt=""/>
+            </div>
             <div className={classes.fabcsec}>
                 <img src="src/assets/img/FABC-MJJ0420-PJY002N_0221_m.png" alt=""/>
                 <h4>ACTIVEWEAR</h4>
@@ -49,7 +51,10 @@ export default function Home() {
                 <h4>ACTIVEWEAR</h4>
                 <a>Discover</a>
             </div>
-            <img src="src/assets/img/snapshot1.png" className={classes.snapshot} alt=""/>
+            <div className="snapshotcontainer">
+                <img src="src/assets/img/snapshot1.png" className={classes.snapshot} alt=""/>
+            </div>
+
         </div>
         <div className={classes.skullwatchsec}>
             <img src="src/assets/img/angle-left.svg" className={classes.angle + ' ' + classes.left} alt=""/>
@@ -58,7 +63,7 @@ export default function Home() {
                 <h4>THE $KULL TITAN GOLD Watch</h4>
                 <a>Discover</a>
             </div>
-            <img src="src/assets/img/angle-right.svg" className={classes.angle + ' ' + classes.right} alt=""/>
+                <img src="src/assets/img/angle-right.svg" className={classes.angle + ' ' + classes.right} alt=""/>
         </div>
         <div className={classes.watchessec}>
             <h4>Eyewear Collection</h4>
