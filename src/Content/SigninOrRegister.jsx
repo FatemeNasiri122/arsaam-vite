@@ -11,8 +11,28 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import {useState} from "react";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useOutlinedInputStyles = makeStyles({
+    root: {
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black !important"
+        }
+    }
+});
+
+const textFieldStyle= {
+    pt: 1,
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+            borderColor: "black"
+        }
+    }
+}
 
 export default function  SigninOrRegister  () {
+    const outlinedInputStyles = useOutlinedInputStyles();
+
     const [validEmail,setValidEmail] = useState(true)
     const [validPassword,setValidPassword] = useState(true)
 
@@ -89,12 +109,14 @@ export default function  SigninOrRegister  () {
                                 onChange={handleChange('email')}
                                 error={validEmail ? false: true}
                                 placeholder='Email'
+                                sx={textFieldStyle}
                             />
                             <p className={classes.error}>{validEmail ? '': 'enter correct email address'}</p>
                         </FormControl>
 
                         <FormControl sx={{ my: 2 }} variant="outlined">
                             <OutlinedInput
+                                classes={outlinedInputStyles}
                                 id="outlined-adornment-password"
                                 type={values.showPassword ? 'text' : 'password'}
                                 value={values.password}
