@@ -3,21 +3,114 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
   .nav {
+    overflow-x: hidden;
     align-self: center;
-    margin-bottom: 25px;
+    //margin-bottom: 25px;
+    //background-color: forestgreen;
+
     ul{
       display: flex;
+      .nav-item{
+        padding-left: 30px;
+        padding-bottom: 25px;
+      }
     }
     li{
-      padding: 0 15px;
+
+
       list-style-type: none;
     }
     a {
       text-decoration: none;
       color: black;
     }
+
+    .menu-items li {
+      transition: background 0.3s ease-in-out;
+    }
+
+    .mega-menu {
+      overflow: hidden;
+
+      .mega-menu-content{
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 110px;
+        z-index: 10;
+        background-color: #fff;
+        li{
+          padding: 0 15px;
+        }
+        .triangle-container{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+          ul{
+            display: flex;
+            flex-direction: row;
+            //transform: translateY(-9px);
+            li{
+              padding: 0 42px;
+              .item-1{
+                width: 10px;
+                height: 2px;
+                transform: rotate(-45deg) translateY(-20px) translateX(-8px);
+                background-color: #A6872D;
+              }
+              .item-2{
+                width: 10px;
+                height: 2px;
+                transform: rotate(45deg) translateX(-17px) translateY(1px);
+                background-color: #A6872D;
+              }
+              .item-3{
+                width: 11px;
+                height: 10px;
+                border-radius: 4px;
+                transform: translateY(-10px) translateX(-17px);
+                background-color: white;
+              }
+              color: white;
+            }
+          }
+        }
+        .list-container{
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+      }
+      ul{
+        display: flex;
+        flex-direction: column;
+
+        li:first-child a{
+          font-weight: 900;
+        }
+        li{
+          margin-bottom: 10px;
+          a{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .menu-items li:hover .mega-menu-content{
+      top: 120px;
+      opacity: 1;
+      visibility: visible;
+
+    }
+
   }
 
   .content {
@@ -78,6 +171,29 @@
     background: transparent linear-gradient(90deg, #A6872D 0%, #EFE27C 100%) 0% 0% no-repeat padding-box;
     margin-bottom: 5px;
   }
+  .item{
+    background-color: dodgerblue;
+    position: absolute;
+  }
+  .line-item-1{
+    width: 10px;
+    height: 2px;
+    background-color:  #A6872D;
+    //transform: rotate(-45deg) translateY(-15px) translateX(50px);
+  }
+  .line-item-2{
+    width: 10px;
+    height: 2px;
+    background-color:  #A6872D;
+    //transform: translateX(31px) translateY(-48px) rotate(45deg);
+  }
+  .line-item-3{
+
+    width: 12px;
+    height: 10px;
+    background-color:  green;
+    //transform: translateX(26px) translateY(-46px) ;
+  }
 
 }
 
@@ -108,15 +224,34 @@
       background-color: transparent;
     }
     .mobile-menu{
-      ul{
+     .mobile-menu-wrapper{
         min-height: 90vh;
       }
+
       li{
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
+        .link-container{
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem;
+        }
+        li:last-child{
+          border-bottom: none;
+        }
         list-style-type: none;
         border-bottom: 1px solid black;
+        li{
+          a{
+            padding: 0 1rem;
+          }
+          li{
+            padding: 1rem 2rem;
+            background-color: black;
+            border-bottom: 1px solid white;
+            a{
+              color: white;
+            }
+          }
+        }
       }
       a{
         color: black;
@@ -125,3 +260,5 @@
     }
   }
 }
+
+

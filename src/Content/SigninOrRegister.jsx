@@ -81,7 +81,7 @@ export default function  SigninOrRegister  () {
                 </div>
             </div>
             <Grid container spacing={2}>
-                <Grid item md={6} xs={12} order={{md: 1 , xs: 2}} >
+                <Grid item sm={6} xs={12} order={{sm: 1 , xs: 2}} >
                     <div className={classes.registerContainer}>
                             <h2 className={classes.title}>
                                 register
@@ -95,7 +95,7 @@ export default function  SigninOrRegister  () {
                         <a className={classes.links} href="">register</a>
                     </div>
                 </Grid>
-                <Grid item md={6} xs={12} order={{md: 2 , xs: 1}}>
+                <Grid item sm={6} xs={12} order={{sm: 2 , xs: 1}}>
                     <div className={classes.signinContainer}>
                         <h2 className={classes.title}>
                             sign in

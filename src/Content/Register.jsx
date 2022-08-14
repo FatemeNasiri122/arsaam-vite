@@ -114,7 +114,7 @@ export default function  Register  () {
 
                     <form action="" className={classes.form} onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} sm={6}>
                                 <label htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
                                 <TextField
                                     sx={textFieldStyle}
@@ -127,7 +127,7 @@ export default function  Register  () {
                                 />
                                 <p className={classes.error}>{validFirstName ? '': 'please enter valid first name'}</p>
                             </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} sm={6}>
                                 <label htmlFor="first-name" className={classes.inputLabel}>Last Name *</label>
                                 <TextField
                                     sx={textFieldStyle}
@@ -140,7 +140,7 @@ export default function  Register  () {
                                 />
                                 <p className={classes.error}>{validLastName ? '': 'please enter valid last name'}</p>
                             </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} sm={6}>
                                 <label htmlFor="email" className={classes.inputLabel}>Email *</label>
                                 <TextField
                                     sx={textFieldStyle}
@@ -153,7 +153,7 @@ export default function  Register  () {
                                 />
                                 <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
                             </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} sm={6}>
                                 <label htmlFor="confirm-email" className={classes.inputLabel}>Confirm Email *</label>
                                 <TextField
                                     sx={textFieldStyle}
@@ -166,7 +166,7 @@ export default function  Register  () {
                                 />
                                 <p className={classes.error}>{validConfirmEmail ? '': 'please enter valid email'}</p>
                             </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} sm={6}>
                                 <label htmlFor="password" className={classes.inputLabel}>Password *</label>
                                 <OutlinedInput
                                     classes={outlinedInputStyles}
@@ -193,7 +193,7 @@ export default function  Register  () {
                                 />
                                 <p className={classes.error}>{validPassword ? '': 'please enter valid password'}</p>
                             </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} sm={6}>
                                 <label htmlFor="confirm-password" className={classes.inputLabel}>Confirm Password *</label>
                                 <OutlinedInput
                                     classes={outlinedInputStyles}

@@ -1,0 +1,75 @@
+$top-text-color: #fff;
+
+@mixin card($padding,$height){
+  width: 100%;
+  height: $height;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: $padding;
+}
+
+.men{
+  width: 100%;
+  height: 600px;
+  background: url("/src/assets/img/1448061.jpg") no-repeat top center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .topTitle{
+    display: flex;
+    flex-direction: column;
+    color: $top-text-color;
+    text-transform: uppercase;
+    align-items: center;
+    h1{
+      font-size: 72px;
+    }
+  }
+
+}
+
+.mainTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2{
+    text-transform: uppercase;
+  }
+  a{
+    text-decoration: underline;
+  }
+}
+
+.clothing{
+  margin: 20px 0;
+  background: url("/src/assets/img/men_clothing_desktop.jpg") no-repeat top center;
+  @include card(31px,406px)
+}
+
+.sportswear{
+  background: url("/src/assets/img/men_jogging.jpg") no-repeat top center;
+  @include card(21px,372px)
+}
+
+.shoes{
+  background: url("/src/assets/img/men_shoes.jpg") no-repeat top center;
+  @include card(21px,372px)
+}
+
+.tshirt{
+  background: url("/src/assets/img/men_tshirt.jpg") no-repeat top center;
+  @include card(21px,372px)
+}
+
+.outfit{
+  background: url("/src/assets/img/men_OUTFIT.jpg") no-repeat top center;
+  @include card(0,568px)
+}
+.empty{
+  background: url("/src/assets/img/business-casual-style-guide-men-luxe-digital.jpg") no-repeat 20%;
+  @include card(0,568px)
+}
