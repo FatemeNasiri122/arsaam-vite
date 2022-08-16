@@ -1,0 +1,82 @@
+$text-color: #fff;
+$gold-background-color: linear-gradient(#EFE27C,#A6872D);
+$strike-color: #808080;
+
+.imgWrapper:hover .imgHover{
+  opacity: 1;
+}
+
+.imgHover{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(215,213,213,35%);
+
+  .star{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 6px;
+  }
+  .sizes{
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
+
+    .size{
+      width: 27px;
+      height: 20px;
+      background-color: $strike-color;
+      text-align: center;
+      color: $text-color;
+    }
+  }
+}
+
+.colorContainer {
+  width: 100%;
+  display: flex;
+}
+
+.circle{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 11px;
+  border: 1px solid #D9D9D9;
+}
+
+.circle:first-child{
+  border: 1px solid black;
+
+}
+
+.content{
+  padding: 20px;
+
+  .name{
+    padding: 7px 0;
+  }
+}
+
+.goldBox{
+  width: 41px;
+  height: 20px;
+  color: $text-color;
+  background: $gold-background-color;
+  padding: 2px 5px;
+  margin: 0 12px;
+}
+
+.price{
+  strong{
+    font-size: 14px;
+  }
+  strike{
+    color: $strike-color;
+    font-size: 14px;
+  }
+}

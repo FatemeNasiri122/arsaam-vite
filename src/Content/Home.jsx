@@ -77,7 +77,6 @@ export default function Home() {
                 <img src="src/assets/img/Group%20402.png" alt=""/>
                 ARSAAM
             </div>
-
         </div>
     </div>
 }
