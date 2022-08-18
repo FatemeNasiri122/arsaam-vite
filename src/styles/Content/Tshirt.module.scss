@@ -1,6 +1,8 @@
 $text-color: #fff;
 $gold-background-color: linear-gradient(#EFE27C,#A6872D);
 $strike-color: #808080;
+$link-color: #000;
+$size-color: rgba(0, 0, 0, 0.62);
 
 .imgWrapper:hover .imgHover{
   opacity: 1;
@@ -13,8 +15,7 @@ $strike-color: #808080;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: rgb(215,213,213,35%);
-
+  cursor: pointer;
   .star{
     width: 100%;
     display: flex;
@@ -29,7 +30,7 @@ $strike-color: #808080;
     .size{
       width: 27px;
       height: 20px;
-      background-color: $strike-color;
+      background-color: $size-color;
       text-align: center;
       color: $text-color;
     }
@@ -58,7 +59,10 @@ $strike-color: #808080;
   padding: 20px;
 
   .name{
-    padding: 7px 0;
+    display: block;
+    margin: 7px 0;
+    text-decoration: none;
+    color: $link-color;
   }
 }
 

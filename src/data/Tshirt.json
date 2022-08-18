@@ -5,6 +5,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5624-PJY002N_13",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 1
   },
   {
@@ -13,6 +15,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5606-PJY002N_02",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 2
   },
   {
@@ -21,6 +25,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "€ 1.000,00",
+    "code": "FABC-MTK5621-PJY002N_0121",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 3
   },
   {
@@ -29,6 +35,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5647-PJY002N_09",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 4
   },
   {
@@ -37,6 +45,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5624-PJY002N_13",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 5
   },
   {
@@ -45,6 +55,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5606-PJY002N_02",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 6
   },
   {
@@ -53,6 +65,7 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "€ 1.090,00",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 7
   },
   {
@@ -61,6 +74,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5647-PJY002N_09",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 8
   },
   {
@@ -69,6 +84,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5624-PJY002N_13",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 9
   },
   {
@@ -77,6 +94,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5606-PJY002N_02",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 10
   },
   {
@@ -85,6 +104,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "€ 1.090,00",
+    "code": "FABC-MTK5621-PJY002N_0121",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 11
   },
   {
@@ -93,6 +114,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5647-PJY002N_09",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 12
   },
   {
@@ -101,6 +124,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5624-PJY002N_13",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 13
   },
   {
@@ -109,6 +134,7 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 14
   },
   {
@@ -117,6 +143,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "€ 1.090,00",
+    "code": "FABC-MTK5606-PJY002N_02",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 15
   },
   {
@@ -125,6 +153,8 @@
     "name": "T-SHIRT ROUND NECK SS",
     "price": "€ 1.090,00",
     "discount": "0",
+    "code": "FABC-MTK5647-PJY002N_09",
+    "size": ["xs","s","m","l","xl","2xl","3xl","4xl","5xl"],
     "id": 16
   }
 ]

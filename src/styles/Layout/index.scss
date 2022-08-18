@@ -9,5 +9,21 @@ body {
 
 }
 
+.swiper-button-prev, .swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  color: white !important;
+  background-color: rgb(51,51,51) !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px !important;
+}
+
+.swiper-horizontal > .swiper-scrollbar {
+  height: 8px !important;
+  width: 98% !important;
+}
+
 @import "Header.module";
 @import "Footer.module";
