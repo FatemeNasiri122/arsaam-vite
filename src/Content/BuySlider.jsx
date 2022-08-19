@@ -1,12 +1,5 @@
-import React, {useRef} from 'react'
-import {Swiper,SwiperSlide} from 'swiper/react'
-import 'swiper/css'
-import {Navigation, Scrollbar, A11y } from "swiper";
-// import 'swiper/css/Navigation'
-import 'swiper/scss/effect-fade'
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/scrollbar';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import classes from '../styles/Content/BuySlider.module.scss';
 import image1 from "../assets/img/FABC-MTK5624-PJY002N_13_sf.jpg";
@@ -17,44 +10,26 @@ import image5 from "../assets/img/FABC-MTK5624-PJY002N_13_lf.jpg";
 
 
 export default function  BuySlider  () {
-
-
     return (
-        <>
+        <CarouselProvider
+            naturalSlideWidth={100}
+            naturalSlideHeight={125}
+            totalSlides={5}
+        >
+            <Slider>
+                <Slide index={0}><img src={image1} alt=""/></Slide>
+                <Slide index={1}><img src={image2} alt=""/></Slide>
+                <Slide index={2}><img src={image3} alt=""/></Slide>
+                <Slide index={3}><img src={image4} alt=""/></Slide>
+                <Slide index={4}><img src={image5} alt=""/></Slide>
 
-            <Swiper
-                modules={[Navigation, Scrollbar, A11y]}
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation
-                scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-                className={classes.sliderContainer}
-            >
-                <SwiperSlide>
-                    <img src={image1} alt=""/>
+            </Slider>
+            <div className={classes.btnCover}>
+                <ButtonBack className={classes.btnSlide}>Back</ButtonBack>
+                <ButtonNext className={classes.btnSlide}>Next</ButtonNext>
+            </div>
 
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={image2} alt=""/>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={image3} alt=""/>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={image4} alt=""/>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={image5} alt=""/>
-
-                </SwiperSlide>
-
-            </Swiper>
-           </>
+        </CarouselProvider>
     );
-};
+}
 

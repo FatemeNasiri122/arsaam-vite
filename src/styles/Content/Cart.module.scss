@@ -1,0 +1,23 @@
+$text-color: #fff;
+$gold-background-color: linear-gradient(#EFE27C,#A6872D);
+$strike-color: #808080;
+$link-color: #000;
+
+html{
+  scroll-behavior: smooth;
+}
+
+.statusContainer{
+  padding: 20px 0;
+  text-transform: uppercase;
+
+  span{
+    color: $strike-color;
+  }
+}
+
+h1{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+}

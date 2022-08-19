@@ -3,12 +3,16 @@ $gold-background-color: linear-gradient(#EFE27C,#A6872D);
 $strike-color: #808080;
 $link-color: #000;
 
-.sliderContainer{
   img{
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-}
+.btnSlide{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transform: translateY(-250px);
 
+}
