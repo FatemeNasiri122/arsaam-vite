@@ -10,6 +10,10 @@ import image5 from "../assets/img/FABC-MTK5624-PJY002N_13_lf.jpg";
 
 
 export default function  BuySlider  () {
+    const imgSlider = {
+        width: '100%',
+        height: '100%'
+    }
     return (
         <CarouselProvider
             naturalSlideWidth={100}
@@ -17,11 +21,11 @@ export default function  BuySlider  () {
             totalSlides={5}
         >
             <Slider>
-                <Slide index={0}><img src={image1} alt=""/></Slide>
-                <Slide index={1}><img src={image2} alt=""/></Slide>
-                <Slide index={2}><img src={image3} alt=""/></Slide>
-                <Slide index={3}><img src={image4} alt=""/></Slide>
-                <Slide index={4}><img src={image5} alt=""/></Slide>
+                <Slide index={0}><img style={imgSlider} src={image1} alt=""/></Slide>
+                <Slide index={1}><img style={imgSlider} src={image2} alt=""/></Slide>
+                <Slide index={2}><img style={imgSlider} src={image3} alt=""/></Slide>
+                <Slide index={3}><img style={imgSlider} src={image4} alt=""/></Slide>
+                <Slide index={4}><img style={imgSlider} src={image5} alt=""/></Slide>
 
             </Slider>
             <div className={classes.btnCover}>

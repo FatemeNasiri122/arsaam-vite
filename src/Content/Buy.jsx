@@ -44,10 +44,8 @@ export default function  Buy  () {
             <div className={classes.statusContainer}>
                 <p><span>Men / </span><span>clothing / </span>t-shirts</p>
             </div>
-            <Grid container >
-            </Grid>
             <Grid container>
-                <Grid item lg={1} sx={{ display: { xs:"none", sm:"none", md: "none", lg: "block" }}}>
+                <Grid item lg={1} sx={{ display: { xs:"none", lg: "block" }}}>
                     <div className={classes.leftImgContainer}>
                         <div onClick={() => testRef1.current.scrollIntoView()} className={classes.imgContainer}>
                             <img src={image1} alt=""/>
@@ -66,19 +64,19 @@ export default function  Buy  () {
                         </div>
                     </div>
                 </Grid>
-                    <Grid item sm={6} md={7} sx={{ display: { xs:"none", sm:"block"}}}>
+                    <Grid item sm={6} lg={7} sx={{ display: { xs:"none", sm:"block"}}}>
                         <div className={classes.imgCenterContainer}>
                                 <img ref={testRef1} src={image1} alt=""/>
                                 <img ref={testRef2} src={image2} alt=""/>
                                 <img ref={testRef3} src={image3} alt=""/>
                                 <img ref={testRef4} src={image4} alt=""/>
-                                <img  ref={testRef5} src={image5} alt=""/>
+                                <img ref={testRef5} src={image5} alt=""/>
                         </div>
                     </Grid>
-                     <Grid item xs={12} sx={{ display: {sm:"none", md: "none", lg: "none" }}}>
+                     <Grid item xs={12} sx={{ display: {sm:"none" }}}>
                         <BuySlider />
                     </Grid>
-                    <Grid item sm={6} md={4} sx={{paddingLeft: "20px"}}>
+                    <Grid item sm={6} lg={4} sx={{paddingLeft: "20px"}}>
                         <div className={classes.topCard}>
                             <div className={classes.iconContainer}>
                                 <Button startIcon={<ShareOutlinedIcon />} sx={{color: "black" , paddingLeft: "0"}}>
@@ -163,21 +161,21 @@ export default function  Buy  () {
                             </Collapse>
                         </div>
                     </Grid>
-                    <Grid item container xs={12} >
+                    <Grid item xs={12} >
                         <div className={classes.related}>
                             <h2>related products</h2>
                         </div>
                     </Grid>
                 </Grid>
-                <Grid container spacing={2}>
-                    {
-                        TshirtsData.map((tshirt ,i)=>{
-                            if (i < 4){
-                                return <Tshirt data={tshirt} key={tshirt.id}/>
-                            }
-                        })
-                    }
-                </Grid>
+            <Grid container spacing={2}>
+                {
+                    TshirtsData.map((tshirt ,i)=>{
+                        if (i < 4){
+                            return <Tshirt data={tshirt} key={tshirt.id}/>
+                        }
+                    })
+                }
+            </Grid>
 
         </Container>
     );
