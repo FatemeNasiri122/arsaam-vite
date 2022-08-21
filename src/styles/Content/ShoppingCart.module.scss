@@ -29,7 +29,7 @@ $link-color: #000;
   }
 }
 
-a{
+.link{
   display: block;
   text-decoration: none;
   color: $link-color;
@@ -37,14 +37,16 @@ a{
   margin-bottom: 10px;
 }
 
-a:hover{
+.link:hover{
   text-decoration: underline;
   color: $link-color;
 }
 
-p{
-  font-size: 12px;
-  text-transform: uppercase;
+.text{
+  p{
+    font-size: 12px;
+    text-transform: uppercase;
+  }
 }
 
 .trash{

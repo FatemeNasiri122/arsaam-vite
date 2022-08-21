@@ -29,10 +29,13 @@ export default function  Cart  ({data}) {
                    <img className={classes.image} src={data.img} alt=""/>
                </Grid>
                <Grid item xs={8} sm={3} >
-                   <a href=''><strong>{data.name}</strong></a>
-                   <p>code: {data.code}</p>
-                   <p>color: {data.colors[0] === "#E8231D" ? 'red': data.colors[0]}</p>
-                   <p>size: {data.size[5]}</p>
+                   <a className={classes.link} href=''><strong>{data.name}</strong></a>
+                   <div className={classes.text}>
+                       <p>code: {data.code}</p>
+                       <p>color: {data.colors[0] === "#E8231D" ? 'red': data.colors[0]}</p>
+                       <p>size: {data.size[5]}</p>
+                   </div>
+
                </Grid>
                <Grid item xs={4} display={{sm: 'none'}}></Grid>
                <Grid item xs={12} sm={3} display={{sm: 'flex',justifyContent: 'center'}}>
