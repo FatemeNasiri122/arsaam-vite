@@ -54,12 +54,12 @@ h1{
     width: 20%;
   }
   li:nth-child(2){
-    width: 40%;
+    width: 32%;
   }
   li:last-child{
-    width: 60%;
+    width: 48%;
     .line:last-child{
-      width: 70%;
+      width: 50%;
     }
   }
   .active{
@@ -85,7 +85,7 @@ h1{
     z-index: 2;
   }
 
-  img{
+  img , svg{
     width: 30px;
     height: 30px;
     transform: translate(-9px,-40px);
@@ -99,8 +99,3 @@ h1{
   }
 }
 
-@media only screen and (min-width: 600px){
-  .rentalManagerProgressBarContainer{
-    width: 569px;
-  }
-}

@@ -54,10 +54,6 @@ export default function  Register  () {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
-
     const handleSubmit = (e) =>{
         e.preventDefault()
         const {email , firstName , lastName , country , city, savedAddress, phoneNumber , address, postalCode} = values
