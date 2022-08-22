@@ -30,7 +30,7 @@ export default function  Cart  () {
                         <h2>related products</h2>
                     </div>
                 </Grid>
-                <Grid  spacing={2}>
+                <Grid container spacing={2}>
                     {
                         TshirtsData.map((tshirt ,i)=>{
                             if (i < 4){
