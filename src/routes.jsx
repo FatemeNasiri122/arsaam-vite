@@ -12,6 +12,7 @@ const Buy = React.lazy(() => import("./Content/Buy.jsx"))
 const Cart = React.lazy(() => import("./Content/Cart.jsx"))
 const Cart2 = React.lazy(() => import("./Content/Cart2.jsx"))
 const CartCheckout = React.lazy(() => import("./Content/CartCheckout.jsx"))
+const ContactUS = React.lazy(() => import("./Content/ContactUS.jsx"))
 
 const Routes = () => {
     return(
@@ -27,6 +28,7 @@ const Routes = () => {
                 <Route path='Cart2' element={<Cart2 />} />
                 <Route path='CartRegister' element={<CartRegister />} />
                 <Route path='CartCheckout' element={<CartCheckout />} />
+                <Route path='ContactUS' element={<ContactUS />} />
             </Route>
             {/*<Route path="*" element={<NotFound />} />*/}
             {/*<Route path='signup' element={ isLoggedIn ? <Navigate to='/' /> : <Signup />} />*/}
