@@ -1,0 +1,91 @@
+$strike-color: #808080;
+$link-color: #000;
+
+@mixin background($height,$size){
+    width: 100%;
+    height: $height;
+    background: url("/src/assets/img/young-couple-standing-by-building-aboutus.png") no-repeat;
+    background-size: $size;
+}
+
+@mixin title($margin){
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 37px;
+  margin-bottom: $margin;
+}
+
+.statusContainer{
+  padding: 20px 0;
+  text-transform: uppercase;
+
+  span{
+    color: $strike-color;
+  }
+}
+
+.imagesContainer{
+  width: 100%;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.AboutUSContainer{
+  h1{
+    @include title(16px);
+  }
+  p{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    line-height: 200%;
+  }
+}
+
+h2{
+  @include title(20px);
+}
+
+.instagramLogoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: $link-color;
+  text-decoration: none;
+
+  span{
+    padding-left: 4px;
+  }
+}
+
+@media only screen and (min-width: 960px){
+  .imgContainer{
+    @include background(356px,100% 100%)
+  }
+
+  .AboutUSContainer{
+    padding: 0 102px;
+  }
+
+  .statusContainer {
+    padding-left: 102px;
+  }
+
+}
+
+@media only screen and (max-width: 960px){
+  .imgContainer{
+    @include background(156px,100% 100%)
+  }
+  .statusContainer {
+    padding-left: 10px;
+    padding-bottom: 15px;
+  }
+  .AboutUSContainer{
+    padding: 0 15px;
+  }
+}
