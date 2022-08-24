@@ -1,5 +1,5 @@
 import classes from '../styles/Content/Tshirts.module.scss';
-import Container from '@mui/material/Container';
+import containerClass from "../styles/Content/Container.module.scss";
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -23,7 +23,7 @@ export default function  Tshirts  () {
     });
     console.log(TshirtsData)
         return (
-            <Container>
+            <div className={containerClass.container}>
                 <div className={classes.statusContainer}>
                     <p><span>Men / </span><span>clothing / </span>t-shirts</p>
                 </div>
@@ -121,7 +121,7 @@ export default function  Tshirts  () {
                         })}
                     </List>
                 </nav>
-            </Container>
+            </div>
             
     );
 };

@@ -1,6 +1,6 @@
 import classes from "../styles/Content/ContactUS.module.scss";
+import containerClass from "../styles/Content/Container.module.scss";
 import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
 import callUs from "/src/assets/img/icons/phone-call.svg"
 import truck from "/src/assets/img/icons/truck-side.svg"
 import undo from "/src/assets/img/icons/undo.svg"
@@ -61,10 +61,10 @@ export default function  ContactUS  () {
             <div className={classes.statusContainer}>
             <p><span>Home / </span>CONTACT US</p>
             </div>
-            <Container>
+            <div className={containerClass.widerContainer}>
 
                 <h1>CONTACT US</h1>
-                <Grid container spacing={3} sx={{paddingX: '17px'}}>
+                <Grid container spacing={3}>
                     <Grid item xs={12} lg={6} >
                         <div className={classes.callUsContainer}>
                             <div className={classes.content}>
@@ -212,7 +212,7 @@ export default function  ContactUS  () {
                     </Grid>
                 </form>
 
-            </Container>
+            </div>
         </>
     );
 };

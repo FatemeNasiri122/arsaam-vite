@@ -13,14 +13,6 @@ $summary-color: #F7F7F7;
   background-color: $color;
 }
 
-.statusContainer{
-  padding: 20px 0;
-  text-transform: uppercase;
-
-  span{
-    color: $strike-color;
-  }
-}
 
 h1{
   text-transform: uppercase;
@@ -96,6 +88,12 @@ h1{
     transform: translate(-45px,-15px);
     color: $deactive-color;
     font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .rentalManagerProgressBarContainer  {
+    width: 100%;
   }
 }
 

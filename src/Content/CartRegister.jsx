@@ -1,4 +1,5 @@
 import classes from '../styles/Content/CartRegister.module.scss';
+import containerClass from '../styles/Content/Container.module.scss';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -101,9 +102,17 @@ export default function  Register  () {
     }
 
     return (
-            <Container>
-                <TopCart isFirstActive={true} isSecondActive={true} isThirdActive={false}/>
-                <form action="" className={classes.form} onSubmit={handleSubmit}>
+            <>
+                <div className={containerClass.container}>
+                    <div className={classes.statusContainer}>
+                        <p><span>Home / </span>Cart</p>
+                    </div>
+                </div>
+                <div className={containerClass.registerContainer}>
+                    <TopCart isFirstActive={true} isSecondActive={true} isThirdActive={false}/>
+                </div>
+                <div className={containerClass.widerContainer}>
+                    <form action="" className={classes.form} onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <label htmlFor="savedAddress-select" className={classes.inputLabel}>Select Saved saved Address *</label>
@@ -241,7 +250,8 @@ export default function  Register  () {
                             </Grid>
                         </Grid>
                     </form>
-            </Container>
+                </div>
+            </>
     );
 };
 

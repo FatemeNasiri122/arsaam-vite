@@ -1,9 +1,6 @@
 import classes from '../styles/Content/SigninOrRegister.module.scss';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import cross from '../assets/img/cross.svg'
 import InputAdornment from '@mui/material/InputAdornment';
-import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
@@ -30,7 +27,7 @@ const textFieldStyle= {
     }
 }
 
-export default function  SigninOrContainer () {
+export default function  SignInContainer () {
     const outlinedInputStyles = useOutlinedInputStyles();
 
     const [validEmail,setValidEmail] = useState(true)

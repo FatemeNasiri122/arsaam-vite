@@ -1,6 +1,6 @@
 import classes from "../styles/Content/Buy.module.scss";
+import containerClass from "../styles/Content/Container.module.scss";
 import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
@@ -40,7 +40,7 @@ export default function  Buy  () {
     };
 
     return (
-        <Container>
+        <div className={containerClass.container}>
             <div className={classes.statusContainer}>
                 <p><span>Men / </span><span>clothing / </span>t-shirts</p>
             </div>
@@ -177,6 +177,6 @@ export default function  Buy  () {
                 }
             </Grid>
 
-        </Container>
+        </div>
     );
 };

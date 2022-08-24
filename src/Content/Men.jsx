@@ -1,4 +1,5 @@
 import classes from '../styles/Content/Men.module.scss';
+import containerClass from "../styles/Content/Container.module.scss";
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Fade from 'react-reveal/Fade';
@@ -12,7 +13,7 @@ export default function  Men  () {
                     <h1>men</h1>
                 </div>
             </div>
-            <Container>
+            <div className={containerClass.container}>
 
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
@@ -73,7 +74,7 @@ export default function  Men  () {
 
                     </Grid>
                 </Grid>
-            </Container>
+            </div>
         </>
     )
 

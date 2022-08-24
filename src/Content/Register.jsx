@@ -1,4 +1,5 @@
 import classes from '../styles/Content/Register.module.scss';
+import containerClass from '../styles/Content/Container.module.scss';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -103,15 +104,16 @@ export default function  Register  () {
 
     return (
         <>
-            <div className={classes.statusContainer}>
-                <p><span>home / </span>register</p>
+            <div className={containerClass.container}>
+                <div className={classes.statusContainer}>
+                    <p><span>home / </span>register</p>
+                </div>
             </div>
 
-            <Container>
+            <div className={containerClass.moreWideContainer}>
                 <div className={classes.titleContainer}>
                     <h1>register</h1>
                 </div>
-
                     <form action="" className={classes.form} onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
@@ -227,13 +229,10 @@ export default function  Register  () {
                             <Grid item xs={12}>
                                 <a href="" className={classes.link} onClick={handleSubmit}>REGISTER NEW ACCOUNT</a>
                             </Grid>
-
                         </Grid>
-
                     </form>
-            </Container>
+            </div>
         </>
-
     );
 };
 

@@ -88,12 +88,7 @@ $link-text-color: #fff;
 
 
 @media only screen and (min-width: 960px){
-  .form{
-    padding: 0 130px;
-  }
-  .statusContainer {
-    padding-left: 102px;
-  }
+
   .link{
     width: 326px;
   }
@@ -102,7 +97,6 @@ $link-text-color: #fff;
 @media only screen and (max-width: 960px){
   .form{
     padding: 0 20px;
-
   }
   .statusContainer {
     padding-left: 10px;

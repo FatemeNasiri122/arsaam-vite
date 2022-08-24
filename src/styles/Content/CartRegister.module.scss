@@ -68,13 +68,12 @@ $link-text-color: #fff;
   }
 }
 
+.statusContainer{
+  margin-top: 20px;
+}
+
 @media only screen and (min-width: 960px){
-  .form{
-    padding: 0 130px;
-  }
-  .statusContainer {
-    padding-left: 102px;
-  }
+
   .link{
     width: 326px;
   }
@@ -86,7 +85,6 @@ $link-text-color: #fff;
 
   }
   .statusContainer {
-    padding-left: 10px;
     padding-bottom: 15px;
   }
   .link{
