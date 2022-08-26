@@ -9,6 +9,7 @@ import { FiChevronDown } from "react-icons/fi";
 import usePagination from '@mui/material/usePagination';
 import { styled } from '@mui/material/styles';
 import {useState} from "react";
+import Pagination from "./Pagination";
 
 const List = styled('ul')({
     listStyle: 'none',
@@ -80,47 +81,8 @@ export default function  Tshirts  () {
                         })
                     }
                 </Grid>
-                <nav className={classes.paginationContainer}>
-                    <List>
-                        {items.map(({ page, type, selected, ...item }, index) => {
-                            let children = null;
 
-                            if (type === 'start-ellipsis' || type === 'end-ellipsis') {
-                                children = '…';
-                            } else if (type === 'page') {
-                                children = (
-                                    <button
-                                        type="button"
-                                        style={{
-                                            fontWeight: selected ? 'bold' : undefined,
-                                            border: 'none',
-                                            outline: 'none',
-                                            background: selected ? "linear-gradient(#EFE27C,#A6872D)" : 'transparent',
-                                            color: selected ? 'white' : 'black',
-                                            padding: "5px 10px",
-                                            cursor: "pointer",
-                                        }}
-                                        {...item}
-                                    >
-                                        {page}
-                                    </button>
-                                );
-                            } else {
-                                children = (
-                                    <button style={{
-                                        border: 'none',
-                                        outline: 'none',
-                                        backgroundColor: 'transparent',
-                                        padding: "5px 10px",
-                                    }} type="button" {...item}>
-                                        {type}
-                                    </button>
-                                );
-                            }
-                            return <li key={index}>{children}</li>;
-                        })}
-                    </List>
-                </nav>
+                <Pagination />
             </div>
             
     );
