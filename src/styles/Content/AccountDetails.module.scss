@@ -1,36 +1,40 @@
-$home-text-color: #808080;
-$error-color: #c62828;
+$strike-color: #808080;
 $link-color: #000;
 $link-text-color: #fff;
+$error-color: #c62828;
+$header-font: normal normal bold 30px/37px Century Gothic;
+$form-header-font: normal normal normal 24px/30px Century Gothic;
+$label-font: normal normal bold 14px/17px Century Gothic;
+$news-text-font: normal normal normal 14px/17px Century Gothic;
+$related-text-font: normal normal normal 24px/30px Century Gothic;
 
 .statusContainer{
-  padding-top: 20px;
+  padding: 10px 0;
   text-transform: uppercase;
 
   span{
-    color: $home-text-color;
+    color: $strike-color;
   }
 }
 
-.titleContainer{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  h1{
-    text-transform: uppercase;
-    font-size: 30px;
-    padding-bottom: 42px;
-    font-weight: 900;
-
-  }
+h1{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  font: $header-font;
 }
 
+.form{
+  h2{
+    font: $form-header-font;
+  }
 
-.error{
-  color: $error-color;
-  margin-top: 5px;
-  font-size: 12px;
+  label{
+    font: $label-font;
+  }
+  .newsLetterText{
+    font: $news-text-font;
+  }
 }
 
 [type="checkbox"]{
@@ -41,6 +45,7 @@ $link-text-color: #fff;
   font-size: 14px;
   position: relative;
   padding-left: 30px;
+  padding-top: 5px;
   cursor: pointer;
   display: inline-block;
   line-height: 25px;
@@ -83,23 +88,19 @@ $link-text-color: #fff;
   margin-right: auto;
 }
 
-
-@media only screen and (min-width: 960px){
-
-  .link{
-    width: 326px;
-  }
+.error{
+  color: $error-color;
+  margin-top: 5px;
+  font-size: 12px;
 }
 
-@media only screen and (max-width: 960px){
-  .form{
-    padding: 0 20px;
-  }
-  .statusContainer {
-    padding-left: 10px;
-    padding-bottom: 15px;
-  }
-  .link{
-    width: 100%;
+.related{
+  width: 100%;
+  padding: 20px 0;
+  font: $related-text-font;
+  h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
   }
 }

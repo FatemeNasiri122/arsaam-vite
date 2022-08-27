@@ -16,6 +16,7 @@ const ContactUS = React.lazy(() => import("./Content/ContactUS.jsx"))
 const AboutUS = React.lazy(() => import("./Content/AboutUS.jsx"))
 const News = React.lazy(() => import("./Content/News.jsx"))
 const NewsViewMore = React.lazy(() => import("./Content/NewsViewMore.jsx"))
+const AccountDetails = React.lazy(() => import("./Content/AccountDetails.jsx"))
 
 const Routes = () => {
     return(
@@ -35,6 +36,7 @@ const Routes = () => {
                 <Route path='AboutUS' element={<AboutUS />} />
                 <Route path='News' element={<News />} />
                 <Route path='NewsViewMore' element={<NewsViewMore />} />
+                <Route path='AccountDetails' element={<AccountDetails />} />
             </Route>
             {/*<Route path="*" element={<NotFound />} />*/}
             {/*<Route path='signup' element={ isLoggedIn ? <Navigate to='/' /> : <Signup />} />*/}
