@@ -1,4 +1,5 @@
 import SigninOrContainer from "./SignInContainer";
+import status from "../styles/Content/Status.module.scss";
 import TopCart from "./TopCart";
 import Container from "@mui/material/Container";
 import React from "react";
@@ -8,7 +9,7 @@ import containerClass from "../styles/Content/Container.module.scss";
 export default function Cart2(){
     return <>
         <div className={containerClass.container}>
-            <div className={classes.statusContainer}>
+            <div className={status.statusContainer}>
                 <p><span>Home / </span>Cart</p>
             </div>
         </div>

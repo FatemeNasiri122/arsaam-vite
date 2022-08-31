@@ -1,4 +1,5 @@
 import classes from "../styles/Content/AboutUS.module.scss";
+import status from "../styles/Content/Status.module.scss";
 import images from "/src/assets/img/Repeat Grid 2.png"
 import instagram from "/src/assets/img/Group 402.png"
 import Fade from 'react-reveal/Fade';
@@ -8,10 +9,10 @@ export default function  AboutUS  () {
 
     return (
         <>
-            <div className={classes.statusContainer}>
-            <p><span>Home / </span>ABOUT ARSAAM</p>
-            </div>
                 <div className={classes.AboutUSContainer}>
+                    <div className={status.statusContainer}>
+                        <p><span>Home / </span>ABOUT ARSAAM</p>
+                    </div>
                     <Fade up>
                         <h1>ABOUT ARSAAM</h1>
                         <div className={classes.imgContainer}>

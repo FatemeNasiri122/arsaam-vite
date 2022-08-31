@@ -1,5 +1,6 @@
 import classes from "../styles/Content/News.module.scss";
 import containerClass from "../styles/Content/Container.module.scss";
+import status from "../styles/Content/Status.module.scss";
 import NewsItem from "./NewsItem";
 import NewsData from "/src/data/News.json"
 import * as React from 'react';
@@ -96,7 +97,7 @@ export default function  News  () {
 
     return (
             <div className={containerClass.container}>
-                <div className={classes.statusContainer}>
+                <div className={status.statusContainer}>
                     <p><span>Home / </span>News</p>
                 </div>
                 <h1>NEWS</h1>

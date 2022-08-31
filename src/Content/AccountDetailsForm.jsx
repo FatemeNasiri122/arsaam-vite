@@ -4,43 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import React, {useState} from "react";
 import TextField from '@mui/material/TextField';
 import MenuItem from "@mui/material/MenuItem";
-import { useTheme } from '@mui/material/styles';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import TshirtsData from "../data/Tshirt.json";
+import Tshirt from "./Tshirt";
+import {AnimatePresence, motion} from "framer-motion";
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-    PaperProps: {
-        style: {
-            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-            width: 250,
-        },
-    },
-};
 
-const names = [
-    'Oliver Hansen',
-    'Van Henry',
-    'April Tucker',
-    'Ralph Hubbard',
-    'Omar Alexander',
-    'Carlos Abbott',
-    'Miriam Wagner',
-    'Bradley Wilkerson',
-    'Virginia Andrews',
-    'Kelly Snyder',
-];
-
-function getStyles(name, personName, theme) {
-    return {
-        fontWeight:
-            personName.indexOf(name) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
-    };
-}
 const useOutlinedInputStyles = makeStyles({
 
 });
@@ -96,27 +65,14 @@ const textFieldStyles = {
     "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
         borderRadius: '0px !important'
     },
-    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline:focus": {
-        border: '1px solid black'
-    },
+    // "& .MuiInputBase-colorPrimary": {
+    //     border: '1px solid black !important'
+    // },
     // fix border color on focus
 }
 
-export default function  AccountDetails  () {
-    const [border, setBorder] = React.useState();
+export default function  AccountDetails  ({isMobileActive}) {
 
-    const theme = useTheme();
-    const [personName, setPersonName] = React.useState([]);
-
-    const handleChange1 = (event) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            // On autofill we get a stringified value.
-            typeof value === 'string' ? value.split(',') : value,
-        );
-    };
     const [validFirstName,setValidFirstName] = useState(true)
     const [validLastName,setValidLastName] = useState(true)
     const [validEmail,setValidEmail] = useState(true)
@@ -191,114 +147,141 @@ export default function  AccountDetails  () {
         }
     }
 
-
-
     return (
-                <Grid item xs={12} md={8} paddingLeft={{md: '20px'}} marginTop={'18px'}>
-                    <form action="" className={classes.form} onSubmit={handleSubmit}>
-                        <h2>ACCOUNT DETAILS</h2>
-                        <Grid container columnSpacing={2} rowSpacing={0.7}>
-                            <Grid item xs={12} sm={6} marginTop={'8px'}>
-                                <label htmlFor="first-name" >First Name *</label>
-                                <TextField
-                                    sx={textFieldStyles}
-                                    id="first-name"
-                                    placeholder="Enter your first name"
-                                    value={values.firstName}
-                                    onChange={handleChange('firstName')}
-                                    fullWidth
-                                    error={validFirstName ? false: true}
-                                />
-                                <p className={classes.error}>{validFirstName ? '': 'please enter valid first name'}</p>
-                            </Grid>
-                            <Grid item xs={12} sm={6} marginTop={'8px'}>
-                                <label htmlFor="last-name" >Last Name *</label>
-                                <TextField
-                                    sx={textFieldStyles}
-                                    id="last-name"
-                                    placeholder="Enter your last name"
-                                    value={values.lastName}
-                                    onChange={handleChange('lastName')}
-                                    fullWidth
-                                    error={validLastName ? false: true}
-                                />
-                                <p className={classes.error}>{validLastName ? '': 'please enter valid last name'}</p>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <label htmlFor="email">Email *</label>
-                                <TextField
-                                    sx={textFieldStyles}
-                                    id="email"
-                                    placeholder="Enter your address"
-                                    value={values.email}
-                                    onChange={handleChange('email')}
-                                    fullWidth
-                                    error={validEmail ? false: true}
-                                />
-                                <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <label htmlFor="phone-number" >Phone Number *</label>
-                                <TextField
-                                    sx={textFieldStyles}
-                                    id="phone-number"
-                                    placeholder="Enter your phone number"
-                                    value={values.phoneNumber}
-                                    onChange={handleChange('phoneNumber')}
-                                    fullWidth
-                                    error={validPhoneNumber ? false: true}
-                                />
-                                <p className={classes.error}>{validPhoneNumber ? '': 'please enter phone number'}</p>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <label htmlFor="country" className={classes.selectLabel}>Country *</label>
-                                <Select
-                                    value={values.country}
-                                    onChange={handleChange('savedAddress')}
-                                    displayEmpty
-                                    inputProps={{ 'aria-label': 'Without label' }}
-                                    fullWidth
-                                    error={validSelect ? false: true}
-                                    sx={textFieldStyles}
-                                >
-                                    <MenuItem value="">
-                                        <em>Select saved saved Address</em>
-                                    </MenuItem>
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                                <p className={classes.error}>{validCountry ? '': 'please enter country'}</p>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <label htmlFor="city" className={classes.selectLabel}>City *</label>
-                                <Select
-                                    value={values.city}
-                                    onChange={handleChange('savedAddress')}
-                                    displayEmpty
-                                    inputProps={{ 'aria-label': 'Without label' }}
-                                    fullWidth
-                                    error={validSelect ? false: true}
-                                    sx={textFieldStyles}
-                                >
-                                    <MenuItem value="">
-                                        <em>Select saved saved Address</em>
-                                    </MenuItem>
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                                <p className={classes.error}>{validCity ? '': 'please enter city'}</p>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <input type="checkbox" name="check-box" value="check-box" id="check-box"/>
-                                <label className={classes.newsLetterText} htmlFor="check-box">I would like to receive a newsletter</label>
-                            </Grid>
-                            <Grid item xs={12} sm={3}>
-                                <a href="" className={classes.link} onClick={handleSubmit}>SAVE DATA</a>
-                            </Grid>
-                        </Grid>
-                    </form>
-                </Grid>
+        <>
+
+
+
+                <Grid item xs={12} md={8} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'18px'}>
+                    <AnimatePresence>
+                        <motion.div initial={{y: -100 }}
+                                    animate={{ y: 1 }}
+                                    exit={{  opacity: 0 }} >
+                            <form action="" className={classes.form} onSubmit={handleSubmit}>
+                                <h2>ACCOUNT DETAILS</h2>
+                                <Grid container columnSpacing={2} rowSpacing={0.7}>
+                                    <Grid item xs={12} sm={6} marginTop={'8px'}>
+                                        <label htmlFor="first-name" >First Name *</label>
+                                        <TextField
+                                            sx={textFieldStyles}
+                                            id="first-name"
+                                            placeholder="Enter your first name"
+                                            value={values.firstName}
+                                            onChange={handleChange('firstName')}
+                                            fullWidth
+                                            error={validFirstName ? false: true}
+                                        />
+                                        <p className={classes.error}>{validFirstName ? '': 'please enter valid first name'}</p>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} marginTop={'8px'}>
+                                        <label htmlFor="last-name" >Last Name *</label>
+                                        <TextField
+                                            sx={textFieldStyles}
+                                            id="last-name"
+                                            placeholder="Enter your last name"
+                                            value={values.lastName}
+                                            onChange={handleChange('lastName')}
+                                            fullWidth
+                                            error={validLastName ? false: true}
+                                        />
+                                        <p className={classes.error}>{validLastName ? '': 'please enter valid last name'}</p>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <label htmlFor="email">Email *</label>
+                                        <TextField
+                                            sx={textFieldStyles}
+                                            id="email"
+                                            placeholder="Enter your email"
+                                            value={values.email}
+                                            onChange={handleChange('email')}
+                                            fullWidth
+                                            error={validEmail ? false: true}
+                                        />
+                                        <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <label htmlFor="phone-number" >Phone Number *</label>
+                                        <TextField
+                                            sx={textFieldStyles}
+                                            id="phone-number"
+                                            placeholder="Enter your phone number"
+                                            value={values.phoneNumber}
+                                            onChange={handleChange('phoneNumber')}
+                                            fullWidth
+                                            error={validPhoneNumber ? false: true}
+                                        />
+                                        <p className={classes.error}>{validPhoneNumber ? '': 'please enter valid phone number'}</p>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <label htmlFor="country" className={classes.selectLabel}>Country *</label>
+                                        <Select
+                                            value={values.country}
+                                            onChange={handleChange('country')}
+                                            displayEmpty
+                                            inputProps={{ 'aria-label': 'Without label' }}
+                                            fullWidth
+                                            error={validSelect ? false: true}
+                                            sx={textFieldStyles}
+                                        >
+                                            <MenuItem value="">
+                                                <em>Enter your country</em>
+                                            </MenuItem>
+                                            <MenuItem value={10}>Ten</MenuItem>
+                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem>
+                                        </Select>
+                                        <p className={classes.error}>{validCountry ? '': 'please enter valid country'}</p>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <label htmlFor="city" className={classes.selectLabel}>City *</label>
+                                        <Select
+                                            value={values.city}
+                                            onChange={handleChange('city')}
+                                            displayEmpty
+                                            inputProps={{ 'aria-label': 'Without label' }}
+                                            fullWidth
+                                            error={validSelect ? false: true}
+                                            sx={textFieldStyles}
+                                        >
+                                            <MenuItem value="">
+                                                <em>Enter your City</em>
+                                            </MenuItem>
+                                            <MenuItem value={10}>Ten</MenuItem>
+                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem>
+                                        </Select>
+                                        <p className={classes.error}>{validCity ? '': 'please enter valid city'}</p>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <input type="checkbox" name="check-box" value="check-box" id="check-box"/>
+                                        <label className={classes.newsLetterText} htmlFor="check-box">I would like to receive a newsletter</label>
+                                    </Grid>
+                                    <Grid item xs={12} sm={3}>
+                                        <a href="" className={classes.link} onClick={handleSubmit}>SAVE DATA</a>
+                                    </Grid>
+                                </Grid>
+                            </form>
+
+                        </motion.div>
+
+                    </AnimatePresence>
+                    </Grid>
+
+
+
+            <div className={classes.related}>
+                <h2>SUGGESTED PRODUCTS</h2>
+            </div>
+            <Grid container spacing={2}>
+                {
+                    TshirtsData.map((tshirt ,i)=>{
+                        if (i < 4){
+                            return <Tshirt data={tshirt} key={tshirt.id}/>
+                        }
+                    })
+                }
+            </Grid>
+        </>
+
     );
 };

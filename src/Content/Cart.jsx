@@ -1,5 +1,6 @@
 import classes from "../styles/Content/Cart.module.scss";
 import containerClass from "../styles/Content/Container.module.scss";
+import status from "../styles/Content/Status.module.scss";
 import Grid from "@mui/material/Grid";
 import TshirtsData from '../data/Tshirt.json'
 import ShoppingCart from "./ShoppingCart"
@@ -11,7 +12,7 @@ export default function  Cart  () {
     return (
         <>
             <div className={containerClass.container}>
-                <div className={classes.statusContainer}>
+                <div className={status.statusContainer}>
                     <p><span>Home / </span>Cart</p>
                 </div>
 

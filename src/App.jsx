@@ -3,15 +3,19 @@ import Routes from './routes.jsx';
 import "../src/styles/Layout/index.scss";
 import "../src/assets/font/font.css"
 import {BrowserRouter} from "react-router-dom";
+import {AccountProvider} from "./context/AccountContext";
 
 function App() {
 
     return (
-        <BrowserRouter>
-            <React.Suspense>
-                <Routes/>
-            </React.Suspense>
-        </BrowserRouter>
+        <AccountProvider>
+            <BrowserRouter>
+                <React.Suspense>
+                    <Routes/>
+                </React.Suspense>
+            </BrowserRouter>
+        </AccountProvider>
+
     )
 }
 

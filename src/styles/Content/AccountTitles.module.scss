@@ -18,10 +18,19 @@ $li-fonts: normal normal normal 14px/30px Century Gothic;
       border-bottom: 1px solid $border-color;
       font: $li-fonts;
       height: 50px;
+      cursor: pointer;
+
+    }
+    li:first-child{
+      border-top: 1px solid $border-color;
     }
     .active{
       color: $active-color;
       background: $gold-background-color;
+
+      a{
+        color: inherit;
+      }
     }
   }
 

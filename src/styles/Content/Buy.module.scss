@@ -22,14 +22,6 @@ $link-color: #000;
 html{
   scroll-behavior: smooth;
 }
-.statusContainer{
-  padding: 20px 0;
-  text-transform: uppercase;
-
-  span{
-    color: $strike-color;
-  }
-}
 
 .leftImgContainer{
   .imgContainer{

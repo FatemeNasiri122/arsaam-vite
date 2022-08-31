@@ -7,14 +7,6 @@ $clear-color: #F7F7F7;
   align-items: center;
 }
 
-.statusContainer{
-  padding: 20px 0;
-  text-transform: uppercase;
-
-  span{
-    color: $home-text-color;
-  }
-}
 .category{
      @include top-container;
 

@@ -1,5 +1,6 @@
 import SigninOrContainer from "./SignInContainer";
 import containerClass from "../styles/Content/Container.module.scss";
+import status from "../styles/Content/Status.module.scss";
 import TopCart from "./TopCart";
 import Container from "@mui/material/Container";
 import React, {useState} from "react";
@@ -26,10 +27,13 @@ export default function CartCheckout(){
     }
 
     return <>
-        <div className={classes.statusContainer}>
-            <p><span>Home / </span>Cart</p>
+        <div className={containerClass.container}>
+            <div className={status.statusContainer}>
+                <p><span>Home / </span>Cart</p>
+            </div>
         </div>
         <div className={containerClass.checkoutContainer}>
+
             <TopCart isFirstActive={true} isSecondActive={true} isThirdActive={true}/>
             <Grid container>
                 <Grid item xs={10}>

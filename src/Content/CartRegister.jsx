@@ -1,5 +1,6 @@
 import classes from '../styles/Content/CartRegister.module.scss';
 import containerClass from '../styles/Content/Container.module.scss';
+import status from "../styles/Content/Status.module.scss";
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -104,7 +105,7 @@ export default function  Register  () {
     return (
             <>
                 <div className={containerClass.container}>
-                    <div className={classes.statusContainer}>
+                    <div className={status.statusContainer}>
                         <p><span>Home / </span>Cart</p>
                     </div>
                 </div>

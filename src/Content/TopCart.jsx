@@ -6,7 +6,6 @@ import React from "react";
 export default function  TopCart  ({isFirstActive , isSecondActive , isThirdActive}) {
     return (
         <>
-
             <h1>cart</h1>
             <Grid container sx={{justifyContent: 'center'}}>
                 <Grid item xs={12}>

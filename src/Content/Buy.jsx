@@ -1,4 +1,5 @@
 import classes from "../styles/Content/Buy.module.scss";
+import status from "../styles/Content/Status.module.scss";
 import containerClass from "../styles/Content/Container.module.scss";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -41,7 +42,7 @@ export default function  Buy  () {
 
     return (
         <div className={containerClass.container}>
-            <div className={classes.statusContainer}>
+            <div className={status.statusContainer}>
                 <p><span>Men / </span><span>clothing / </span>t-shirts</p>
             </div>
             <Grid container>

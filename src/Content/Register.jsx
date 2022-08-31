@@ -1,6 +1,7 @@
 import classes from '../styles/Content/Register.module.scss';
 import containerClass from '../styles/Content/Container.module.scss';
 import Container from '@mui/material/Container';
+import status from "../styles/Content/Status.module.scss";
 import Grid from '@mui/material/Grid';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -105,7 +106,7 @@ export default function  Register  () {
     return (
         <>
             <div className={containerClass.container}>
-                <div className={classes.statusContainer}>
+                <div className={status.statusContainer}>
                     <p><span>home / </span>register</p>
                 </div>
             </div>
