@@ -149,9 +149,6 @@ export default function  AccountDetails  ({isMobileActive}) {
 
     return (
         <>
-
-
-
                 <Grid item xs={12} md={8} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'18px'}>
                     <AnimatePresence>
                         <motion.div initial={{y: -100 }}
@@ -261,26 +258,21 @@ export default function  AccountDetails  ({isMobileActive}) {
                                     </Grid>
                                 </Grid>
                             </form>
-
+                            <Grid container spacing={2} display={{xs: 'none',md: 'block'}}>
+                                <div className={classes.related}>
+                                    <h2>SUGGESTED PRODUCTS</h2>
+                                </div>
+                                {
+                                    TshirtsData.map((tshirt ,i)=>{
+                                        if (i < 4){
+                                            return <Tshirt data={tshirt} key={tshirt.id}/>
+                                        }
+                                    })
+                                }
+                            </Grid>
                         </motion.div>
-
                     </AnimatePresence>
                     </Grid>
-
-
-
-            <div className={classes.related}>
-                <h2>SUGGESTED PRODUCTS</h2>
-            </div>
-            <Grid container spacing={2}>
-                {
-                    TshirtsData.map((tshirt ,i)=>{
-                        if (i < 4){
-                            return <Tshirt data={tshirt} key={tshirt.id}/>
-                        }
-                    })
-                }
-            </Grid>
         </>
 
     );

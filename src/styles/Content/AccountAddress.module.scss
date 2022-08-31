@@ -1,0 +1,39 @@
+$notActive-color: #808080;
+$link-color: #000;
+$link-text-color: #fff;
+$error-color: #c62828;
+$header-font: normal normal bold 30px/37px Century Gothic;
+$orders-header-font: normal normal normal 24px/30px Century Gothic;
+$label-font: normal normal bold 14px/17px Century Gothic;
+$news-text-font: normal normal normal 14px/17px Century Gothic;
+$related-text-font: normal normal normal 24px/30px Century Gothic;
+$link-font: normal normal normal 14px/30px Century Gothic;
+
+.container{
+    width: 100%;
+
+    .addressTitle{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        a{
+            text-decoration: none;
+            font: $link-font;
+            svg{
+                margin-right: 5px;
+            }
+        }
+        .notActive{
+            color: $notActive-color;
+        }
+        .notActiveIcon{
+            fill: $notActive-color;
+        }
+    }
+    h2{
+        font: $orders-header-font;
+        margin-bottom: 20px;
+    }
+
+}

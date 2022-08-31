@@ -1,0 +1,22 @@
+[
+  {
+    "user": {
+      "home": {
+        "title": "home",
+        "address": "Address is here, Address is here, Address is here, Address is here",
+        "cityName": "City name",
+        "postalCode": "Postal Code",
+        "phoneNumber": "+49-123456789",
+        "user": "Hossein Bagheri"
+      },
+      "work": {
+        "title": "work",
+        "address": "Address is here, Address is here, Address is here, Address is here",
+        "cityName": "City name",
+        "postalCode": "Postal Code",
+        "phoneNumber": "+49-123456789",
+        "user": "Hossein Bagheri"
+      }
+    }
+  }
+]

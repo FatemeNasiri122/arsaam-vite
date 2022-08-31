@@ -25,7 +25,7 @@ export default function  AccountTitles  () {
                 <Grid item xs={12} display={{xs: 'block',md: 'none'}}>
                     <ul onClick={
                         (e) =>
-                        {changeMobileActive(e.target)
+                        {changeActive(e.target)
                         }}>
                         {lists.map((list) =>{
                             return <>
