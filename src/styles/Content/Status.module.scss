@@ -8,3 +8,11 @@ $strike-color: #808080;
     color: $strike-color;
   }
 }
+@media only screen and (max-width: 600px){
+
+  .statusContainer{
+    padding: 5px 0;
+
+  }
+
+}

@@ -8,6 +8,7 @@ import Select from '@mui/material/Select';
 import TshirtsData from "../data/Tshirt.json";
 import Tshirt from "./Tshirt";
 import {AnimatePresence, motion} from "framer-motion";
+import {Box} from "@material-ui/core";
 
 
 const useOutlinedInputStyles = makeStyles({
@@ -258,10 +259,15 @@ export default function  AccountDetails  ({isMobileActive}) {
                                     </Grid>
                                 </Grid>
                             </form>
-                            <Grid container spacing={2} display={{xs: 'none',md: 'block'}}>
-                                <div className={classes.related}>
-                                    <h2>SUGGESTED PRODUCTS</h2>
-                                </div>
+
+                        </motion.div>
+                    </AnimatePresence>
+                    </Grid>
+                        <div className={classes.suggestedContainer}>
+                            <div className={classes.related}>
+                                <h2>SUGGESTED PRODUCTS</h2>
+                            </div>
+                            <Grid container spacing={2}>
                                 {
                                     TshirtsData.map((tshirt ,i)=>{
                                         if (i < 4){
@@ -270,9 +276,7 @@ export default function  AccountDetails  ({isMobileActive}) {
                                     })
                                 }
                             </Grid>
-                        </motion.div>
-                    </AnimatePresence>
-                    </Grid>
+                        </div>
         </>
 
     );

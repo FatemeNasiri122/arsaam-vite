@@ -30,13 +30,12 @@ export default function  AccountTitles  () {
                         {lists.map((list) =>{
                             return <>
                                 <li data-id={list.id} className={list.isActive && classes.active}>{list.name}</li>
-                                <Collapse orientation="horizontal" in={list.isActive}>
-                                    {lists[0].isActive && <AccountDetailsForm isMobileActive={false}/>}
-                                    {lists[1].isActive && <OrdersListContainer isMobileActive={false}/>}
-                                    {lists[2].isActive && <FavoriteAccount isMobileActive={false}/>}
-                                    {lists[3].isActive && <AccountAddress isMobileActive={false}/>}
-                                    {lists[5].isActive && <ChangePassword isMobileActive={false}/>}
-                                </Collapse>
+                                    {lists[0].isActive && <AccountDetailsForm isMobileActive={true}/>}
+                                    {lists[1].isActive && <OrdersListContainer isMobileActive={true}/>}
+                                    {lists[2].isActive && <FavoriteAccount isMobileActive={true}/>}
+                                    {lists[3].isActive && <AccountAddress isMobileActive={true}/>}
+                                    {lists[5].isActive && <ChangePassword isMobileActive={true}/>}
+
                             </>
                         })}
                     </ul>

@@ -72,3 +72,81 @@ h1{
   display: block;
   margin-bottom: 5px;
 }
+
+.form{
+  h2{
+    font: $form-header-font;
+  }
+
+  label{
+    font: $label-font;
+  }
+  .newsLetterText{
+    font: $news-text-font;
+  }
+}
+
+[type="checkbox"]{
+  display: none;
+}
+
+[type="checkbox"] + label{
+  font-size: 14px;
+  position: relative;
+  padding-left: 30px;
+  padding-top: 5px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 25px;
+}
+
+[type="checkbox"] + label::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid black;
+  //background: white;
+}
+
+
+[type="checkbox"]:checked + label::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background: url("/src/assets/img/checkmark.png") no-repeat center;
+}
+
+
+.error{
+  color: $error-color;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.related{
+  width: 100%;
+  padding: 20px 0;
+  font: $related-text-font;
+  h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+  }
+}
+
+.suggestedContainer{
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px){
+  .suggestedContainer{
+    display: none;
+  }
+
+}
