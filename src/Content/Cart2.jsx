@@ -1,9 +1,7 @@
 import SigninOrContainer from "./SignInContainer";
 import status from "../styles/Content/Status.module.scss";
 import TopCart from "./TopCart";
-import Container from "@mui/material/Container";
 import React from "react";
-import classes from "../styles/Content/Register.module.scss";
 import containerClass from "../styles/Content/Container.module.scss";
 
 export default function Cart2(){

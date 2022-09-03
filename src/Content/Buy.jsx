@@ -8,7 +8,6 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import TshirtsData from "../data/Tshirt.json"
 import image1 from "/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg"
 import image2 from "/src/assets/img/FABC-MTK5624-PJY002N_13_mf.jpg"
@@ -18,9 +17,11 @@ import image5 from "/src/assets/img/FABC-MTK5624-PJY002N_13_d1.jpg"
 import React, {useRef, useState} from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import {Collapse} from "@material-ui/core";
+import {Box, Collapse, Select} from "@material-ui/core";
 import Tshirt from "./Tshirt";
 import BuySlider from "./BuySlider";
+import LinkButton from "./button/LinkButton";
+import SelectItems from "./select/SelectItems";
 
 export default function  Buy  () {
     const testRef1 = useRef(null);
@@ -77,13 +78,13 @@ export default function  Buy  () {
                      <Grid item xs={12} sx={{ display: {sm:"none" }}}>
                         <BuySlider />
                     </Grid>
-                    <Grid item sm={6} lg={4} sx={{paddingLeft: "20px"}}>
+                    <Grid item sm={6} lg={4} paddingLeft={{sm:"20px"}}>
                         <div className={classes.topCard}>
                             <div className={classes.iconContainer}>
-                                <Button startIcon={<ShareOutlinedIcon />} sx={{color: "black" , paddingLeft: "0"}}>
+                                <Button startIcon={<ShareOutlinedIcon />} sx={{color: "black" , paddingLeft: "0",font: 'normal normal normal 14px/17px Century Gothic'}}>
                                     share
                                 </Button>
-                                <Button startIcon={<StarBorderIcon />} sx={{color: "black"}}>
+                                <Button startIcon={<StarBorderIcon />} sx={{color: "black", font: 'normal normal normal 14px/17px Century Gothic'}}>
                                     favorite
                                 </Button>
                             </div>
@@ -94,7 +95,7 @@ export default function  Buy  () {
                             }</p>
                         </div>
                         <div className={classes.colorContainer}>
-                            <p><strong>color</strong>: red</p>
+                            <p><strong>color</strong><span>: red</span></p>
                             <div className={classes.circleContainer}>
                                 {TshirtsData[0].colors.map((color) =>{
                                     if(color === "blackAndWhite")
@@ -107,23 +108,14 @@ export default function  Buy  () {
                         <div className={classes.sizeContainer}>
                             <p><strong>size</strong></p>
                             <div className={classes.selectContainer}>
-                                <FormControl sx={{width: "176px",height: "40px"}}>
-                                    <InputLabel id="demo-simple-select-label">Select Size</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        value={size}
-                                        label="Select Size"
-                                        onChange={handleChange}
-                                    >
-                                        {TshirtsData[0].size.map((s)=>{
-                                            return <MenuItem value={s} sx={{borderBottom: "1px solid silver"}}>{s}</MenuItem>
-                                        })}
-                                    </Select>
-                                </FormControl>
+                                    <div className={classes.selectSize}>
+                                        <SelectItems initialSelect='Select Size' label='select'/>
+                                    </div>
                                 <a href="">size guide</a>
                             </div>
-                            <a className={classes.cardLink} href="">add to cart</a>
+
+                            <LinkButton width='100%' height='50px' color='#fff' background='#000' linkText="add to cart" marginTop='40px' marginButtom='10px'/>
+
                         </div>
                             <div className={classes.questionContainer}>
                                 <div className={classes.question} onClick={() => setPlus1((prev) => !prev)}>
@@ -168,7 +160,7 @@ export default function  Buy  () {
                         </div>
                     </Grid>
                 </Grid>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} marginBottom='50px'>
                 {
                     TshirtsData.map((tshirt ,i)=>{
                         if (i < 4){

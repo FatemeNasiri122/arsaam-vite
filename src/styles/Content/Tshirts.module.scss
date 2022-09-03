@@ -1,5 +1,9 @@
 $home-text-color: #808080;
 $clear-color: #F7F7F7;
+$title-font: normal normal bold 30px/37px Century Gothic;
+$select-font: normal normal normal 14px/15px Century Gothic;
+
+
 @mixin top-container {
   width: 100%;
   display: flex;
@@ -72,6 +76,7 @@ $clear-color: #F7F7F7;
     }
      h2{
        text-transform: uppercase;
+       font: $title-font;
      }
 }
 
@@ -101,6 +106,10 @@ $clear-color: #F7F7F7;
   justify-content: center;
 }
 
+.marginEndOfContent{
+  margin-bottom: 50px;
+}
+
 @media only screen and (min-width: 600px) {
   .selectsContainer{
 
@@ -110,6 +119,9 @@ $clear-color: #F7F7F7;
         height: 249px;
         padding: 20px;
 
+      }
+      .select{
+        font: $select-font;;
       }
     }
   }

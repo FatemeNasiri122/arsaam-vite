@@ -9,99 +9,89 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-import {useState} from "react";
+import React, {useContext, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import LinkButton from "./button/LinkButton";
+import FormContext from "../context/FormContext";
 
 const useOutlinedInputStyles = makeStyles({
     root: {
         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "black !important"
-        }
+            borderColor: "black !important",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            height: '45px',
+            borderRadius: "0",
+        },
+        "& .MuiInputBase-input": {
+            padding: '10px',
+            fontSize: '12px',
+
+        },
+
     }
 });
 
-const textFieldStyle= {
-    pt: 1,
+const textFieldStyles = {
+    root: {
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black !important",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            height: '45px',
+            borderRadius: '0',
+        },
+        "& .MuiInputBase-input": {
+            padding: '10px',
+            fontSize: '12px',
+        },
+
+    },
+    '& label': {
+        color: '#808080',
+        fontSize: '12px',
+
+    },
     "& .MuiOutlinedInput-root.Mui-focused": {
-    "& > fieldset": {
-        borderColor: "black"
-    }
-}
+        "& > fieldset": {
+            borderColor: 'black',
+            borderRadius: '0',
+
+        }
+    },
+    "& .MuiOutlinedInput-root": {
+        "& > fieldset": {
+            borderRadius: '0',
+            height: '45px',
+            position: 'absolute',
+            top: '0',
+        }
+    },
+    "& .MuiInputBase-root": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+
+    },
+    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+        padding: '10px',
+
+    },
+    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
+        borderRadius: '0px !important'
+    },
+    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+        borderRadius: '0px !important'
+    },
 }
 
 export default function  Register  () {
-    const [validFirstName,setValidFirstName] = useState(true)
-    const [validLastName,setValidLastName] = useState(true)
-    const [validEmail,setValidEmail] = useState(true)
-    const [validConfirmEmail,setValidConfirmEmail] = useState(true)
-    const [validPassword,setValidPassword] = useState(true)
-    const [validConfirmPassword,setValidConfirmPassword] = useState(true)
 
     const outlinedInputStyles = useOutlinedInputStyles();
 
-    const [values, setValues] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        confirmEmail: '',
-        password: '',
-        confirmPassword: '',
-        showPassword: false,
-        showConfirmPassword: false,
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleClickShowPassword = (prop) => {
-        setValues({
-            ...values,
-            [prop]: !values.showPassword,
-        });
-    };
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const {email , password , firstName , lastName , confirmEmail , confirmPassword} = values
-        const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-        const regexConfirmEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(confirmEmail);
-
-        if (firstName === ''){
-            setValidFirstName(false)
-        }else {
-            setValidFirstName(true)
-        }
-        if (lastName === ''){
-            setValidLastName(false)
-        }else {
-            setValidLastName(true)
-        }
-        if (email === '' || regexEmail === false){
-            setValidEmail(false)
-        }else {
-            setValidEmail(true)
-        }
-        if (confirmEmail === '' || regexConfirmEmail === false || confirmEmail !== email){
-            setValidConfirmEmail(false)
-        }else {
-            setValidConfirmEmail(true)
-        }
-        if (password === ''){
-            setValidPassword(false)
-        }else {
-            setValidPassword(true)
-        }
-        if (confirmPassword === '' || confirmPassword !== password){
-            setValidConfirmPassword(false)
-        }else {
-            setValidConfirmPassword(true)
-        }
-    }
+    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
+        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,validConfirmEmail} = useContext(FormContext);
 
     return (
         <>
@@ -116,11 +106,11 @@ export default function  Register  () {
                     <h1>register</h1>
                 </div>
                     <form action="" className={classes.form} onSubmit={handleSubmit}>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={0.8} columnSpacing={2.2}>
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="first-name"
                                     placeholder="Enter your first name"
                                     value={values.firstName}
@@ -131,9 +121,9 @@ export default function  Register  () {
                                 <p className={classes.error}>{validFirstName ? '': 'please enter valid first name'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="first-name" className={classes.inputLabel}>Last Name *</label>
+                                <label htmlFor="last-name" className={classes.inputLabel}>Last Name *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="last-name"
                                     placeholder="Enter your last name"
                                     value={values.lastName}
@@ -146,7 +136,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="email" className={classes.inputLabel}>Email *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="email"
                                     placeholder="Enter your email"
                                     value={values.email}
@@ -159,7 +149,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="confirm-email" className={classes.inputLabel}>Confirm Email *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="confirm-email"
                                     placeholder="Enter your email"
                                     value={values.confirmEmail}
@@ -170,65 +160,65 @@ export default function  Register  () {
                                 <p className={classes.error}>{validConfirmEmail ? '': 'please enter valid email'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="password" className={classes.inputLabel}>Password *</label>
+                                <label htmlFor="password" className={classes.inputLabel}>Current Password *</label>
                                 <OutlinedInput
                                     classes={outlinedInputStyles}
-                                    sx={{ mt : 1}}
                                     id="password"
-                                    type={values.showPassword ? 'text' : 'password'}
-                                    value={values.password}
-                                    onChange={handleChange('password')}
+                                    type={values.showCurrentPassword ? 'text' : 'password'}
+                                    value={values.currentPassword}
+                                    onChange={handleChange('currentPassword')}
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
                                                 aria-label="toggle password visibility"
-                                                onClick={() =>handleClickShowPassword('showPassword')}
+                                                onClick={() => handleClickshowCurrentPassword('showCurrentPassword')}
                                                 onMouseDown={handleMouseDownPassword}
                                                 edge="end"
                                             >
-                                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                                {values.showCurrentPassword ? <VisibilityOff /> : <Visibility />}
                                             </IconButton>
                                         </InputAdornment>
                                     }
-                                    error={validPassword ? false: true}
-                                    placeholder='Password'
+                                    error={validcurrentPassword ? false : true}
+                                    placeholder='Enter your current password'
                                     fullWidth
                                 />
-                                <p className={classes.error}>{validPassword ? '': 'please enter valid password'}</p>
+                                <p className={classes.error}>{validcurrentPassword ? '': 'please enter valid password'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="confirm-password" className={classes.inputLabel}>Confirm Password *</label>
+                                <label htmlFor="newPassword" className={classes.inputLabel}>New Password *</label>
                                 <OutlinedInput
                                     classes={outlinedInputStyles}
-                                    sx={{ mt : 1}}
-                                    id="confirm-password"
-                                    type={values.showPassword ? 'text' : 'password'}
-                                    value={values.confirmPassword}
-                                    onChange={handleChange('confirmPassword')}
+                                    id="newPassword"
+                                    type={values.showNewPassword ? 'text' : 'password'}
+                                    value={values.newPassword}
+                                    onChange={handleChange('newPassword')}
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
                                                 aria-label="toggle password visibility"
-                                                onClick={() => handleClickShowPassword('showConfirmPassword')}
+                                                onClick={() =>handleClickShowNewPassword('showNewPassword')}
                                                 onMouseDown={handleMouseDownPassword}
                                                 edge="end"
                                             >
-                                                {values.showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                                                {values.showNewPassword ? <VisibilityOff /> : <Visibility />}
                                             </IconButton>
                                         </InputAdornment>
                                     }
-                                    error={validConfirmPassword ? false: true}
-                                    placeholder='Password'
+                                    error={validnewPassword ? false: true}
+                                    placeholder='Enter your current password'
                                     fullWidth
                                 />
-                                <p className={classes.error}>{validConfirmPassword ? '': 'please enter valid password'}</p>
+                                <p className={classes.error}>{validnewPassword ? '': 'please enter valid password'}</p>
                             </Grid>
                             <Grid item xs={12}>
                                 <input type="checkbox" name="check-box" value="check-box" id="check-box"/>
                                 <label htmlFor="check-box">I would like to receive a newsletter</label>
                             </Grid>
-                            <Grid item xs={12}>
-                                <a href="" className={classes.link} onClick={handleSubmit}>REGISTER NEW ACCOUNT</a>
+                            <Grid item xs={12} sx={{display : 'flex',justifyContent: 'center'}}>
+                                <div className={classes.link}>
+                                    <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000' linkText="REGISTER NEW ACCOUNT" marginTop='40px' marginButtom='10px'/>
+                                </div>
                             </Grid>
                         </Grid>
                     </form>

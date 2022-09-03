@@ -4,7 +4,6 @@ import status from "../styles/Content/Status.module.scss";
 import NewsItem from "./NewsItem";
 import NewsData from "/src/data/News.json"
 import * as React from 'react';
-import MenuItem from '@mui/material/MenuItem';
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import {useState} from "react";
@@ -15,6 +14,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { makeStyles } from "@material-ui/core/styles";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LinkButton from "./button/LinkButton";
+import SelectItems from "./select/SelectItems";
 
 const useOutlinedInputStyles = makeStyles({
     root: {
@@ -103,28 +104,12 @@ export default function  News  () {
                 <h1>NEWS</h1>
                 <form action="">
                     <Grid container sx={{marginY: '10px'}}>
-                        <Grid item xs={12} md={3} paddingRight={{md: '20px'}}>
-                            <TextField
-                                value={age}
-                                select
-                                onChange={handleChange}
-
-                                fullWidth
-                                label='Category'
-                                sx={textFieldStyle}
-                            >
-                                <MenuItem value="">
-                                    <em style={{color: '#808080'}}>Category</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </TextField>
+                        <Grid item xs={12} md={3} paddingRight={{md: '20px'}} marginTop='4px'>
+                            <SelectItems initialSelect='Category' label='category'/>
                         </Grid>
                         <Grid item xs={12} md={2} paddingRight={{md: '20px'}} marginTop={{xs: '0', md : '4px'}}>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
-                                marginTop={{xs: '10px', md : '5px'}}
                                 id="Calendar"
                                 value={values.CalendarFrom}
                                 onChange={handleChange('CalendarFrom')}
@@ -172,7 +157,7 @@ export default function  News  () {
                         <Grid item xs={12} md={4} paddingRight={{md: '20px'}} marginTop={{xs: '10px', md : '0'}}>
                             <TextField
                                 id="search"
-                                label="Search News"
+                                placeholder="Search News"
                                 value={values.search}
                                 onChange={handleChange('search')}
                                 fullWidth
@@ -183,7 +168,7 @@ export default function  News  () {
                             <p className={classes.error}>{validSearch ? '': 'please enter valid email'}</p>
                         </Grid>
                         <Grid item xs={12} md={1}>
-                            <a href="" className={classes.links} onClick={handleSubmit}>SEARCH</a>
+                            <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="SEARCH" marginTop='5px' marginButtom='0'/>
                         </Grid>
                     </Grid>
 
@@ -194,7 +179,7 @@ export default function  News  () {
                     })
                 }
                 <Pagination />
-
+                <div style={{marginBottom: '50px'}}></div>
             </div>
 
     );

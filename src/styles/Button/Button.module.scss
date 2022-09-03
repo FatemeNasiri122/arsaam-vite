@@ -1,0 +1,13 @@
+$link-font: normal normal normal 14px/17px Century Gothic;
+$link-color: #000;
+
+.buttonLink{
+  font: $link-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color linear 500ms ;
+  border: 1px solid $link-color;
+}

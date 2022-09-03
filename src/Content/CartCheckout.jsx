@@ -1,30 +1,89 @@
-import SigninOrContainer from "./SignInContainer";
 import containerClass from "../styles/Content/Container.module.scss";
 import status from "../styles/Content/Status.module.scss";
 import TopCart from "./TopCart";
-import Container from "@mui/material/Container";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import classes from "../styles/Content/CartCheckout.module.scss";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
+import LinkButton from "./button/LinkButton";
+import FormContext from "../context/FormContext";
+
+const textFieldStyles = {
+    root: {
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black !important",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            height: '45px',
+            borderRadius: '0',
+        },
+        "& .MuiInputBase-input": {
+            padding: '10px',
+            fontSize: '12px',
+        },
+
+    },
+    '& label': {
+        color: '#808080',
+        fontSize: '12px',
+
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+            borderColor: 'black',
+            borderRadius: '0',
+
+        }
+    },
+    "& .MuiOutlinedInput-root": {
+        "& > fieldset": {
+            borderRadius: '0',
+            height: '45px',
+            position: 'absolute',
+            top: '0'
+        }
+    },
+    "& .MuiInputBase-root": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+
+    },
+    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+        padding: '10px',
+
+    },
+    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
+        borderRadius: '0px !important'
+    },
+    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+        borderRadius: '0px !important'
+    },
+    // "& .MuiInputBase-colorPrimary": {
+    //     border: '1px solid black !important'
+    // },
+    // fix border color on focus
+}
+
+const descriptionStyle = {
+    marginTop: '5px',
+    "& .MuiOutlinedInput-notchedOutline": {
+        borderRadius: '0',
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+            borderColor: 'black',
+            borderRadius: '0',
+
+        }
+    },
+}
 
 export default function CartCheckout(){
-    const [validCode,setValidCode] = useState(true)
 
-    const [values, setValues] = useState({
-        code: '',
-        description: '',
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const {code , description} = values
-
-    }
+    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
+        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
 
     return <>
         <div className={containerClass.container}>
@@ -33,27 +92,26 @@ export default function CartCheckout(){
             </div>
         </div>
         <div className={containerClass.checkoutContainer}>
-
             <TopCart isFirstActive={true} isSecondActive={true} isThirdActive={true}/>
-            <Grid container>
+            <Grid container marginBottom='50px'>
                 <Grid item xs={10}>
                     <label htmlFor="code" className={classes.inputLabel}>Use Coupon Code</label>
                     <TextField
+                        sx={textFieldStyles}
                         id="code"
                         placeholder="Enter coupon code"
                         value={values.email}
                         onChange={handleChange('email')}
                         fullWidth
-                        error={validCode ? false: true}
-                        sx={{marginTop: '5px'}}
+                        error={validEmail ? false: true}
                     />
                 </Grid>
                 <Grid item xs={2}>
-                    <a href="" className={classes.applyLink} onClick={handleSubmit}>APPLY</a>
+                    <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="APPLY" marginTop='25px' marginButtom='10px'/>
                 </Grid>
                 <Grid item xs={12}>
                     <div className={classes.finalContainer}>
-                        <strong className={classes.title}>FINAL INVOICE</strong>
+                        <p className={classes.title}>FINAL INVOICE</p>
                         <p><span>TOTAL PURCHASE</span><span>€ 2.400,00</span></p>
                         <p><span>TOTAL NUMBER OF ORDERS</span><span>2</span></p>
                         <p><span>TOTAL DISCOUNT</span><span>€ 400,00</span></p>
@@ -66,7 +124,7 @@ export default function CartCheckout(){
                 <Grid item xs={12} sx={{marginTop: '21px'}}>
                     <label htmlFor="description" className={classes.inputLabel}>Description</label>
                     <TextField
-                        sx={{marginTop: '5px'}}
+                        sx={descriptionStyle}
                         id="description"
                         placeholder='you can give your own description write in this section'
                         multiline
@@ -76,8 +134,8 @@ export default function CartCheckout(){
                         fullWidth
                     />
                 </Grid>
-                <Grid item xs={12} sx={{marginTop: '21px',display: 'flex',justifyContent: 'end'}}>
-                    <a href="" className={classes.paymentLink} onClick={handleSubmit}>BILL PAYMENT</a>
+                <Grid item xs={12} sx={{marginTop: '21px',display: 'flex',justifyContent: 'center'}}>
+                    <LinkButton width='215px' height='55px' color='#fff' background='#000' linkText="BILL PAYMENT" marginTop='0' marginButtom='0'/>
                 </Grid>
             </Grid>
         </div>

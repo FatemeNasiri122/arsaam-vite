@@ -3,6 +3,9 @@ $gold-background-color: linear-gradient(#EFE27C,#A6872D);
 $strike-color: #808080;
 $link-color: #000;
 $size-color: rgba(0, 0, 0, 0.62);
+$name-font: normal normal normal 14px/17px Century Gothic;
+$price-font: normal normal bold 14px/17px Century Gothic;
+$gold-font: normal normal normal 14px/17px Century Gothic;
 
 .imgWrapper:hover .imgHover{
   opacity: 1;
@@ -63,6 +66,7 @@ $size-color: rgba(0, 0, 0, 0.62);
     margin: 7px 0;
     text-decoration: none;
     color: $link-color;
+    font: $name-font;
   }
 }
 
@@ -73,11 +77,13 @@ $size-color: rgba(0, 0, 0, 0.62);
   background: $gold-background-color;
   padding: 2px 5px;
   margin: 0 12px;
+  font: $gold-font;
 }
 
 .price{
   strong{
     font-size: 14px;
+    font: $price-font;
   }
   strike{
     color: $strike-color;

@@ -7,23 +7,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import TshirtsData from '../data/Tshirt.json'
 import Tshirt from "./Tshirt";
 import { FiChevronDown } from "react-icons/fi";
-import usePagination from '@mui/material/usePagination';
-import { styled } from '@mui/material/styles';
 import {useState} from "react";
 import Pagination from "./Pagination";
 
-const List = styled('ul')({
-    listStyle: 'none',
-    padding: 0,
-    margin: 0,
-    display: 'flex',
-});
 export default function  Tshirts  () {
     const [checked, setChecked] = useState(false);
-    const { items } = usePagination({
-        count: 10,
-    });
-    console.log(TshirtsData)
+
         return (
             <div className={containerClass.container}>
                 <div className={status.statusContainer}>
@@ -66,11 +55,11 @@ export default function  Tshirts  () {
                 </div>
                 <div className={classes.clear}>
                     <div>
-                        <IconButton aria-label="delete" sx={{color: 'black', fontSize: '12px'}}>
-                           New In <CloseIcon sx={{fontSize: '18px', color: 'gray', paddingLeft: '5px'}}/>
+                        <IconButton aria-label="delete" sx={{color: '#808080', font: 'normal normal normal 12px/15px Century Gothic;'}}>
+                           New In <CloseIcon sx={{ color: 'gray', paddingLeft: '5px'}}/>
                         </IconButton>
-                        <IconButton aria-label="delete" sx={{color: 'black', fontSize: '12px'}}>
-                            XXL <CloseIcon sx={{fontSize: '18px' , color: 'gray', paddingLeft: '5px'}}/>
+                        <IconButton aria-label="delete" sx={{color: '#808080', font: 'normal normal normal 12px/15px Century Gothic;'}}>
+                            XXL <CloseIcon sx={{color: 'gray', paddingLeft: '5px'}}/>
                         </IconButton>
                     </div>
                     <button className={classes.btn}>clear all</button>
@@ -84,6 +73,7 @@ export default function  Tshirts  () {
                 </Grid>
 
                 <Pagination />
+                <div className={classes.marginEndOfContent}></div>
             </div>
             
     );

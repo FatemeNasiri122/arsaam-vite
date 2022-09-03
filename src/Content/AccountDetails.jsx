@@ -1,4 +1,3 @@
-import classes from "../styles/Content/AccountDetails.module.scss";
 import containerClass from "../styles/Content/Container.module.scss";
 import Grid from "@mui/material/Grid";
 import AccountTitles from "./AccountTitles";
@@ -31,6 +30,8 @@ export default function  AccountDetails  () {
                 {lists[3].isActive && <AccountAddress isMobileActive={false} />}
                 {lists[5].isActive && <ChangePassword isMobileActive={false} />}
             </Grid>
+
+            <div style={{marginBottom: '50px'}}></div>
         </div>
     );
 };

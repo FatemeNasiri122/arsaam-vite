@@ -5,6 +5,8 @@ $link-color: #000;
 $deactive-color:#BFBFBF;
 $active-color: #000;
 $summary-color: #F7F7F7;
+$card-title-font: normal normal bold 30px/37px Century Gothic;
+$card-item-font: normal normal bold 13px/17px Century Gothic;
 
 @mixin circle($color){
   content: '';
@@ -17,7 +19,7 @@ $summary-color: #F7F7F7;
 h1{
   text-transform: uppercase;
   text-align: center;
-  font-size: 30px;
+  font: $card-title-font;
   margin-bottom: 40px;
 }
 
@@ -63,6 +65,7 @@ h1{
     }
     p{
       color: $active-color;
+      font: $card-item-font;
     }
   }
   .circle{

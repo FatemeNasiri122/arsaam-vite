@@ -1,5 +1,9 @@
 $strike-color: #808080;
 $link-color: #000;
+$title-font: normal normal bold 30px/37px Century Gothic;
+$content-font: normal normal normal 14px/30px Century Gothic;;
+$follow-font: normal normal bold 30px/37px Century Gothic;
+$follow-text-font: normal normal normal 18px/22px Century Gothic;
 
 @mixin background($height,$size){
     width: 100%;
@@ -11,7 +15,6 @@ $link-color: #000;
 @mixin title($margin){
   text-transform: uppercase;
   text-align: center;
-  font-size: 37px;
   margin-bottom: $margin;
 }
 
@@ -25,17 +28,22 @@ $link-color: #000;
 }
 
 .AboutUSContainer{
+  margin-bottom: 55px;
+
   h1{
+    font: $title-font;
     @include title(16px);
   }
   p{
     padding-top: 10px;
     padding-bottom: 40px;
     line-height: 200%;
+    font: $content-font;
   }
 }
 
 h2{
+  font: $follow-font;
   @include title(20px);
 }
 
@@ -50,6 +58,7 @@ h2{
 
   span{
     padding-left: 4px;
+    font: $follow-text-font;
   }
 }
 

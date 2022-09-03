@@ -2,7 +2,6 @@ import classes from "../styles/Content/AccountTitles.module.scss";
 import React, {useContext, useState} from "react";
 import AccountContext from "../context/AccountContext";
 import Grid from "@mui/material/Grid";
-import {Collapse} from "@material-ui/core";
 import AccountDetailsForm from "./AccountDetailsForm";
 import OrdersListContainer from "./OrdersListContainer";
 import FavoriteAccount from "./FavoriteProduct";

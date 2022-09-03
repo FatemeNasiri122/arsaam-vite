@@ -1,16 +1,7 @@
 $home-text-color: #808080;
 $error-color: #c62828;
-$link-color: #000;
-$link-text-color: #fff;
-
-.statusContainer{
-  padding-top: 20px;
-  text-transform: uppercase;
-
-  span{
-    color: $home-text-color;
-  }
-}
+$title-font: normal normal bold 30px/37px Century Gothic;
+$label-font: normal normal bold 14px/17px Century Gothic;;
 
 .titleContainer{
   width: 100%;
@@ -19,18 +10,20 @@ $link-text-color: #fff;
 
   h1{
     text-transform: uppercase;
-    font-size: 30px;
-    padding-bottom: 42px;
-    font-weight: 900;
-
+    margin-bottom: 20px;
+    font: $title-font;
   }
 }
-
 
 .error{
   color: $error-color;
   margin-top: 5px;
   font-size: 12px;
+}
+
+.inputLabel{
+  font: $label-font;
+  margin-bottom: 5px;
 }
 
 [type="checkbox"]{
@@ -68,25 +61,16 @@ $link-text-color: #fff;
   background: url("/src/assets/img/checkmark.png") no-repeat center;
 }
 
-.link{
-  height: 40px;
-  background-color: $link-color;
-  color: $link-text-color;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
+.form{
+  margin-bottom: 160px;
 }
-
 
 @media only screen and (min-width: 960px){
 
   .link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 326px;
   }
 }
@@ -94,10 +78,6 @@ $link-text-color: #fff;
 @media only screen and (max-width: 960px){
   .form{
     padding: 0 20px;
-  }
-  .statusContainer {
-    padding-left: 10px;
-    padding-bottom: 15px;
   }
   .link{
     width: 100%;

@@ -1,4 +1,8 @@
+$top-title-font: normal normal normal 16px/21px Century Gothic;
+$tile-font: normal normal normal 72px/88px Century Gothic;
 $top-text-color: #fff;
+$card-font: normal normal bold 24px/29px Century Gothic;
+$link-font: normal normal normal 14px/17px Century Gothic;
 
 @mixin card($padding,$height){
   width: 100%;
@@ -8,6 +12,7 @@ $top-text-color: #fff;
   justify-content: center;
   align-items: end;
   padding-bottom: $padding;
+
 }
 
 .men{
@@ -27,6 +32,10 @@ $top-text-color: #fff;
     align-items: center;
     h1{
       font-size: 72px;
+      font: $tile-font;
+    }
+    p{
+      font: $top-title-font;
     }
   }
 
@@ -38,38 +47,44 @@ $top-text-color: #fff;
   align-items: center;
   h2{
     text-transform: uppercase;
+    font: $card-font;
   }
   a{
     text-decoration: underline;
+    font: $link-font;
+  }
+  a:last-child{
+    //margin-bottom: 21px;
   }
 }
 
 .clothing{
-  margin: 20px 0;
+  margin: 16px 0;
+  padding: 16px 0;
   background: url("/src/assets/img/men_clothing_desktop.jpg") no-repeat top center;
   @include card(31px,406px)
 }
 
 .sportswear{
   background: url("/src/assets/img/men_jogging.jpg") no-repeat top center;
-  @include card(21px,372px)
+  @include card(16px,372px)
 }
 
 .shoes{
   background: url("/src/assets/img/men_shoes.jpg") no-repeat top center;
-  @include card(21px,372px)
+  @include card(16px,372px)
 }
 
 .tshirt{
   background: url("/src/assets/img/men_tshirt.jpg") no-repeat top center;
-  @include card(21px,372px)
+  @include card(16px,372px)
 }
 
 .outfit{
   background: url("/src/assets/img/men_OUTFIT.jpg") no-repeat top center;
-  @include card(0,568px)
+  @include card(21px,568px)
 }
 .empty{
-  background: url("/src/assets/img/business-casual-style-guide-men-luxe-digital.jpg") no-repeat 20%;
+  background: url("/src/assets/img/business-casual-style-guide-men-luxe-digital.jpg") no-repeat 16%;
   @include card(0,568px)
 }

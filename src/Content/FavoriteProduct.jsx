@@ -1,14 +1,9 @@
 import classes from "../styles/Content/FavoriteProduct.module.scss";
 import Grid from "@mui/material/Grid";
 import React, {useState} from "react";
-import OrdersLists from "/src/data/OrdersLists.json"
-import Order from "./Order";
 import TshirtsData from '../data/Tshirt.json'
 import FavoriteItem from "./FavoriteItem";
 import {AnimatePresence, motion} from "framer-motion";
-import AddressInformation from "./AddressInformation";
-import userAddress from "../data/userAddressInformation.json";
-
 
 export default function  FavoriteProduct  ({isMobileActive}) {
 

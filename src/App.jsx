@@ -4,18 +4,20 @@ import "../src/styles/Layout/index.scss";
 import "../src/assets/font/font.css"
 import {BrowserRouter} from "react-router-dom";
 import {AccountProvider} from "./context/AccountContext";
+import {FormProvider} from "./context/FormContext";
 
 function App() {
 
     return (
-        <AccountProvider>
-            <BrowserRouter>
-                <React.Suspense>
-                    <Routes/>
-                </React.Suspense>
-            </BrowserRouter>
-        </AccountProvider>
-
+        <FormProvider>
+            <AccountProvider>
+                <BrowserRouter>
+                    <React.Suspense>
+                        <Routes/>
+                    </React.Suspense>
+                </BrowserRouter>
+            </AccountProvider>
+        </FormProvider>
     )
 }
 

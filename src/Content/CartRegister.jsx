@@ -1,106 +1,92 @@
 import classes from '../styles/Content/CartRegister.module.scss';
 import containerClass from '../styles/Content/Container.module.scss';
 import status from "../styles/Content/Status.module.scss";
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TopCart from "./TopCart";
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import LinkButton from "./button/LinkButton";
+import FormContext from "../context/FormContext";
+import SelectItems from "./select/SelectItems";
 
-const useTextFieldStyles = makeStyles({
+const useOutlinedInputStyles = makeStyles({
     root: {
-        "&.Mui-focused .MuiTextField-notchedOutline": {
-            borderColor: "black !important"
-        }
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black !important",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            height: '45px',
+            borderRadius: "0",
+        },
+        "& .MuiInputBase-input": {
+            padding: '10px',
+            fontSize: '12px',
+        },
+
     }
 });
 
-const textFieldStyle= {
-    pt: 1,
-    "& .MuiTextField-root.Mui-focused": {
-    "& > fieldset": {
-        borderColor: "black"
-    }
-}
+const textFieldStyles = {
+    root: {
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black !important",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            height: '45px',
+            borderRadius: '0',
+        },
+        "& .MuiInputBase-input": {
+            padding: '10px',
+            fontSize: '12px',
+        },
+
+    },
+    '& label': {
+        color: '#808080',
+        fontSize: '12px',
+
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+            borderColor: 'black',
+            borderRadius: '0',
+
+        }
+    },
+    "& .MuiOutlinedInput-root": {
+        "& > fieldset": {
+            borderRadius: '0',
+            height: '45px',
+            position: 'absolute',
+            top: '0'
+        }
+    },
+    "& .MuiInputBase-root": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+
+    },
+    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+        padding: '10px',
+
+    },
+    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
+        borderRadius: '0px !important'
+    },
+    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+        borderRadius: '0px !important'
+    },
 }
 
 export default function  Register  () {
-    const [validFirstName,setValidFirstName] = useState(true)
-    const [validLastName,setValidLastName] = useState(true)
-    const [validEmail,setValidEmail] = useState(true)
-    const [validSelect,setValidSelect] = useState(true)
-    const [validCountry,setValidCountry] = useState(true)
-    const [validCity,setValidCity] = useState(true)
-    const [validPhoneNumber,setValidPhoneNumber] = useState(true)
-    const [validAddress,setValidAddress] = useState(true)
-    const [validPostalCode,setValidPostalCode] = useState(true)
 
-    const TextFieldStyles = useTextFieldStyles();
+    const outlinedInputStyles = useOutlinedInputStyles();
 
-    const [values, setValues] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        savedAddress: '',
-        country: '',
-        city: '',
-        phoneNumber: '',
-        postalCode: '',
-        address: '',
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const {email , firstName , lastName , country , city, savedAddress, phoneNumber , address, postalCode} = values
-        const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-        if (savedAddress === ''){
-            setValidSelect(false)
-        }else {
-            setValidSelect(true)
-        }
-        if (firstName === ''){
-            setValidFirstName(false)
-        }else {
-            setValidFirstName(true)
-        }
-        if (lastName === ''){
-            setValidLastName(false)
-        }else {
-            setValidLastName(true)
-        }if (country === ''){
-            setValidCountry(false)
-        }else {
-            setValidCountry(true)
-        }if (city === ''){
-            setValidCity(false)
-        }else {
-            setValidCity(true)
-        }if (phoneNumber === ''){
-            setValidPhoneNumber(false)
-        }else {
-            setValidPhoneNumber(true)
-        }if (postalCode === ''){
-            setValidPostalCode(false)
-        }else {
-            setValidPostalCode(true)
-        }
-        if (address === ''){
-            setValidAddress(false)
-        }else {
-            setValidAddress(true)
-        }if (email === '' || regexEmail === false){
-            setValidEmail(false)
-        }else {
-            setValidEmail(true)
-        }
-    }
+    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
+        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
 
     return (
             <>
@@ -114,31 +100,15 @@ export default function  Register  () {
                 </div>
                 <div className={containerClass.widerContainer}>
                     <form action="" className={classes.form} onSubmit={handleSubmit}>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={0.8} columnSpacing={2.2}>
                             <Grid item xs={12}>
-                                <label htmlFor="savedAddress-select" className={classes.inputLabel}>Select Saved saved Address *</label>
-                                <Select
-                                    value={values.savedAddress}
-                                    onChange={handleChange('savedAddress')}
-                                    displayEmpty
-                                    inputProps={{ 'aria-label': 'Without label' }}
-                                    fullWidth
-                                    sx={{marginTop: '10px'}}
-                                    error={validSelect ? false: true}
-                                >
-                                    <MenuItem value="">
-                                        <em>Select saved saved Address</em>
-                                    </MenuItem>
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                                <p className={classes.error}>{validSelect ? '': 'please select address'}</p>
+                                <label className={classes.inputLabel} htmlFor="savedAddress-select" className={classes.inputLabel}>Select Saved saved Address *</label>
+                                <SelectItems initialSelect='Select saved saved Address' label='address'/>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
+                                <label className={classes.inputLabel} htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="first-name"
                                     placeholder="Enter your first name"
                                     value={values.firstName}
@@ -149,9 +119,9 @@ export default function  Register  () {
                                 <p className={classes.error}>{validFirstName ? '': 'please enter valid first name'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="last-name" className={classes.inputLabel}>Last Name *</label>
+                                <label className={classes.inputLabel} htmlFor="last-name" className={classes.inputLabel}>Last Name *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="last-name"
                                     placeholder="Enter your last name"
                                     value={values.lastName}
@@ -162,9 +132,9 @@ export default function  Register  () {
                                 <p className={classes.error}>{validLastName ? '': 'please enter valid last name'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="country" className={classes.inputLabel}>Country *</label>
+                                <label className={classes.inputLabel} htmlFor="country" className={classes.inputLabel}>Country *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="country"
                                     placeholder="Enter your country"
                                     value={values.country}
@@ -175,22 +145,14 @@ export default function  Register  () {
                                 <p className={classes.error}>{validCountry ? '': 'please enter country'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="city" className={classes.inputLabel}>City *</label>
-                                <TextField
-                                    sx={textFieldStyle}
-                                    id="city"
-                                    placeholder="Enter your City"
-                                    value={values.city}
-                                    onChange={handleChange('city')}
-                                    fullWidth
-                                    error={validCity ? false: true}
-                                />
-                                <p className={classes.error}>{validCity ? '': 'please enter city'}</p>
+                                {/*select!*/}
+                                <label className={classes.inputLabel} htmlFor="city" className={classes.inputLabel}>City *</label>
+                                <SelectItems initialSelect='Enter your City' label='city'/>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="email" className={classes.inputLabel}>Email *</label>
+                                <label className={classes.inputLabel} htmlFor="email" className={classes.inputLabel}>Email *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="email"
                                     placeholder="Enter your address"
                                     value={values.email}
@@ -201,9 +163,9 @@ export default function  Register  () {
                                 <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="phone-number" className={classes.inputLabel}>Phone Number *</label>
+                                <label className={classes.inputLabel} htmlFor="phone-number" className={classes.inputLabel}>Phone Number *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="phone-number"
                                     placeholder="Enter your phone number"
                                     value={values.phoneNumber}
@@ -214,9 +176,9 @@ export default function  Register  () {
                                 <p className={classes.error}>{validPhoneNumber ? '': 'please enter phone number'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="address" className={classes.inputLabel}>Address *</label>
+                                <label className={classes.inputLabel} htmlFor="address" className={classes.inputLabel}>Address *</label>
                                 <TextField
-                                    sx={textFieldStyle}
+                                    sx={textFieldStyles}
                                     id="address"
                                     placeholder="Enter your address"
                                     value={values.address}
@@ -227,10 +189,9 @@ export default function  Register  () {
                                 <p className={classes.error}>{validAddress ? '': 'please enter address'}</p>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <label htmlFor="postal-code" className={classes.inputLabel}>Postal Code *</label>
+                                <label className={classes.inputLabel} htmlFor="postal-code" className={classes.inputLabel}>Postal Code *</label>
                                 <TextField
-                                    classes={TextFieldStyles}
-                                    sx={{ mt : 1}}
+                                    sx={textFieldStyles}
                                     id="postal-code"
                                     type='text'
                                     value={values.postalCode}
@@ -246,8 +207,8 @@ export default function  Register  () {
                                 <label htmlFor="check-box">Add to address book</label>
                             </Grid>
                             <Grid item sm={3}></Grid>
-                            <Grid item xs={12} sm={3}>
-                                <a href="" className={classes.link} onClick={handleSubmit}>CONTINIUE</a>
+                            <Grid item xs={12} sm={3} width={{sm: '176px'}}>
+                                <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="CONTINIUE" marginTop='0' marginButtom='0' isOnClicked={true}/>
                             </Grid>
                         </Grid>
                     </form>

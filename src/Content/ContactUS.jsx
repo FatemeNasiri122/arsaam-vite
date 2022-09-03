@@ -8,55 +8,84 @@ import undo from "/src/assets/img/icons/undo.svg"
 import info from "/src/assets/img/icons/info.svg"
 import interrogation from "/src/assets/img/icons/interrogation.svg"
 import TextField from '@mui/material/TextField';
-import React, {useState} from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
+import React, {useContext, useState} from "react";
+import LinkButton from "./button/LinkButton";
+import FormContext from "../context/FormContext";
+import SelectItems from "./select/SelectItems";
+
+const textFieldStyles = {
+    root: {
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black !important",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            height: '45px',
+            borderRadius: '0',
+        },
+        "& .MuiInputBase-input": {
+            padding: '10px',
+            fontSize: '12px',
+        },
+
+    },
+    '& label': {
+        color: '#808080',
+        fontSize: '12px',
+
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+            borderColor: 'black',
+            borderRadius: '0',
+
+        }
+    },
+    "& .MuiOutlinedInput-root": {
+        "& > fieldset": {
+            borderRadius: '0',
+            height: '45px',
+            position: 'absolute',
+            top: '0'
+        }
+    },
+    "& .MuiInputBase-root": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+
+    },
+    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
+        fontFamily: 'normal normal normal 12px/15px Century Gothic',
+        fontSize: '12px !important',
+        padding: '10px',
+
+    },
+    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
+        borderRadius: '0px !important'
+    },
+    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+        borderRadius: '0px !important'
+    },
+}
+
+const descriptionStyle = {
+    marginTop: '5px',
+    "& .MuiOutlinedInput-notchedOutline": {
+        borderRadius: '0',
+    },
+    "& .MuiOutlinedInput-root.Mui-focused": {
+        "& > fieldset": {
+            borderColor: 'black',
+            borderRadius: '0',
+
+        }
+    },
+}
 
 export default function  ContactUS  () {
 
-    const [validFirstName,setValidFirstName] = useState(true)
-    const [validSelect,setvalidSelect] = useState(true)
-    const [validEmail,setValidEmail] = useState(true)
-    const [validPhoneNumber,setvalidPhoneNumber] = useState(true)
+    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
+        validCountry, validCity, validPhoneNumber, validmessage, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
 
-    const [values, setValues] = useState({
-        firstName: '',
-        email: '',
-        phoneNumber: '',
-        request: '',
-        description: ''
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const {email  , firstName , request , phoneNumber ,description} = values
-        const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-
-        if (firstName === ''){
-            setValidFirstName(false)
-        }else {
-            setValidFirstName(true)
-        }
-        if (request === ''){
-            setvalidSelect(false)
-        }else {
-            setvalidSelect(true)
-        }
-        if (email === '' || regexEmail === false){
-            setValidEmail(false)
-        }else {
-            setValidEmail(true)
-        }
-        if (phoneNumber === '' || phoneNumber !== email){
-            setvalidPhoneNumber(false)
-        }else {
-            setvalidPhoneNumber(true)
-        }
-    }
     return (
         <>
             <div className={containerClass.container}>
@@ -131,86 +160,70 @@ export default function  ContactUS  () {
                         <Grid item xs={12} sm={6} >
                             <label htmlFor="first-name" className={classes.inputLabel}>Name *</label>
                             <TextField
-                                size="small"
+                                
                                 id="first-name"
                                 placeholder="Enter your name"
                                 value={values.firstName}
                                 onChange={handleChange('firstName')}
                                 fullWidth
                                 error={validFirstName ? false: true}
-                                sx={{marginTop: '5px'}}
+                                sx={textFieldStyles}
                             />
                             <p className={classes.error}>{validFirstName ? '': 'please enter valid name'}</p>
                         </Grid>
                         <Grid item xs={12} sm={6} >
                             <label htmlFor="email" className={classes.inputLabel}>Email *</label>
                             <TextField
-                                size="small"
+                                
                                 id="email"
                                 placeholder="Enter your email"
                                 value={values.email}
                                 onChange={handleChange('email')}
                                 fullWidth
                                 error={validEmail ? false: true}
-                                sx={{marginTop: '5px'}}
+                                sx={textFieldStyles}
                             />
                             <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
                         </Grid>
                         <Grid item xs={12} sm={6} >
                             <label htmlFor="confirm-email" className={classes.inputLabel}>Phone Number</label>
                             <TextField
-                                size="small"
+                                
                                 id="confirm-email"
                                 placeholder="Enter your email"
                                 value={values.phoneNumber}
                                 onChange={handleChange('phoneNumber')}
                                 fullWidth
                                 error={validPhoneNumber ? false: true}
-                                sx={{marginTop: '5px'}}
+                                sx={textFieldStyles}
                             />
                             <p className={classes.error}>{validPhoneNumber ? '': 'please enter phone number'}</p>
                         </Grid>
                         <Grid item xs={12} sm={6} >
-                            <label htmlFor="first-name" className={classes.inputLabel}>Type of request *</label>
-                            <Select
-                                value={values.request}
-                                onChange={handleChange('request')}
-                                displayEmpty
-                                inputProps={{ 'aria-label': 'Without label' }}
-                                fullWidth
-                                sx={{marginTop: '5px', height: '40px'}}
-                                error={validSelect ? false: true}
-                            >
-                                <MenuItem value="">
-                                    <em style={{color: '#B3B3B3'}}>Select type of request</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                            <p className={classes.error}>{validSelect ? '': 'please select something'}</p>
-
+                            <label htmlFor="first-name" className={classes.inputLabel} style={{display: 'block',marginBottom: '5px'}}>Type of request *</label>
+                            <SelectItems initialSelect='Select type of request' label='city'/>
                         </Grid>
                         <Grid item xs={12}>
                             <label htmlFor="description">Message</label>
                             <TextField
-                                sx={{marginTop: '5px'}}
+                                sx={descriptionStyle}
                                 id="description"
                                 placeholder='Write here your message'
                                 multiline
                                 rows={3}
-                                value={values.description}
+                                value={values.message}
                                 onChange={handleChange('description')}
+                                error={validmessage ? false: true}
                                 fullWidth
                             />
+                            <p className={classes.error}>{validmessage ? '': 'please write message'}</p>
                         </Grid>
 
                         <Grid item xs={12} sx={{display: 'flex', justifyContent: 'space-between'}}>
                             <div>
                                 recaptcha
                             </div>
-                            <a href="" className={classes.link} onClick={handleSubmit}>SEND</a>
-
+                            <LinkButton isOnClicked={true}  width='176px' height='40px' color='#fff' background='#000' linkText="SAVE DATA" marginTop='0'/>
                         </Grid>
 
                     </Grid>

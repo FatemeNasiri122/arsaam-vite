@@ -1,23 +1,14 @@
 $text-color: #fff;
 $gold-background-color: linear-gradient(#EFE27C,#A6872D);
 $strike-color: #808080;
-$link-color: #000;
-
-@mixin buttonLink{
-  margin-top: 40px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  width: 100%;
-  background-color: $link-color;
-  color: $text-color;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 500ms;
-  border: 1px solid $link-color;
-  text-transform: uppercase;
-}
+$title-font: normal normal normal 30px/37px Century Gothic;
+$code-font: normal normal normal 12px/15px Century Gothic;
+$price-font: normal normal bold 18px/22px Century Gothic;
+$strong-font: normal normal bold 14px/17px Century Gothic;
+$color-font: normal normal normal 14px/17px Century Gothic;
+$link-font: normal normal normal 12px/15px Century Gothic;
+$question-font: normal normal normal 14px/17px Century Gothic;
+$related-font: normal normal normal 36px/44px Century Gothic;
 
 html{
   scroll-behavior: smooth;
@@ -49,6 +40,10 @@ html{
 .topCard{
   border-bottom: 1px solid silver;
   padding-bottom: 15px;
+
+  h2{
+    font: $title-font;
+  }
 }
 
 .iconContainer{
@@ -58,6 +53,8 @@ html{
 .code{
   color: $strike-color;
   padding: 10px 0;
+  font: $code-font;
+  text-transform: uppercase;
 }
 
 .goldBox{
@@ -72,7 +69,7 @@ html{
 
 .price{
   strong{
-    font-size: 14px;
+    font: normal normal bold 18px/22px Century Gothic;;
   }
   strike{
     color: $strike-color;
@@ -84,6 +81,12 @@ html{
   border-bottom: 1px solid silver;
   padding: 10px 0;
   p{
+    span{
+      font: $color-font;
+    }
+    strong{
+      font: $strong-font;
+    }
     text-transform: uppercase;
   }
   .circleContainer{
@@ -109,30 +112,34 @@ html{
 
   p{
     padding: 10px 0;
+    font: $strong-font;
+    text-transform: uppercase;
   }
   .selectContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .selectSize{
+      width: 176px;
+      background-color: dodgerblue;
+      height: 40px;
+    }
+
     a{
-      color: $link-color;
+      font: $link-font;
       text-transform: uppercase;
+      color: $strike-color;
     }
   }
-  .cardLink{
-    @include buttonLink;
-  }
-  .cardLink:hover{
-    color: $link-color;
-    background-color: $text-color;
-    transition: linear 500ms;
-  }
+
 }
 
 .questionContainer{
   border-bottom: 1px solid silver;
   p{
     padding-bottom: 10px;
+    font: $question-font;
   }
 }
 
@@ -142,16 +149,18 @@ html{
   justify-content: space-between;
   padding: 20px 0;
   cursor: pointer;
+  font: $question-font;
 }
 
 .related{
   width: 100%;
-  padding: 20px 0;
+  margin-top: 50px;
+  margin-bottom: 10px;
 
   h2{
     text-align: center;
     text-transform: uppercase;
-    font-size: 36px;
+    font: $related-font;
   }
 }
 

@@ -1,4 +1,3 @@
-
 import image1 from "../assets/img/FABC-MTK5624-PJY002N_13_sf.jpg";
 import image2 from "../assets/img/FABC-MTK5624-PJY002N_13_mf.jpg";
 import image3 from "../assets/img/FABC-MTK5624-PJY002N_13_mb.jpg";
@@ -25,7 +24,6 @@ export default function  BuySlider  () {
                 slidesPerView={1}
                 navigation
                 scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
             >
                 <SwiperSlide>
                     <img style={imgSlider} src={image1} alt=""/>

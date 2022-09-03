@@ -1,13 +1,17 @@
 $text-color: #fff;
 $gold-background-color: linear-gradient(#EFE27C,#A6872D);
 $strike-color: #808080;
-$link-color: #000;
 $deactive-color:#BFBFBF;
 $active-color: #000;
 $summary-color: #F7F7F7;
 $content-color: #F7F7F7;
 $error-color: #c62828;
-$link-text-color: #fff;
+$title-font: normal normal bold 30px/37px Century Gothic;
+$call-us-font:normal normal bold 24px/29px Century Gothic;
+$phone-number-font: normal normal normal 24px/29px Century Gothic;
+$text-font: normal normal normal 16px/21px Century Gothic;
+$label-font: normal normal bold 14px/17px Century Gothic;
+$write-us-font: normal normal normal 14px/17px Century Gothic;
 
 @mixin container($height){
   display: flex;
@@ -21,7 +25,7 @@ $link-text-color: #fff;
 h1{
   text-transform: uppercase;
   text-align: center;
-  font-size: 30px;
+  font: $title-font;
   margin-bottom: 40px;
 }
 
@@ -49,12 +53,12 @@ h1{
         font-size: 24px;
         padding-left: 10px;
         align-self: center;
+        font: $call-us-font;
       }
     }
     .phoneNumber{
-      font-size: 24px;
       margin-top: 30px;
-
+      font: $phone-number-font;
     }
   }
 }
@@ -64,10 +68,11 @@ h1{
   margin-top: 40px;
 
   h2{
-    font-size: 30px;
+    font: $title-font;
+
   }
   p{
-    font-size: 14px;
+    font: $write-us-font;
     margin-top: 10px;
   }
 }
@@ -76,9 +81,10 @@ h1{
   margin-top: 20px;
 
   label{
-    font-size: 14px;
-    font-weight: bold;
+    font: $label-font;
+
   }
+  margin-bottom: 64px;
 }
 
 .error{
@@ -91,20 +97,8 @@ h1{
   @include container(176px);
   p{
     margin-top: 20px;
+    font: $text-font;
   }
-}
-
-.link{
-  width: 176px;
-  height: 40px;
-  background-color: $link-color;
-  color: $link-text-color;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 14px;
 }
 
 @media only screen and (min-width: 960px){

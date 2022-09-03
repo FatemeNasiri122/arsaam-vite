@@ -1,5 +1,5 @@
 import classes from "../styles/Content/ChangePassword.module.scss";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -8,6 +8,8 @@ import Grid from "@mui/material/Grid";
 import {makeStyles} from "@material-ui/core/styles";
 import IconButton from "@mui/material/IconButton";
 import {AnimatePresence, motion} from "framer-motion";
+import FormContext from "../context/FormContext";
+import LinkButton from "./button/LinkButton";
 
 const useOutlinedInputStyles = makeStyles({
     root: {
@@ -28,68 +30,10 @@ const useOutlinedInputStyles = makeStyles({
 
 export default function  ChangePassword  ({isMobileActive}) {
     const outlinedInputStyles = useOutlinedInputStyles();
-    const [validcurrentPassword,setValidcurrentPassword] = useState(true)
-    const [validnewPassword,setValidnewPassword] = useState(true)
-    const [validconfirmnewPassword,setvalidconfirmnewPassword] = useState(true)
 
-    const [values, setValues] = useState({
-        currentPassword: '',
-        newPassword: '',
-        confirmPassword: '',
-        confirmnewPassword: '',
-        showCurrentPassword: false,
-        showNewPassword: false,
-        showConfirmPassword: false,
-    });
+    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
+        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,validConfirmEmail} = useContext(FormContext);
 
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleClickshowCurrentPassword = (prop) => {
-        setValues({
-            ...values,
-            [prop]: !values.showCurrentPassword,
-        });
-    };
-    const handleClickShowNewPassword = (prop) => {
-        setValues({
-            ...values,
-            [prop]: !values.showNewPassword,
-        });
-    };
-
-    const handleClickShowConfirmPassword = (prop) => {
-        setValues({
-            ...values,
-            [prop]: !values.showConfirmPassword,
-        });
-    };
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
-
-    const handleSubmit = (e) =>{
-        const {newPassword , currentPassword , confirmnewPassword} = values
-        e.preventDefault()
-        if (newPassword === ''){
-            setValidnewPassword(false)
-        }else {
-            setValidnewPassword(true)
-        }
-        if (currentPassword === ''){
-            setValidcurrentPassword(false)
-        }else {
-            setValidcurrentPassword(true)
-        }
-        if (confirmnewPassword === ''){
-            setvalidconfirmnewPassword(false)
-        }else {
-            setvalidconfirmnewPassword(true)
-        }
-
-    }
     return (
         <Grid item xs={12} md={4} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'18px'}>
             <AnimatePresence>
@@ -104,7 +48,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                             <OutlinedInput
                                 classes={outlinedInputStyles}
                                 marginTop={{xs: '10px', md : '5px'}}
-                                id="password"
+                                
                                 type={values.showCurrentPassword ? 'text' : 'password'}
                                 value={values.currentPassword}
                                 onChange={handleChange('currentPassword')}
@@ -131,7 +75,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                             <OutlinedInput
                                 classes={outlinedInputStyles}
                                 marginTop={{xs: '10px', md : '5px'}}
-                                id="password"
+                                
                                 type={values.showNewPassword ? 'text' : 'password'}
                                 value={values.newPassword}
                                 onChange={handleChange('newPassword')}
@@ -158,7 +102,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                             <OutlinedInput
                                 classes={outlinedInputStyles}
                                 marginTop={{xs: '10px', md : '5px'}}
-                                id="password"
+                                
                                 type={values.showConfirmPassword ? 'text' : 'password'}
                                 value={values.confirmnewPassword}
                                 onChange={handleChange('confirmnewPassword')}
@@ -181,13 +125,11 @@ export default function  ChangePassword  ({isMobileActive}) {
                         </Grid>
                         <p className={classes.error}>{validconfirmnewPassword ? '': 'please enter valid password'}</p>
                         <Grid item xs={12} md={7}>
-                            <a href="" className={classes.link} onClick={handleSubmit}>SAVE NEW PASSWORD</a>
+                            <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000' linkText="SAVE NEW PASSWORD" marginTop='40px' marginButtom='10px'/>
                         </Grid>
                     </form>
                 </motion.div>
             </AnimatePresence>
-
-            
         </Grid>
 
     );

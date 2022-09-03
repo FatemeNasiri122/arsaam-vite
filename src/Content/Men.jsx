@@ -1,6 +1,5 @@
 import classes from '../styles/Content/Men.module.scss';
 import containerClass from "../styles/Content/Container.module.scss";
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Fade from 'react-reveal/Fade';
 
@@ -15,7 +14,7 @@ export default function  Men  () {
             </div>
             <div className={containerClass.container}>
 
-                <Grid container spacing={2}>
+                <Grid container spacing={2} marginBottom='50px'>
                     <Grid item xs={12}>
                         <Fade up>
                             <div className={classes.clothing}>
@@ -71,7 +70,6 @@ export default function  Men  () {
                             <div className={classes.empty}>
                             </div>
                         </Fade>
-
                     </Grid>
                 </Grid>
             </div>

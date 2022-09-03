@@ -1,9 +1,7 @@
 import classes from "../styles/Content/FavoriteItem.module.scss";
 import Grid from "@mui/material/Grid";
-import trash from "/src/assets/img/icons/trash.svg"
 import {useState} from "react";
 import Typography from '@mui/material/Typography';
-import {Box} from "@mui/material";
 
 export default function  FavoriteItem  ({data}) {
 

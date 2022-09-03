@@ -1,8 +1,6 @@
 import classes from "../styles/Content/Order.module.scss";
 import Grid from "@mui/material/Grid";
 import React, {useState} from "react";
-import OrdersLists from "/src/data/OrdersLists.json"
-
 
 export default function  Order  ({data}) {
 

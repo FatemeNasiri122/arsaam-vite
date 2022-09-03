@@ -1,7 +1,25 @@
+$summer-sale-font: normal normal bold 60px/74px Century Gothic;
+$percentage-font: normal normal bold 200px/245px Century Gothic;
+$link-font: normal normal normal 14px/17px Century Gothic;
+
+@mixin linkHover($background , $border , $color){
+  background-color: $background;
+  border: 1px solid $border;
+  color: $color;
+}
+
 .bodymain {
   text-transform: uppercase;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 75px;
+
+  a{
+    font: $link-font !important;
+    transition: background-color 500ms;
+  }
+
+
   .followussec {
     display: flex;
     justify-content: center;
@@ -82,6 +100,9 @@
         text-align: center;
         cursor: pointer;
       }
+      a:hover{
+        @include linkHover(#fff,#000,#000);
+      }
     }
   }
 
@@ -122,6 +143,9 @@
       text-align: center;
       cursor: pointer;
     }
+    a:hover{
+      @include linkHover(#fff,#fff,#000);
+    }
   }
 
   .watchessec {
@@ -161,6 +185,9 @@
       text-align: center;
       cursor: pointer;
     }
+    a:hover{
+      @include linkHover(#fff,#fff,#000);
+    }
   }
 
   .nikeshoesec {
@@ -199,6 +226,9 @@
         color: white;
         background-color: black;
       }
+      a:hover{
+        @include linkHover(#fff,#000,#000);
+      }
     }
   }
 
@@ -228,10 +258,16 @@
           border: 1px solid white;
           height: 38px;
         }
+        &.women:hover {
+          @include linkHover(#000,#000,#fff)
+        }
 
         &.men {
           color: black;
           background-color: #fff;
+        }
+        &.men:hover {
+          @include linkHover(#000,#000,#fff)
         }
       }
     }
@@ -275,6 +311,11 @@
         text-align: center;
         cursor: pointer;
       }
+
+      a:hover{
+        @include linkHover(#fff,#000,#000);
+      }
+
     }
 
     .snapshotcontainer{
@@ -333,6 +374,10 @@
       margin-left: 101px;
       margin-bottom: 26px;
     }
+
+    a:hover{
+      @include linkHover(#fff,#000,#000);
+    }
   }
 
   .fw22sec {
@@ -370,6 +415,11 @@
       text-align: center;
       cursor: pointer;
     }
+
+    a:hover{
+      @include linkHover(#000,#000,#fff);
+    }
+
   }
 
   .salesec {
@@ -391,7 +441,6 @@
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
-        font-family: gothic;
         font-size: 14px;
         margin: 20px 10px 0;
         color: white;
@@ -399,6 +448,9 @@
         width: 300px;
         height: 40px;
         border-radius: 0;
+      }
+      a:hover{
+        @include linkHover(#fff,#fff,#000);
       }
     }
 
@@ -451,6 +503,13 @@
 
     h2 {
       margin-top: 0;
+    }
+  }
+}
+@media only screen and (min-width: 900px) {
+  .goldcard{
+    h1{
+      font: $summer-sale-font;
     }
   }
 }
@@ -542,7 +601,11 @@
         a {
           width: 170px;
         }
+        a:hover{
+          @include linkHover(#fff,#fff,#000);
+        }
       }
+
     }
 
     .womensec {
@@ -563,6 +626,7 @@
         a {
           position: relative;
         }
+
       }
 
       .snapshot {
@@ -592,6 +656,7 @@
           font-size: 25px;
         }
       }
+
     }
 
     .watchessec {

@@ -1,7 +1,7 @@
 import classes from "../styles/Content/AccountDetailsForm.module.scss";
 import Grid from "@mui/material/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import TextField from '@mui/material/TextField';
 import MenuItem from "@mui/material/MenuItem";
 import Select from '@mui/material/Select';
@@ -9,6 +9,9 @@ import TshirtsData from "../data/Tshirt.json";
 import Tshirt from "./Tshirt";
 import {AnimatePresence, motion} from "framer-motion";
 import {Box} from "@material-ui/core";
+import FormContext from "../context/FormContext";
+import SelectItems from "./select/SelectItems";
+import LinkButton from "./button/LinkButton";
 
 
 const useOutlinedInputStyles = makeStyles({
@@ -74,79 +77,9 @@ const textFieldStyles = {
 
 export default function  AccountDetails  ({isMobileActive}) {
 
-    const [validFirstName,setValidFirstName] = useState(true)
-    const [validLastName,setValidLastName] = useState(true)
-    const [validEmail,setValidEmail] = useState(true)
-    const [validSelect,setValidSelect] = useState(true)
-    const [validCountry,setValidCountry] = useState(true)
-    const [validCity,setValidCity] = useState(true)
-    const [validPhoneNumber,setValidPhoneNumber] = useState(true)
-    const [validAddress,setValidAddress] = useState(true)
-    const [validPostalCode,setValidPostalCode] = useState(true)
+    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
+        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,validConfirmEmail} = useContext(FormContext);
 
-    const outlinedInputStyles = useOutlinedInputStyles();
-
-    const [values, setValues] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        savedAddress: '',
-        country: '',
-        city: '',
-        phoneNumber: '',
-        postalCode: '',
-        address: '',
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const {email , firstName , lastName , country , city, savedAddress, phoneNumber , address, postalCode} = values
-        const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-        if (savedAddress === ''){
-            setValidSelect(false)
-        }else {
-            setValidSelect(true)
-        }
-        if (firstName === ''){
-            setValidFirstName(false)
-        }else {
-            setValidFirstName(true)
-        }
-        if (lastName === ''){
-            setValidLastName(false)
-        }else {
-            setValidLastName(true)
-        }if (country === ''){
-            setValidCountry(false)
-        }else {
-            setValidCountry(true)
-        }if (city === ''){
-            setValidCity(false)
-        }else {
-            setValidCity(true)
-        }if (phoneNumber === ''){
-            setValidPhoneNumber(false)
-        }else {
-            setValidPhoneNumber(true)
-        }if (postalCode === ''){
-            setValidPostalCode(false)
-        }else {
-            setValidPostalCode(true)
-        }
-        if (address === ''){
-            setValidAddress(false)
-        }else {
-            setValidAddress(true)
-        }if (email === '' || regexEmail === false){
-            setValidEmail(false)
-        }else {
-            setValidEmail(true)
-        }
-    }
 
     return (
         <>
@@ -212,50 +145,18 @@ export default function  AccountDetails  ({isMobileActive}) {
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
                                         <label htmlFor="country" className={classes.selectLabel}>Country *</label>
-                                        <Select
-                                            value={values.country}
-                                            onChange={handleChange('country')}
-                                            displayEmpty
-                                            inputProps={{ 'aria-label': 'Without label' }}
-                                            fullWidth
-                                            error={validSelect ? false: true}
-                                            sx={textFieldStyles}
-                                        >
-                                            <MenuItem value="">
-                                                <em>Enter your country</em>
-                                            </MenuItem>
-                                            <MenuItem value={10}>Ten</MenuItem>
-                                            <MenuItem value={20}>Twenty</MenuItem>
-                                            <MenuItem value={30}>Thirty</MenuItem>
-                                        </Select>
-                                        <p className={classes.error}>{validCountry ? '': 'please enter valid country'}</p>
+                                        <SelectItems initialSelect='Enter your Country' label='country'/>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
                                         <label htmlFor="city" className={classes.selectLabel}>City *</label>
-                                        <Select
-                                            value={values.city}
-                                            onChange={handleChange('city')}
-                                            displayEmpty
-                                            inputProps={{ 'aria-label': 'Without label' }}
-                                            fullWidth
-                                            error={validSelect ? false: true}
-                                            sx={textFieldStyles}
-                                        >
-                                            <MenuItem value="">
-                                                <em>Enter your City</em>
-                                            </MenuItem>
-                                            <MenuItem value={10}>Ten</MenuItem>
-                                            <MenuItem value={20}>Twenty</MenuItem>
-                                            <MenuItem value={30}>Thirty</MenuItem>
-                                        </Select>
-                                        <p className={classes.error}>{validCity ? '': 'please enter valid city'}</p>
+                                        <SelectItems initialSelect='Enter your City' label='city'/>
                                     </Grid>
                                     <Grid item xs={12}>
                                         <input type="checkbox" name="check-box" value="check-box" id="check-box"/>
                                         <label className={classes.newsLetterText} htmlFor="check-box">I would like to receive a newsletter</label>
                                     </Grid>
                                     <Grid item xs={12} sm={3}>
-                                        <a href="" className={classes.link} onClick={handleSubmit}>SAVE DATA</a>
+                                        <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000' linkText="SAVE DATA" marginTop='40px' marginButtom='10px'/>
                                     </Grid>
                                 </Grid>
                             </form>

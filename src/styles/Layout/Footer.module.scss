@@ -1,9 +1,20 @@
+$title-font: normal normal normal 30px/37px Century Gothic;
+$title-text-font: normal normal normal 14px/30px Century Gothic;
+$col-title-font: normal normal bold 18px/30px Century Gothic;
+$copy-right-font: normal normal normal 12px/15px Century Gothic;
+
+@mixin linkHover($background , $border , $color){
+  transition: 500ms;
+  background-color: $background;
+  border: 1px solid $border;
+  color: $color;
+}
+
 .gold-line-footer {
   width: 100%;
   height: 2px;
   background: transparent linear-gradient(90deg, #A6872D 0%, #EFE27C 100%) 0% 0% no-repeat padding-box;
   margin-bottom: 5px;
-  margin-top: 75px;
 }
 
 .footer-main {
@@ -28,7 +39,7 @@
       }
 
       p {
-        font-size: 10px;
+        font: $copy-right-font;
       }
     }
 
@@ -51,7 +62,7 @@
 
         h4 {
           margin-top: 30px;
-          font-size: 18px;
+          font: $col-title-font;
         }
       }
     }
@@ -120,19 +131,22 @@
           color: white;
           background-color: black;
         }
+        a:hover{
+          @include linkHover(#fff,#000,#000);
+        }
       }
 
       .singup-txt {
         h3 {
-          font-size: 30px;
-          font-weight: normal;
+          font: $title-font;
           margin-bottom: 0;
           margin-top: 0;
         }
 
         p {
           margin-top: 5px;
-          font-size: 14px;
+          font: $title-text-font;
+          text-transform: lowercase;
         }
       }
     }
@@ -168,8 +182,11 @@
           text-align: center;
         }
         .copyright{
+          p {
+            font-size: 10px !important;
+          }
           img{
-            margin-left: 2px;
+            margin-left: 1px;
           }
         }
       }

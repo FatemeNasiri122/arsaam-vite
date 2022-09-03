@@ -1,0 +1,72 @@
+$select-font: normal normal normal 12px/15px Century Gothic;
+
+.App{
+    .dropdown {
+        margin: 0 auto;
+        z-index: 10000;
+        width: 100%;
+        position: relative;
+        height: 40px;
+    }
+    .dropdown-btn:hover {
+        border: 1px solid #000 !important;
+    }
+    .dropdown-btn:active {
+        border: 2px solid #000 !important;
+    }
+    .dropdown,
+    .dropdown * {
+        z-index: 10;
+    }
+    .dropdown .dropdown-btn {
+        cursor: pointer;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: #777;
+        font: $select-font;
+        height: inherit;
+    }
+    .dropdown-content {
+        position: absolute;
+        /* top: 110%; */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+        font: $select-font;
+        background-color: white;
+    }
+    .dropdown-content .item {
+        z-index: 10;
+        padding: 10px;
+        cursor: pointer;
+        font: inherit;
+    }
+    .dropdown-content .item:hover {
+        background: #fcfcfc;
+    }
+
+    button {
+        z-index: -1;
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .down{
+        transform: rotateX(180deg);
+    }
+    .up{
+        transform: rotateX(0deg);
+    }
+
+    svg{
+        transition: linear 1s;
+    }
+
+    p{
+        z-index: 0;
+    }
+}

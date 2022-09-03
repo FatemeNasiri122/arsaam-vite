@@ -1,12 +1,22 @@
 $strike-color: #808080;
 $link-color: #808080;
 $date-color: #999999;
+$title-news-font: normal normal bold 16px/36px Century Gothic;
+$content-font: normal normal normal 12px/24px Century Gothic;
+$date-font: normal normal normal 12px/15px Century Gothic;
+$link-font: normal normal normal 12px/15px Century Gothic;
 
 .NewsContent{
     p:nth-child(2){
       line-height: 1.6;
       font-size: 12px;
+      font: $content-font;
     }
+    p:first-child{
+      line-height: 1.6;
+      font: $title-news-font;
+    }
+
 }
 
 .NewsFooter{
@@ -15,7 +25,7 @@ $date-color: #999999;
   margin-top: 20px;
   span{
     color: $date-color;
-    font-size: 12px;
+    font: $date-font;
   }
 
   a{
@@ -27,6 +37,7 @@ $date-color: #999999;
       height: 10px;
       fill: $link-color;
     }
+    font: $link-font;
   }
 }
 

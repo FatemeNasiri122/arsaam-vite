@@ -1,7 +1,7 @@
 import classes from '../styles/Content/SigninOrRegister.module.scss';
 import containerClass from '../styles/Content/Container.module.scss';
 import cross from '../assets/img/cross.svg'
-import SigninOrContainer from "./SignInContainer";
+import SigninContainer from "./SignInContainer";
 
 export default function  SigninOrRegister  () {
     return (
@@ -11,7 +11,7 @@ export default function  SigninOrRegister  () {
                     <img src={cross} alt=""/>
                 </div>
             </div>
-            <SigninOrContainer />
+            <SigninContainer />
         </div>
     );
 };

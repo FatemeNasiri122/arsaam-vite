@@ -1,30 +1,11 @@
 $text-color: #fff;
 $strike-color: #808080;
-$link-color: #000;
 $summary-color: #F7F7F7;
-
-@mixin buttonLink{
-  margin-top: 40px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  width: 100%;
-  background-color: $link-color;
-  color: $text-color;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 500ms;
-  border: 1px solid $link-color;
-  text-transform: uppercase;
-}
-
-@mixin hoverLink{
-  color: $link-color;
-  background-color: $text-color;
-  transition: linear 500ms;
-  text-decoration: none;
-}
+$card-title: normal normal bold 30px/37px Century Gothic;
+$summary-title-font: normal normal bold 18px/22px Century Gothic;
+$summary-content-font: normal normal normal 14px/30px Century Gothic;
+$summary-bold-font: normal normal normal 14px/30px Century Gothic;
+$related-font: normal normal normal 24px/29px Century Gothic;
 
 h1{
   text-transform: uppercase;
@@ -45,29 +26,23 @@ h1{
     text-align: center;
     margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 18px;
+    font: $summary-title-font;
   }
   p{
-    padding-bottom:  5px;
-    font-size: 14px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font: $summary-content-font;
   }
   .order{
     padding-top: 20px;
-  }
-  .continue{
-    @include buttonLink;
-    margin-top: 57px;
-  }
-  .continue:hover{
-    @include hoverLink;
+    font: $summary-bold-font;
   }
 }
 .related{
   width: 100%;
   padding: 20px 0;
+  font: $related-font;
 
   h2{
     text-align: center;

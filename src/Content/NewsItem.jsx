@@ -18,7 +18,7 @@ export default function  NewsItem  ({data}) {
             <Grid item sm={12} md={9} sx={{paddingTop: '18px'}}>
                 <div className={classes.NewsContent}>
                     <p><strong>{data.title}</strong></p>
-                    <p>{data.content}</p>
+                    <p className={classes.text}>{data.content}</p>
                 </div>
                 <div className={classes.NewsFooter}>
                     <span>{data.date}</span>

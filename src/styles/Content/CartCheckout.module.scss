@@ -1,24 +1,11 @@
 $home-text-color: #808080;
 $error-color: #c62828;
-$link-color: #000;
-$link-text-color: #fff;
 $final-color: #F7F7F7;
 $strike-color: #808080;
-
-@mixin link($width,$border,$margin){
-  margin-top: $margin;
-  width: $width !important;
-  height: 55px;
-  background-color: $link-color;
-  color: $link-text-color;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 14px;
-  border-radius: $border;
-}
+$label-font: normal normal bold 14px/17px Century Gothic;
+$font-final-title: normal normal bold 18px/22px Century Gothic;
+$font-final-content: normal normal normal 14px/30px Century Gothic;
+$font-final-footer: normal normal bold 14px/30px Century Gothic;
 
 .inputLabel{
   font-weight: 900;
@@ -30,21 +17,9 @@ $strike-color: #808080;
   font-size: 12px;
 }
 
-.applyLink{
-  @include link(100%,5px,25px);
+label {
+  font: $label-font;
 }
-
-.paymentLink{
-  @include link(215px,0,0);
-}
-
-.form{
-  margin-top: 40px;
-  em{
-    color: #808080;
-  }
-}
-
 @media only screen and (min-width: 960px){
   .form{
     padding: 0 130px;
@@ -62,9 +37,9 @@ $strike-color: #808080;
 
   .title{
     display: block;
-    font-size: 18px;
     margin-bottom: 20px;
     text-align: center;
+    font: $font-final-title;
 
   }
   strong:nth-child(2) , strong:nth-child(3){
@@ -72,7 +47,7 @@ $strike-color: #808080;
   }
 
   p{
-    font-size: 14px;
+    font: $font-final-content;
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
@@ -80,15 +55,7 @@ $strike-color: #808080;
   p:nth-child(7){
     padding-bottom: 20px;
   }
-}
-
-@media only screen and (max-width: 960px){
-  .form{
-    padding: 0 20px;
-
-  }
-  .statusContainer {
-    padding-left: 10px;
-    padding-bottom: 15px;
+  p:last-child{
+    font: $font-final-footer;
   }
 }

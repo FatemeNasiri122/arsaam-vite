@@ -4,7 +4,6 @@ import facebook from '../assets/img/036-facebook.svg'
 import telegram from '../assets/img/telegram.svg'
 import linkdin from '../assets/img/027-linkedin.svg'
 import twitter from '../assets/img/008-twitter.svg'
-import classes from "../styles/Content/Home.module.scss";
 
 export default function Footer() {
 

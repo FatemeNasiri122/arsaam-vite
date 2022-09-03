@@ -1,5 +1,4 @@
 import classes from "../styles/Content/AddressInformation.module.scss";
-import React, {useState} from "react";
 
 export default function  AddressInformation  ({data,isActive}) {
 
