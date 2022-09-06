@@ -51,7 +51,7 @@ export default function  Register  () {
                 <div className={containerClass.registerContainer}>
                     <TopCart isFirstActive={true} isSecondActive={true} isThirdActive={false}/>
                 </div>
-                <div className={containerClass.widerContainer}>
+                <div className={containerClass.moreWideContainer}>
                     <form action="" className={classes.form} onSubmit={handleSubmit}>
                         <Grid container spacing={0.8} columnSpacing={2.2}>
                             <Grid item xs={12}>

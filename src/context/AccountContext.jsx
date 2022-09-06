@@ -11,28 +11,34 @@ export const AccountProvider = ({children}) =>{
     const [state,dispatch] = useReducer(AccountReducer,initialState)
 
     const changeActive = (element) => {
-        console.log(element.dataset.id)
-        state.lists.forEach((list) =>{
-            list.isActive = false
-        })
-        state.lists.forEach((list) =>{
-            if (list.id === +element.dataset.id){
-                list.isActive = !list.isActive
-            }
-        })
+        if (!element.dataset.number)
+            return
 
-        dispatch({
-            type: 'CHANGE-ACTIVE',
-            payload: {
-                lists: state.lists,
-            }
-        })
-        console.log(state.lists)
+            state.lists.forEach((list) =>{
+                list.isActive = false
+            })
+            state.lists.forEach((list) =>{
+                if (list.id === +element.dataset.number){
+                    list.isActive = !list.isActive
+                }
+            })
+
+            dispatch({
+                type: 'CHANGE-ACTIVE',
+                payload: {
+                    lists: state.lists,
+                }
+            })
+            console.log(state.lists)
+
     }
 
     const changeMobileActive = (element) => {
+        if (!element.dataset.number)
+            return
+
         state.lists.forEach((list) =>{
-            if (list.id === +element.dataset.id){
+            if (list.id === +element.dataset.number){
                 list.isActive = !list.isActive
             }
         })

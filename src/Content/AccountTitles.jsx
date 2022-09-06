@@ -17,7 +17,7 @@ export default function  AccountTitles  () {
                 <Grid item xs={12} display={{xs: 'none',md: 'block'}}>
                     <ul onClick={(e) => changeActive(e.target)} >
                         {lists.map((list) =>{
-                            return <li data-id={list.id} className={list.isActive && classes.active}>{list.name}</li>
+                            return <li data-number={list.id} className={list.isActive && classes.active}>{list.name}</li>
                         })}
                     </ul>
                 </Grid>

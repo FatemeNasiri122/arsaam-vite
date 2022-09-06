@@ -33,9 +33,26 @@ const useOutlinedInputStyles = makeStyles({
     }
 });
 
+const useDescriptionStyle = makeStyles({
+    root: {
+        marginTop: '5px',
+        "& .MuiOutlinedInput-notchedOutline": {
+            borderRadius: '0',
+        },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
+            }
+        },
+    }
+});
+
+
 export default function CartCheckout(){
 
     const outlinedInputStyles = useOutlinedInputStyles();
+    const DescriptionStyle = useDescriptionStyle();
 
     const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
         validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
@@ -79,7 +96,7 @@ export default function CartCheckout(){
                 <Grid item xs={12} sx={{marginTop: '21px'}}>
                     <label htmlFor="description" className={classes.inputLabel}>Description</label>
                     <TextField
-                        classes={outlinedInputStyles}
+                        classes={DescriptionStyle}
                         id="description"
                         placeholder='you can give your own description write in this section'
                         multiline

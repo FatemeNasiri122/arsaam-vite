@@ -38,23 +38,25 @@ const useOutlinedInputStyles = makeStyles({
     }
 });
 
-const descriptionStyle = {
-    marginTop: '5px',
-    "& .MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0',
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
+const useDescriptionStyle = makeStyles({
+    root: {
+        marginTop: '5px',
+        "& .MuiOutlinedInput-notchedOutline": {
             borderRadius: '0',
-
-        }
-    },
-}
+        },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
+            }
+        },
+    }
+});
 
 export default function  ContactUS  () {
 
     const outlinedInputStyles = useOutlinedInputStyles();
+    const DescriptionStyle = useDescriptionStyle();
 
     const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
         validCountry, validCity, validPhoneNumber, validmessage, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
@@ -177,9 +179,9 @@ export default function  ContactUS  () {
                             <SelectItems initialSelect='Select type of request' label='city'/>
                         </Grid>
                         <Grid item xs={12}>
-                            <label htmlFor="description">Message</label>
+                            <label className={classes.inputLabel} htmlFor="description">Message</label>
                             <TextField
-                                sx={descriptionStyle}
+                                classes={DescriptionStyle}
                                 id="description"
                                 placeholder='Write here your message'
                                 multiline

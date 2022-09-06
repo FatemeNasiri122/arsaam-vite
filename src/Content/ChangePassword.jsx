@@ -35,9 +35,8 @@ export default function  ChangePassword  ({isMobileActive}) {
         validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,validConfirmEmail} = useContext(FormContext);
 
     return (
-        <Grid item xs={12} md={4} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'18px'}>
+        <Grid item xs={12} md={4} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'10px'}>
             <AnimatePresence>
-
                 <motion.div initial={{y: -100 }}
                             animate={{ y: 1 }}
                             exit={{  opacity: 0 }} >
@@ -125,7 +124,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                         </Grid>
                         <p className={classes.error}>{validconfirmnewPassword ? '': 'please enter valid password'}</p>
                         <Grid item xs={12} md={7}>
-                            <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000' linkText="SAVE NEW PASSWORD" marginTop='40px' marginButtom='10px'/>
+                            <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000' linkText="SAVE NEW PASSWORD" marginTop='20px' marginButtom='10px'/>
                         </Grid>
                     </form>
                 </motion.div>

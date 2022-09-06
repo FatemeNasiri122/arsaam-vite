@@ -5,7 +5,6 @@ import userAddress from "../data/userAddressInformation.json"
 import {AnimatePresence , motion} from "framer-motion";
 
 export default function  AccountAddress  ({isMobileActive}) {
-    console.log(userAddress[0].user.home)
     return (
                 <Grid item xs={12} md={8} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'18px'}>
                     <AnimatePresence>

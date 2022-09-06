@@ -8,15 +8,6 @@ $label-font: normal normal bold 14px/17px Century Gothic;
 $news-text-font: normal normal normal 14px/17px Century Gothic;
 $related-text-font: normal normal normal 24px/29px Century Gothic;
 
-.statusContainer{
-  padding: 10px 0;
-  text-transform: uppercase;
-
-  span{
-    color: $strike-color;
-  }
-}
-
 h1{
   text-transform: uppercase;
   text-align: center;
@@ -31,6 +22,10 @@ h1{
 
   label{
     font: $label-font;
+    margin-top: 10px;
+  }
+  label:last-child{
+    margin-top: 0;
   }
   .newsLetterText{
     font: $news-text-font;
@@ -121,7 +116,6 @@ h1{
   height: 18px;
   background: url("/src/assets/img/checkmark.png") no-repeat center;
 }
-
 
 .error{
   color: $error-color;

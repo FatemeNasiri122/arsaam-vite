@@ -15,7 +15,6 @@ export default function  Pagination  () {
     const { items } = usePagination({
         count: 10,
     });
-    console.log(TshirtsData)
         return (
             <nav className={classes.paginationContainer}>
                 <List>
