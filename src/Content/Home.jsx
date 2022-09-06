@@ -56,8 +56,8 @@ export default function Home() {
             </div>
 
         </div>
-        <div className={classes.watchessec}>
-            <h4>WATCHES COLLECTION</h4>
+        <div className={classes.eyewearsec}>
+            <h4>Eyewear Collection</h4>
             <a>Discover</a>
         </div>
         <div className={classes.skullwatchsec}>
@@ -69,8 +69,8 @@ export default function Home() {
             </div>
                 <img src="src/assets/img/angle-right.svg" className={classes.angle + ' ' + classes.right} alt=""/>
         </div>
-        <div className={classes.eyewearsec}>
-            <h4>Eyewear Collection</h4>
+        <div className={classes.watchessec}>
+            <h4>WATCHES COLLECTION</h4>
             <a>Discover</a>
         </div>
         <div className={classes.followussec}>
