@@ -1,6 +1,5 @@
 import classes from '../styles/Content/Register.module.scss';
 import containerClass from '../styles/Content/Container.module.scss';
-import Container from '@mui/material/Container';
 import status from "../styles/Content/Status.module.scss";
 import Grid from '@mui/material/Grid';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -28,63 +27,15 @@ const useOutlinedInputStyles = makeStyles({
             fontSize: '12px',
 
         },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
 
+            }
+        },
     }
 });
-
-const textFieldStyles = {
-    root: {
-        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "black !important",
-        },
-        "& .MuiOutlinedInput-notchedOutline": {
-            height: '45px',
-            borderRadius: '0',
-        },
-        "& .MuiInputBase-input": {
-            padding: '10px',
-            fontSize: '12px',
-        },
-
-    },
-    '& label': {
-        color: '#808080',
-        fontSize: '12px',
-
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
-            borderRadius: '0',
-
-        }
-    },
-    "& .MuiOutlinedInput-root": {
-        "& > fieldset": {
-            borderRadius: '0',
-            height: '45px',
-            position: 'absolute',
-            top: '0',
-        }
-    },
-    "& .MuiInputBase-root": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-
-    },
-    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-        padding: '10px',
-
-    },
-    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
-        borderRadius: '0px !important'
-    },
-    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0px !important'
-    },
-}
 
 export default function  Register  () {
 
@@ -106,11 +57,11 @@ export default function  Register  () {
                     <h1>register</h1>
                 </div>
                     <form action="" className={classes.form} onSubmit={handleSubmit}>
-                        <Grid container spacing={0.8} columnSpacing={2.2}>
+                        <Grid container spacing={2} columnSpacing={2.2}>
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="first-name"
                                     placeholder="Enter your first name"
                                     value={values.firstName}
@@ -123,7 +74,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="last-name" className={classes.inputLabel}>Last Name *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="last-name"
                                     placeholder="Enter your last name"
                                     value={values.lastName}
@@ -136,7 +87,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="email" className={classes.inputLabel}>Email *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="email"
                                     placeholder="Enter your email"
                                     value={values.email}
@@ -149,7 +100,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label htmlFor="confirm-email" className={classes.inputLabel}>Confirm Email *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="confirm-email"
                                     placeholder="Enter your email"
                                     value={values.confirmEmail}

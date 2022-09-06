@@ -11,7 +11,6 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 .bodymain {
   text-transform: uppercase;
   width: 100%;
-  overflow: hidden;
   margin-bottom: 75px;
 
   a{
@@ -340,7 +339,7 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 
     .fabcsec {
       position: relative;
-      margin-right: 101px;
+      margin-right: 10px;
       margin-top: 30px;
 
       h4 {
@@ -486,26 +485,6 @@ $link-font: normal normal normal 14px/17px Century Gothic;
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .activewearwomensec{
-    .fabcsec{
-      margin-right: 10px !important;
-    }
-    .snapshot{
-      margin-left: 10px !important;
-    }
-  }
-  .followussec {
-    img {
-      margin-right: 5px;
-      width: 100%;
-    }
-
-    h2 {
-      margin-top: 0;
-    }
-  }
-}
 @media only screen and (min-width: 900px) {
   .goldcard{
     h1{
@@ -514,7 +493,21 @@ $link-font: normal normal normal 14px/17px Century Gothic;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 960px) and (max-width: 1280px){
+
+  .followussec {
+    img {
+      //margin-right: 5px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 965px) {
   .bodymain {
     .salesec {
       height: 430px;
@@ -622,7 +615,6 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 
       .fabcsec {
         margin-right: 0;
-
         a {
           position: relative;
         }
@@ -630,22 +622,30 @@ $link-font: normal normal normal 14px/17px Century Gothic;
       }
 
       .snapshot {
+        padding: 0 10px;
+        img{
+          width: 100%;
+        }
         margin-top: 0;
         margin-left: 0;
-        width: 90%;
       }
     }
 
     .skullwatchsec {
+      width: 100%;
+      padding: 10px;
+      img{
+        width: 100%;
+      }
       .angle {
         width: 18px;
 
         &.left {
-          margin-right: 10px;
+          margin-right: 5px;
         }
 
         &.right {
-          margin-left: 10px;
+          margin-left: 5px;
         }
       }
 

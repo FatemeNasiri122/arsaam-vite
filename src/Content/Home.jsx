@@ -51,7 +51,7 @@ export default function Home() {
                 <h4>ACTIVEWEAR</h4>
                 <a>Discover</a>
             </div>
-            <div className="snapshotcontainer">
+            <div className={classes.snapshot}>
                 <img src="src/assets/img/snapshot1.png" className={classes.snapshot} alt=""/>
             </div>
 

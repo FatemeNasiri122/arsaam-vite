@@ -12,60 +12,31 @@ import React, {useContext, useState} from "react";
 import LinkButton from "./button/LinkButton";
 import FormContext from "../context/FormContext";
 import SelectItems from "./select/SelectItems";
+import {makeStyles} from "@material-ui/core/styles";
 
-const textFieldStyles = {
+const useOutlinedInputStyles = makeStyles({
     root: {
         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "black !important",
         },
         "& .MuiOutlinedInput-notchedOutline": {
             height: '45px',
-            borderRadius: '0',
+            borderRadius: "0",
         },
         "& .MuiInputBase-input": {
             padding: '10px',
             fontSize: '12px',
+
         },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
 
-    },
-    '& label': {
-        color: '#808080',
-        fontSize: '12px',
-
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
-            borderRadius: '0',
-
-        }
-    },
-    "& .MuiOutlinedInput-root": {
-        "& > fieldset": {
-            borderRadius: '0',
-            height: '45px',
-            position: 'absolute',
-            top: '0'
-        }
-    },
-    "& .MuiInputBase-root": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-
-    },
-    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-        padding: '10px',
-
-    },
-    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
-        borderRadius: '0px !important'
-    },
-    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0px !important'
-    },
-}
+            }
+        },
+    }
+});
 
 const descriptionStyle = {
     marginTop: '5px',
@@ -82,6 +53,8 @@ const descriptionStyle = {
 }
 
 export default function  ContactUS  () {
+
+    const outlinedInputStyles = useOutlinedInputStyles();
 
     const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
         validCountry, validCity, validPhoneNumber, validmessage, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
@@ -167,7 +140,7 @@ export default function  ContactUS  () {
                                 onChange={handleChange('firstName')}
                                 fullWidth
                                 error={validFirstName ? false: true}
-                                sx={textFieldStyles}
+                                classes={outlinedInputStyles}
                             />
                             <p className={classes.error}>{validFirstName ? '': 'please enter valid name'}</p>
                         </Grid>
@@ -181,7 +154,7 @@ export default function  ContactUS  () {
                                 onChange={handleChange('email')}
                                 fullWidth
                                 error={validEmail ? false: true}
-                                sx={textFieldStyles}
+                                classes={outlinedInputStyles}
                             />
                             <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
                         </Grid>
@@ -195,7 +168,7 @@ export default function  ContactUS  () {
                                 onChange={handleChange('phoneNumber')}
                                 fullWidth
                                 error={validPhoneNumber ? false: true}
-                                sx={textFieldStyles}
+                                classes={outlinedInputStyles}
                             />
                             <p className={classes.error}>{validPhoneNumber ? '': 'please enter phone number'}</p>
                         </Grid>

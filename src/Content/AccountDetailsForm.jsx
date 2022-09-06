@@ -13,69 +13,33 @@ import FormContext from "../context/FormContext";
 import SelectItems from "./select/SelectItems";
 import LinkButton from "./button/LinkButton";
 
-
 const useOutlinedInputStyles = makeStyles({
-
-});
-const textFieldStyles = {
     root: {
         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "black !important",
         },
         "& .MuiOutlinedInput-notchedOutline": {
             height: '45px',
-            borderRadius: '0',
+            borderRadius: "0",
         },
         "& .MuiInputBase-input": {
             padding: '10px',
             fontSize: '12px',
+
         },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
 
-    },
-    '& label': {
-        color: '#808080',
-        fontSize: '12px',
-
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
-            borderRadius: '0',
-
-        }
-    },
-    "& .MuiOutlinedInput-root": {
-        "& > fieldset": {
-            borderRadius: '0',
-            height: '45px',
-            position: 'absolute',
-            top: '0'
-        }
-    },
-    "& .MuiInputBase-root": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-
-    },
-    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-        padding: '10px',
-
-    },
-    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
-        borderRadius: '0px !important'
-    },
-    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0px !important'
-    },
-    // "& .MuiInputBase-colorPrimary": {
-    //     border: '1px solid black !important'
-    // },
-    // fix border color on focus
-}
+            }
+        },
+    }
+});
 
 export default function  AccountDetails  ({isMobileActive}) {
+
+    const outlinedInputStyles = useOutlinedInputStyles();
 
     const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
         validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,validConfirmEmail} = useContext(FormContext);
@@ -92,9 +56,9 @@ export default function  AccountDetails  ({isMobileActive}) {
                                 <h2>ACCOUNT DETAILS</h2>
                                 <Grid container columnSpacing={2} rowSpacing={0.7}>
                                     <Grid item xs={12} sm={6} marginTop={'8px'}>
-                                        <label htmlFor="first-name" >First Name *</label>
+                                        <label htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
                                         <TextField
-                                            sx={textFieldStyles}
+                                            classes={outlinedInputStyles}
                                             id="first-name"
                                             placeholder="Enter your first name"
                                             value={values.firstName}
@@ -105,9 +69,9 @@ export default function  AccountDetails  ({isMobileActive}) {
                                         <p className={classes.error}>{validFirstName ? '': 'please enter valid first name'}</p>
                                     </Grid>
                                     <Grid item xs={12} sm={6} marginTop={'8px'}>
-                                        <label htmlFor="last-name" >Last Name *</label>
+                                        <label htmlFor="last-name" className={classes.inputLabel}>Last Name *</label>
                                         <TextField
-                                            sx={textFieldStyles}
+                                            classes={outlinedInputStyles}
                                             id="last-name"
                                             placeholder="Enter your last name"
                                             value={values.lastName}
@@ -118,9 +82,9 @@ export default function  AccountDetails  ({isMobileActive}) {
                                         <p className={classes.error}>{validLastName ? '': 'please enter valid last name'}</p>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <label htmlFor="email">Email *</label>
+                                        <label htmlFor="email" className={classes.inputLabel}>Email *</label>
                                         <TextField
-                                            sx={textFieldStyles}
+                                            classes={outlinedInputStyles}
                                             id="email"
                                             placeholder="Enter your email"
                                             value={values.email}
@@ -131,9 +95,9 @@ export default function  AccountDetails  ({isMobileActive}) {
                                         <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <label htmlFor="phone-number" >Phone Number *</label>
+                                        <label htmlFor="phone-number" className={classes.inputLabel}>Phone Number *</label>
                                         <TextField
-                                            sx={textFieldStyles}
+                                            classes={outlinedInputStyles}
                                             id="phone-number"
                                             placeholder="Enter your phone number"
                                             value={values.phoneNumber}

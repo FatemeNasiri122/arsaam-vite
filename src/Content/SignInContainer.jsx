@@ -92,7 +92,7 @@ export default function  SignInContainer () {
 
     return (
             <Grid container spacing={2} marginBottom='80px'>
-                <Grid item sm={6} xs={12} order={{sm: 1 , xs: 2}} >
+                <Grid item lg={6} xs={12} order={{lg: 1 , xs: 2}} >
                     <div className={classes.registerContainer}>
                         <h2 className={classes.title}>
                             register
@@ -106,7 +106,7 @@ export default function  SignInContainer () {
                         <LinkButton isOnClicked={false} width='100%' height='50px' color='#fff' background='#000' linkText="REGISTER" marginTop='0' marginButtom='0'/>
                     </div>
                 </Grid>
-                <Grid item sm={6} xs={12} order={{sm: 2 , xs: 1}}>
+                <Grid item lg={6} xs={12} order={{lg: 2 , xs: 1}}>
                     <div className={classes.signinContainer}>
                         <h2 className={classes.title}>
                             sign in

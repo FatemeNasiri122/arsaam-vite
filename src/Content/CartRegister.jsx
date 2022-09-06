@@ -22,64 +22,17 @@ const useOutlinedInputStyles = makeStyles({
         "& .MuiInputBase-input": {
             padding: '10px',
             fontSize: '12px',
-        },
 
+        },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
+
+            }
+        },
     }
 });
-
-const textFieldStyles = {
-    root: {
-        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "black !important",
-        },
-        "& .MuiOutlinedInput-notchedOutline": {
-            height: '45px',
-            borderRadius: '0',
-        },
-        "& .MuiInputBase-input": {
-            padding: '10px',
-            fontSize: '12px',
-        },
-
-    },
-    '& label': {
-        color: '#808080',
-        fontSize: '12px',
-
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
-            borderRadius: '0',
-
-        }
-    },
-    "& .MuiOutlinedInput-root": {
-        "& > fieldset": {
-            borderRadius: '0',
-            height: '45px',
-            position: 'absolute',
-            top: '0'
-        }
-    },
-    "& .MuiInputBase-root": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-
-    },
-    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-        padding: '10px',
-
-    },
-    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
-        borderRadius: '0px !important'
-    },
-    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0px !important'
-    },
-}
 
 export default function  Register  () {
 
@@ -108,7 +61,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="first-name" className={classes.inputLabel}>First Name *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="first-name"
                                     placeholder="Enter your first name"
                                     value={values.firstName}
@@ -121,7 +74,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="last-name" className={classes.inputLabel}>Last Name *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="last-name"
                                     placeholder="Enter your last name"
                                     value={values.lastName}
@@ -134,7 +87,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="country" className={classes.inputLabel}>Country *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="country"
                                     placeholder="Enter your country"
                                     value={values.country}
@@ -152,7 +105,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="email" className={classes.inputLabel}>Email *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="email"
                                     placeholder="Enter your address"
                                     value={values.email}
@@ -165,7 +118,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="phone-number" className={classes.inputLabel}>Phone Number *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="phone-number"
                                     placeholder="Enter your phone number"
                                     value={values.phoneNumber}
@@ -178,7 +131,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="address" className={classes.inputLabel}>Address *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="address"
                                     placeholder="Enter your address"
                                     value={values.address}
@@ -191,7 +144,7 @@ export default function  Register  () {
                             <Grid item xs={12} sm={6}>
                                 <label className={classes.inputLabel} htmlFor="postal-code" className={classes.inputLabel}>Postal Code *</label>
                                 <TextField
-                                    sx={textFieldStyles}
+                                    classes={outlinedInputStyles}
                                     id="postal-code"
                                     type='text'
                                     value={values.postalCode}

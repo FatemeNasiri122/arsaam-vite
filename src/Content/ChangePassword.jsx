@@ -44,7 +44,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                     <form action="" className={classes.form}>
                         <h2>CHANGE PASSWORD</h2>
                         <Grid item xs={12} marginTop={{xs: '0', md : '20px'}}>
-                            <label htmlFor="password">Current Password *</label>
+                            <label htmlFor="password" className={classes.inputLabel}>Current Password *</label>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
                                 marginTop={{xs: '10px', md : '5px'}}
@@ -71,7 +71,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                         </Grid>
                         <p className={classes.error}>{validcurrentPassword ? '': 'please enter valid password'}</p>
                         <Grid item xs={12} marginTop={{xs: '0', md : '20px'}}>
-                            <label htmlFor="password">New Password *</label>
+                            <label htmlFor="password" className={classes.inputLabel}>New Password *</label>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
                                 marginTop={{xs: '10px', md : '5px'}}
@@ -98,7 +98,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                         </Grid>
                         <p className={classes.error}>{validnewPassword ? '': 'please enter valid password'}</p>
                         <Grid item xs={12} marginTop={{xs: '0', md : '20px'}}   >
-                            <label htmlFor="password">Confirm New Password *</label>
+                            <label htmlFor="password" className={classes.inputLabel}>Confirm New Password *</label>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
                                 marginTop={{xs: '10px', md : '5px'}}

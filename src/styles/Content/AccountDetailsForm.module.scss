@@ -144,6 +144,12 @@ h1{
   width: 100%;
 }
 
+.inputLabel{
+  font: $label-font;
+  margin-bottom: 5px;
+  display: block;
+}
+
 @media only screen and (max-width: 960px){
   .suggestedContainer{
     display: none;

@@ -24,6 +24,7 @@ $label-font: normal normal bold 14px/17px Century Gothic;;
 .inputLabel{
   font: $label-font;
   margin-bottom: 5px;
+  display: block;
 }
 
 [type="checkbox"]{

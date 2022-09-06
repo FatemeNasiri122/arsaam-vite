@@ -6,8 +6,11 @@ $label-font: normal normal bold 14px/17px Century Gothic;
 $last-child-label-font: normal normal normal 14px/17px Century Gothic;
 
 .inputLabel{
-  font-weight: 900;
+  font: $label-font;
+  margin-bottom: 5px;
+  display: block;
 }
+
 
 .error{
   color: $error-color;
@@ -20,7 +23,7 @@ $last-child-label-font: normal normal normal 14px/17px Century Gothic;
 }
 
 [type="checkbox"] + label{
-
+  font-size: 14px;
   position: relative;
   padding-left: 30px;
   cursor: pointer;
@@ -50,26 +53,11 @@ $last-child-label-font: normal normal normal 14px/17px Century Gothic;
   background: url("/src/assets/img/checkmark.png") no-repeat center;
 }
 
-.link{
-  width: 100% !important;
-  height: 40px;
-  background-color: $link-color;
-  color: $link-text-color;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 14px;
-}
 
 .form{
   margin-top: 40px;
   em{
     color: #808080;
-  }
-  .inputLabel{
-    font: $label-font;
   }
   margin-bottom: 50px;
 }

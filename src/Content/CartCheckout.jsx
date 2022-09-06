@@ -7,80 +7,35 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import LinkButton from "./button/LinkButton";
 import FormContext from "../context/FormContext";
+import {makeStyles} from "@material-ui/core/styles";
 
-const textFieldStyles = {
+const useOutlinedInputStyles = makeStyles({
     root: {
         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "black !important",
         },
         "& .MuiOutlinedInput-notchedOutline": {
             height: '45px',
-            borderRadius: '0',
+            borderRadius: "0",
         },
         "& .MuiInputBase-input": {
             padding: '10px',
             fontSize: '12px',
+
         },
+        "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+                borderColor: 'black',
+                borderRadius: '0',
 
-    },
-    '& label': {
-        color: '#808080',
-        fontSize: '12px',
-
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
-            borderRadius: '0',
-
-        }
-    },
-    "& .MuiOutlinedInput-root": {
-        "& > fieldset": {
-            borderRadius: '0',
-            height: '45px',
-            position: 'absolute',
-            top: '0'
-        }
-    },
-    "& .MuiInputBase-root": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-
-    },
-    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-        fontFamily: 'normal normal normal 12px/15px Century Gothic',
-        fontSize: '12px !important',
-        padding: '10px',
-
-    },
-    "& .css-1te9c4s-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root": {
-        borderRadius: '0px !important'
-    },
-    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0px !important'
-    },
-    // "& .MuiInputBase-colorPrimary": {
-    //     border: '1px solid black !important'
-    // },
-    // fix border color on focus
-}
-
-const descriptionStyle = {
-    marginTop: '5px',
-    "& .MuiOutlinedInput-notchedOutline": {
-        borderRadius: '0',
-    },
-    "& .MuiOutlinedInput-root.Mui-focused": {
-        "& > fieldset": {
-            borderColor: 'black',
-            borderRadius: '0',
-
-        }
-    },
-}
+            }
+        },
+    }
+});
 
 export default function CartCheckout(){
+
+    const outlinedInputStyles = useOutlinedInputStyles();
 
     const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
         validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
@@ -97,7 +52,7 @@ export default function CartCheckout(){
                 <Grid item xs={10}>
                     <label htmlFor="code" className={classes.inputLabel}>Use Coupon Code</label>
                     <TextField
-                        sx={textFieldStyles}
+                        classes={outlinedInputStyles}
                         id="code"
                         placeholder="Enter coupon code"
                         value={values.email}
@@ -107,7 +62,7 @@ export default function CartCheckout(){
                     />
                 </Grid>
                 <Grid item xs={2}>
-                    <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="APPLY" marginTop='25px' marginButtom='10px'/>
+                    <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="APPLY" marginTop='22px' marginButtom='10px' />
                 </Grid>
                 <Grid item xs={12}>
                     <div className={classes.finalContainer}>
@@ -124,7 +79,7 @@ export default function CartCheckout(){
                 <Grid item xs={12} sx={{marginTop: '21px'}}>
                     <label htmlFor="description" className={classes.inputLabel}>Description</label>
                     <TextField
-                        sx={descriptionStyle}
+                        classes={outlinedInputStyles}
                         id="description"
                         placeholder='you can give your own description write in this section'
                         multiline

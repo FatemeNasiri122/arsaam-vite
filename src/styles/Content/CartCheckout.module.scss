@@ -8,7 +8,9 @@ $font-final-content: normal normal normal 14px/30px Century Gothic;
 $font-final-footer: normal normal bold 14px/30px Century Gothic;
 
 .inputLabel{
-  font-weight: 900;
+  font: $label-font;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .error{
