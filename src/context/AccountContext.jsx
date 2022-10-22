@@ -4,21 +4,19 @@ import {ActiveDetails} from "../Content/ActiveDetails";
 
 const AccountContext = createContext()
 
-export const AccountProvider = ({children}) =>{
+export const AccountProvider = ({children}) => {
     const initialState = {
         lists: ActiveDetails,
     }
-    const [state,dispatch] = useReducer(AccountReducer,initialState)
+    const [state, dispatch] = useReducer(AccountReducer, initialState)
 
     const changeActive = (element) => {
-        if (!element.dataset.number)
-            return
-
-            state.lists.forEach((list) =>{
+        if (element.dataset.number) {
+            state.lists.forEach((list) => {
                 list.isActive = false
             })
-            state.lists.forEach((list) =>{
-                if (list.id === +element.dataset.number){
+            state.lists.forEach((list) => {
+                if (list.id === +element.dataset.number) {
                     list.isActive = !list.isActive
                 }
             })
@@ -29,16 +27,16 @@ export const AccountProvider = ({children}) =>{
                     lists: state.lists,
                 }
             })
-            console.log(state.lists)
-
+        }
+        console.log('change active')
     }
 
     const changeMobileActive = (element) => {
         if (!element.dataset.number)
             return
 
-        state.lists.forEach((list) =>{
-            if (list.id === +element.dataset.number){
+        state.lists.forEach((list) => {
+            if (list.id === +element.dataset.number) {
                 list.isActive = !list.isActive
             }
         })
@@ -52,8 +50,9 @@ export const AccountProvider = ({children}) =>{
         console.log(state.lists)
     }
 
-    return(
-        <AccountContext.Provider value={{ lists: state.lists , path: state.path , plus: state.plus , changeActive , changeMobileActive}}>
+    return (
+        <AccountContext.Provider
+            value={{lists: state.lists, path: state.path, plus: state.plus, changeActive, changeMobileActive}}>
             {children}
         </AccountContext.Provider>
     )

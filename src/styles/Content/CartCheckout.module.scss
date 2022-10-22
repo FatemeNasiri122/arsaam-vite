@@ -7,13 +7,13 @@ $font-final-title: normal normal bold 18px/22px Century Gothic;
 $font-final-content: normal normal normal 14px/30px Century Gothic;
 $font-final-footer: normal normal bold 14px/30px Century Gothic;
 
-.inputLabel{
+.inputLabel {
   font: $label-font;
   margin-bottom: 5px;
   display: block;
 }
 
-.error{
+.error {
   color: $error-color;
   margin-top: 5px;
   font-size: 12px;
@@ -22,8 +22,9 @@ $font-final-footer: normal normal bold 14px/30px Century Gothic;
 label {
   font: $label-font;
 }
-@media only screen and (min-width: 960px){
-  .form{
+
+@media only screen and (min-width: 960px) {
+  .form {
     padding: 0 130px;
   }
   .statusContainer {
@@ -31,33 +32,36 @@ label {
   }
 }
 
-.finalContainer{
+.finalContainer {
   width: 100%;
   background-color: $final-color;
   margin-top: 21px;
   padding: 40px 50px;
 
-  .title{
+  .title {
     display: block;
     margin-bottom: 20px;
     text-align: center;
     font: $font-final-title;
 
   }
-  strong:nth-child(2) , strong:nth-child(3){
+
+  strong:nth-child(2), strong:nth-child(3) {
     font-size: 14px;
   }
 
-  p{
+  p {
     font: $font-final-content;
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
   }
-  p:nth-child(7){
+
+  p:nth-child(7) {
     padding-bottom: 20px;
   }
-  p:last-child{
+
+  p:last-child {
     font: $font-final-footer;
   }
 }

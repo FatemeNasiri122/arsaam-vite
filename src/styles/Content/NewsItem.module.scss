@@ -6,48 +6,52 @@ $content-font: normal normal normal 12px/24px Century Gothic;
 $date-font: normal normal normal 12px/15px Century Gothic;
 $link-font: normal normal normal 12px/15px Century Gothic;
 
-.NewsContent{
-    p:nth-child(2){
-      line-height: 1.6;
-      font-size: 12px;
-      font: $content-font;
-    }
-    p:first-child{
-      line-height: 1.6;
-      font: $title-news-font;
-    }
+.NewsContent {
+  p:nth-child(2) {
+    line-height: 1.6;
+    font-size: 12px;
+    font: $content-font;
+  }
+
+  p:first-child {
+    line-height: 1.6;
+    font: $title-news-font;
+  }
 
 }
 
-.NewsFooter{
+.NewsFooter {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  span{
+
+  span {
     color: $date-color;
     font: $date-font;
   }
 
-  a{
+  a {
     font-size: 12px;
     text-decoration: none;
     color: $link-color;
-    svg{
+
+    svg {
       width: 10px;
       height: 10px;
       fill: $link-color;
     }
+
     font: $link-font;
   }
 }
 
-@mixin imageContainer($width,$height,$padding){
-  .imageContainer{
+@mixin imageContainer($width,$height,$padding) {
+  .imageContainer {
     width: $width;
     height: $height;
     margin-bottom: 20px;
 
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
@@ -55,13 +59,13 @@ $link-font: normal normal normal 12px/15px Century Gothic;
 
 }
 
-@media only screen and (min-width: 960px){
-  @include imageContainer(100%,174px,20px);
+@media only screen and (min-width: 960px) {
+  @include imageContainer(100%, 174px, 20px);
 }
 
-@media only screen and (max-width: 960px){
-  @include imageContainer(100%,100%,0);
-  .NewsFooter{
+@media only screen and (max-width: 960px) {
+  @include imageContainer(100%, 100%, 0);
+  .NewsFooter {
     margin-bottom: 10px;
   }
 }

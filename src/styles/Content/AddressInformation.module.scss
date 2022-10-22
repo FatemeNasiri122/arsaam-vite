@@ -5,46 +5,54 @@ $error-color: #c62828;
 $title-font: normal normal bold 14px/30px Century Gothic;
 $user-information-font: normal normal normal 14px/20px Century Gothic;
 
-.notActive{
+.notActive {
   color: $notActive-color;
   border-color: $notActive-color;
 }
-.active{
+
+.active {
   color: $active-color;
   border-color: $active-color;
 }
-.userInformationContainer{
+
+.userInformationContainer {
   padding: 15px 20px 20px 20px;
   border: 1px solid;
-  p{
+
+  p {
     color: inherit;
     font: $user-information-font;
     display: flex;
     align-items: center;
     text-align: justify;
   }
-  p:first-child{
+
+  p:first-child {
     padding-top: 0;
-    strong{
+
+    strong {
       text-transform: uppercase;
       font: $title-font;
     }
   }
-  p:nth-child(3),p:nth-child(4),p:nth-child(5),p:nth-child(6){
+
+  p:nth-child(3), p:nth-child(4), p:nth-child(5), p:nth-child(6) {
     padding-top: 15px;
   }
-  svg{
+
+  svg {
     margin-right: 2px;
   }
 }
 
-@media only screen and (min-width: 600px){
-  .active{
+@media only screen and (min-width: 600px) {
+  .active {
     margin-right: 20px;
   }
 }
-@media only screen and (max-width: 600px){
-  .userInformationContainer{
+
+@media only screen and (max-width: 600px) {
+  .userInformationContainer {
     margin-top: 20px;
   }
 }

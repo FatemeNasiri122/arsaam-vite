@@ -1,57 +1,57 @@
-@media only screen and (min-width: 960px){
-  .container{
+@media only screen and (min-width: 960px) {
+  .container {
     padding: 0 102px;
   }
 
-  .widerContainer{
+  .widerContainer {
     padding: 0 200px;
   }
 
-  .moreWideContainer{
+  .moreWideContainer {
     padding: 0 298px;
   }
-  .checkoutContainer{
+  .checkoutContainer {
     padding: 0 398px;
   }
-  .registerContainer{
+  .registerContainer {
     padding: 0 396px;
   }
 
 }
 
-@media only screen and (min-width: 960px) and (max-width: 1280px){
-  .moreWideContainer{
+@media only screen and (min-width: 960px) and (max-width: 1280px) {
+  .moreWideContainer {
     padding: 0 100px;
   }
-  .registerContainer{
+  .registerContainer {
     padding: 0 200px;
   }
-  .checkoutContainer{
+  .checkoutContainer {
     padding: 0 100px;
   }
 }
 
-@media only screen and (max-width: 960px){
+@media only screen and (max-width: 960px) {
 
   .container {
     padding: 10px;
   }
 
-  .checkoutContainer{
+  .checkoutContainer {
     padding: 0 15px;
   }
 
-  .widerContainer{
+  .widerContainer {
     padding: 0 10px;
   }
 
-  .moreWideContainer{
+  .moreWideContainer {
     padding: 0 10px;
   }
-  .checkoutContainer{
+  .checkoutContainer {
     padding: 0 10px;
   }
-  .registerContainer{
+  .registerContainer {
     padding: 0 10px;
   }
 

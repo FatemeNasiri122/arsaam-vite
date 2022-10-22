@@ -67,7 +67,7 @@ export default function Home() {
                 <h4>THE $KULL TITAN GOLD Watch</h4>
                 <a>Discover</a>
             </div>
-                <img src="src/assets/img/angle-right.svg" className={classes.angle + ' ' + classes.right} alt=""/>
+            <img src="src/assets/img/angle-right.svg" className={classes.angle + ' ' + classes.right} alt=""/>
         </div>
         <div className={classes.watchessec}>
             <h4>WATCHES COLLECTION</h4>

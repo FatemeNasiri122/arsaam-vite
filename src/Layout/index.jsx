@@ -9,12 +9,12 @@ export default function Layout() {
     return (
         <div>
             {/*<Container maxWidth="lg">*/}
-                <Header/>
-                {/*<div style={{minHeight: '80vh'}}>*/}
-                    <React.Suspense fallback={null}>
-                        <Outlet/>
-                    </React.Suspense>
-                {/*</div>*/}
+            <Header/>
+            {/*<div style={{minHeight: '80vh'}}>*/}
+            <React.Suspense fallback={null}>
+                <Outlet/>
+            </React.Suspense>
+            {/*</div>*/}
             {/*</Container>*/}
             <Footer/>
         </div>

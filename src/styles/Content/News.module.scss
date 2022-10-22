@@ -2,27 +2,27 @@ $strike-color: #808080;
 $error-color: #c62828;
 $title-font: normal normal bold 30px/37px Century Gothic;
 
-@mixin background($height,$size){
-    width: 100%;
-    height: $height;
-    background: url("/src/assets/img/young-couple-standing-by-building-aboutus.png") no-repeat;
-    background-size: $size;
+@mixin background($height,$size) {
+  width: 100%;
+  height: $height;
+  background: url("/src/assets/img/young-couple-standing-by-building-aboutus.png") no-repeat;
+  background-size: $size;
 }
 
-@mixin title($margin){
+@mixin title($margin) {
   text-transform: uppercase;
   text-align: center;
   font-size: 37px;
   margin-bottom: $margin;
 }
 
-h1{
+h1 {
   width: 100%;
   text-align: center;
   font: $title-font;
 }
 
-.error{
+.error {
   display: block;
   color: $error-color;
   margin-top: 5px;

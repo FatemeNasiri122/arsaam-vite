@@ -1,8 +1,8 @@
 $link-color: #000;
 $title-font: normal normal normal 30px/37px Century Gothic;
-$register-font-title:  normal normal normal 16px/21px Century Gothic;
+$register-font-title: normal normal normal 16px/21px Century Gothic;
 $register-text-font: normal normal normal 14px/24px Century Gothic;
-$sign-in-font: normal normal normal 14px/17px Century Gothic;;
+$sign-in-font: normal normal normal 14px/17px Century Gothic;
 
 @mixin card($padding-width) {
   padding: $padding-width;
@@ -10,57 +10,59 @@ $sign-in-font: normal normal normal 14px/17px Century Gothic;;
   flex-direction: column;
 }
 
-$register-color : #F7F7F7;
+$register-color: #F7F7F7;
 $link-color: #000;
 $link-text-color: #fff;
 
-.closeContainer{
+.closeContainer {
   display: flex;
   justify-content: end;
   margin-top: 50px;
   transform: translateY(100%);
 
-  .closeWrapper{
+  .closeWrapper {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    img{
+
+    img {
       width: 100%;
       height: 100%;
     }
   }
 }
 
-.registerContainer{
+.registerContainer {
 
   background-color: $register-color;
-  p{
+
+  p {
     font: $register-font-title;
   }
 
-  ul{
+  ul {
     margin-top: 30px;
     margin-left: 15px;
     margin-bottom: 125px;
 
-    li{
+    li {
       margin-top: 5px;
       font: $register-text-font;
     }
   }
 }
 
-.signinContainer{
-  form{
+.signinContainer {
+  form {
     display: flex;
     flex-direction: column;
   }
 
-  p{
+  p {
     font: $sign-in-font;
   }
 
-  a{
+  a {
     color: $link-color;
     text-decoration: none;
     margin-top: 20px;
@@ -68,31 +70,31 @@ $link-text-color: #fff;
   }
 }
 
-.title{
+.title {
   font: $title-font;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
-.error{
+.error {
   color: tomato;
 }
 
-@media only screen and (max-width: 960px){
-  .registerContainer{
+@media only screen and (max-width: 960px) {
+  .registerContainer {
     @include card(10px);
 
   }
-  .signinContainer{
+  .signinContainer {
     @include card(10px);
   }
 }
 
-@media only screen and (min-width: 960px){
-  .registerContainer{
+@media only screen and (min-width: 960px) {
+  .registerContainer {
     @include card(72px);
   }
-  .signinContainer{
+  .signinContainer {
     @include card(72px);
   }
 }

@@ -28,26 +28,37 @@ const useOutlinedInputStyles = makeStyles({
     }
 });
 
-export default function  ChangePassword  ({isMobileActive}) {
+export default function ChangePassword({isMobileActive}) {
     const outlinedInputStyles = useOutlinedInputStyles();
 
-    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
-        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,validConfirmEmail} = useContext(FormContext);
+    const {
+        handleChange,
+        handleClickshowCurrentPassword,
+        handleClickShowNewPassword,
+        handleClickShowConfirmPassword,
+        handleMouseDownPassword,
+        values,
+        validcurrentPassword,
+        validnewPassword,
+        validconfirmnewPassword,
+        validConfirmEmail
+    } = useContext(FormContext);
 
     return (
-        <Grid item xs={12} md={4} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'10px'}>
+        <Grid item xs={12} md={4} display={isMobileActive && {xs: 'none', md: 'block'}} paddingLeft={{md: '20px'}}
+              marginTop={'10px'}>
             <AnimatePresence>
-                <motion.div initial={{y: -100 }}
-                            animate={{ y: 1 }}
-                            exit={{  opacity: 0 }} >
+                <motion.div initial={{y: -100}}
+                            animate={{y: 1}}
+                            exit={{opacity: 0}}>
                     <form action="" className={classes.form}>
                         <h2>CHANGE PASSWORD</h2>
-                        <Grid item xs={12} marginTop={{xs: '0', md : '20px'}}>
+                        <Grid item xs={12} marginTop={{xs: '0', md: '20px'}}>
                             <label htmlFor="password" className={classes.inputLabel}>Current Password *</label>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
-                                marginTop={{xs: '10px', md : '5px'}}
-                                
+                                marginTop={{xs: '10px', md: '5px'}}
+
                                 type={values.showCurrentPassword ? 'text' : 'password'}
                                 value={values.currentPassword}
                                 onChange={handleChange('currentPassword')}
@@ -59,7 +70,7 @@ export default function  ChangePassword  ({isMobileActive}) {
                                             onMouseDown={handleMouseDownPassword}
                                             edge="end"
                                         >
-                                            {values.showCurrentPassword ? <VisibilityOff /> : <Visibility />}
+                                            {values.showCurrentPassword ? <VisibilityOff/> : <Visibility/>}
                                         </IconButton>
                                     </InputAdornment>
                                 }
@@ -68,13 +79,13 @@ export default function  ChangePassword  ({isMobileActive}) {
                                 fullWidth
                             />
                         </Grid>
-                        <p className={classes.error}>{validcurrentPassword ? '': 'please enter valid password'}</p>
-                        <Grid item xs={12} marginTop={{xs: '0', md : '20px'}}>
+                        <p className={classes.error}>{validcurrentPassword ? '' : 'please enter valid password'}</p>
+                        <Grid item xs={12} marginTop={{xs: '0', md: '20px'}}>
                             <label htmlFor="password" className={classes.inputLabel}>New Password *</label>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
-                                marginTop={{xs: '10px', md : '5px'}}
-                                
+                                marginTop={{xs: '10px', md: '5px'}}
+
                                 type={values.showNewPassword ? 'text' : 'password'}
                                 value={values.newPassword}
                                 onChange={handleChange('newPassword')}
@@ -82,26 +93,26 @@ export default function  ChangePassword  ({isMobileActive}) {
                                     <InputAdornment position="end">
                                         <IconButton
                                             aria-label="toggle password visibility"
-                                            onClick={() =>handleClickShowNewPassword('showNewPassword')}
+                                            onClick={() => handleClickShowNewPassword('showNewPassword')}
                                             onMouseDown={handleMouseDownPassword}
                                             edge="end"
                                         >
-                                            {values.showNewPassword ? <VisibilityOff /> : <Visibility />}
+                                            {values.showNewPassword ? <VisibilityOff/> : <Visibility/>}
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                error={validnewPassword ? false: true}
+                                error={validnewPassword ? false : true}
                                 placeholder='Enter your current password'
                                 fullWidth
                             />
                         </Grid>
-                        <p className={classes.error}>{validnewPassword ? '': 'please enter valid password'}</p>
-                        <Grid item xs={12} marginTop={{xs: '0', md : '20px'}}   >
+                        <p className={classes.error}>{validnewPassword ? '' : 'please enter valid password'}</p>
+                        <Grid item xs={12} marginTop={{xs: '0', md: '20px'}}>
                             <label htmlFor="password" className={classes.inputLabel}>Confirm New Password *</label>
                             <OutlinedInput
                                 classes={outlinedInputStyles}
-                                marginTop={{xs: '10px', md : '5px'}}
-                                
+                                marginTop={{xs: '10px', md: '5px'}}
+
                                 type={values.showConfirmPassword ? 'text' : 'password'}
                                 value={values.confirmnewPassword}
                                 onChange={handleChange('confirmnewPassword')}
@@ -109,22 +120,23 @@ export default function  ChangePassword  ({isMobileActive}) {
                                     <InputAdornment position="end">
                                         <IconButton
                                             aria-label="toggle password visibility"
-                                            onClick={() =>handleClickShowConfirmPassword('showConfirmPassword')}
+                                            onClick={() => handleClickShowConfirmPassword('showConfirmPassword')}
                                             onMouseDown={handleMouseDownPassword}
                                             edge="end"
                                         >
-                                            {values.showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                                            {values.showConfirmPassword ? <VisibilityOff/> : <Visibility/>}
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                error={validconfirmnewPassword ? false: true}
+                                error={validconfirmnewPassword ? false : true}
                                 placeholder='Enter your current password'
                                 fullWidth
                             />
                         </Grid>
-                        <p className={classes.error}>{validconfirmnewPassword ? '': 'please enter valid password'}</p>
+                        <p className={classes.error}>{validconfirmnewPassword ? '' : 'please enter valid password'}</p>
                         <Grid item xs={12} md={7}>
-                            <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000' linkText="SAVE NEW PASSWORD" marginTop='20px' marginButtom='10px'/>
+                            <LinkButton isOnClicked={true} width='100%' height='40px' color='#fff' background='#000'
+                                        linkText="SAVE NEW PASSWORD" marginTop='20px' marginButtom='10px'/>
                         </Grid>
                     </form>
                 </motion.div>

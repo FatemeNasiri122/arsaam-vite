@@ -1,8 +1,9 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: gothic !important;
   margin: 0;
@@ -13,7 +14,7 @@ body {
   width: 40px !important;
   height: 40px !important;
   color: white !important;
-  background-color: rgb(51,51,51) !important;
+  background-color: rgb(51, 51, 51) !important;
 }
 
 .swiper-button-prev:after, .swiper-button-next:after {

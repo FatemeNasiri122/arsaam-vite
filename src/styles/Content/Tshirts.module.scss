@@ -3,7 +3,6 @@ $clear-color: #F7F7F7;
 $title-font: normal normal bold 30px/37px Century Gothic;
 $select-font: normal normal normal 14px/15px Century Gothic;
 
-
 @mixin top-container {
   width: 100%;
   display: flex;
@@ -11,116 +10,124 @@ $select-font: normal normal normal 14px/15px Century Gothic;
   align-items: center;
 }
 
-.category{
-     @include top-container;
+.category {
+  @include top-container;
 
-    .selectsContainer{
-        display: flex;
-      .selectContainer{
-        position: relative;
-      .select{
+  .selectsContainer {
+    display: flex;
+
+    .selectContainer {
+      position: relative;
+
+      .select {
         cursor: pointer;
         display: flex;
         align-items: center;
         padding: 0 5px;
-          .chev{
-            transition: 1s;
-          }
+
+        .chev {
+          transition: 1s;
+        }
       }
-          .options{
-            position: absolute;
-            top: 25px;
-            left: 0;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid black;
-            z-index: 10;
-            [type="checkbox"]{
-              display: none;
-            }
 
-            [type="checkbox"] + label{
-              position: relative;
-              padding-left: 30px;
-              cursor: pointer;
-              display: inline-block;
-              line-height: 25px;
-              margin: 2px 0;
-              font-size: 12px;
-            }
+      .options {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        z-index: 10;
 
-            [type="checkbox"] + label::before{
-              content: '';
-              position: absolute;
-              left: 0;
-              top: 4px;
-              width: 16px;
-              height: 16px;
-              outline: 2px solid black;
-              //background: white;
-            }
+        [type="checkbox"] {
+          display: none;
+        }
+
+        [type="checkbox"] + label {
+          position: relative;
+          padding-left: 30px;
+          cursor: pointer;
+          display: inline-block;
+          line-height: 25px;
+          margin: 2px 0;
+          font-size: 12px;
+        }
+
+        [type="checkbox"] + label::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 4px;
+          width: 16px;
+          height: 16px;
+          outline: 2px solid black;
+          //background: white;
+        }
 
 
-            [type="checkbox"]:checked + label::after{
-              content: "";
-              position: absolute;
-              left: 0;
-              top: 4px;
-              width: 18px;
-              height: 18px;
-              background: url("/src/assets/img/checkmark.png") no-repeat center;
-            }
-          }
+        [type="checkbox"]:checked + label::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 4px;
+          width: 18px;
+          height: 18px;
+          background: url("/src/assets/img/checkmark.png") no-repeat center;
+        }
       }
     }
-     h2{
-       text-transform: uppercase;
-       font: $title-font;
-     }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font: $title-font;
+  }
 }
 
-.clear{
-    @include top-container;
-    margin: 20px 0;
-    height: 30px;
-    background-color: $clear-color;
-    .btn{
-      border: none;
-      outline: none;
-      height: 20px;
-      width: 75px;
-      background-color: #000;
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 12px;
-      padding: 3px 5px;
-      cursor: pointer;
-    }
+.clear {
+  @include top-container;
+  margin: 20px 0;
+  height: 30px;
+  background-color: $clear-color;
+
+  .btn {
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 75px;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 3px 5px;
+    cursor: pointer;
+  }
 
 }
 
-.paginationContainer{
+.paginationContainer {
   margin-top: 30px;
   display: flex;
   justify-content: center;
 }
 
-.marginEndOfContent{
+.marginEndOfContent {
   margin-bottom: 50px;
 }
 
 @media only screen and (min-width: 600px) {
-  .selectsContainer{
+  .selectsContainer {
 
-    .selectContainer{
-      .options{
+    .selectContainer {
+      .options {
         width: 150px;
         height: 249px;
         padding: 20px;
 
       }
-      .select{
+
+      .select {
         font: $select-font;;
       }
     }
@@ -128,18 +135,19 @@ $select-font: normal normal normal 14px/15px Century Gothic;
 }
 
 @media only screen and (max-width: 600px) {
-  .category{
-    h2{
+  .category {
+    h2 {
       font-size: 12px;
     }
   }
 
-  .selectsContainer{
-    .selectContainer{
-      span{
+  .selectsContainer {
+    .selectContainer {
+      span {
         font-size: 11px;
       }
-      .options{
+
+      .options {
         width: auto;
         padding: 10px;
 

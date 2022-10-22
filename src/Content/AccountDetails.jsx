@@ -10,25 +10,25 @@ import AccountAddress from "./AccountAddress";
 import ChangePassword from "./ChangePassword";
 import AccountContext from "../context/AccountContext";
 
-export default function  AccountDetails  () {
+export default function AccountDetails() {
 
-    const {lists } = useContext(AccountContext)
+    const {lists} = useContext(AccountContext)
 
     return (
         <div className={containerClass.container}>
             <div className={status.statusContainer}>
-            <p><span>Home / </span>MY ACCOUNT</p>
+                <p><span>Home / </span>MY ACCOUNT</p>
             </div>
             <h1>MY ACCOUNT</h1>
             <Grid container>
                 <Grid item xs={12} md={3}>
-                    <AccountTitles />
+                    <AccountTitles/>
                 </Grid>
-                {lists[0].isActive && <AccountDetailsForm isMobileActive={false} />}
-                {lists[1].isActive && <OrdersListContainer isMobileActive={false} />}
-                {lists[2].isActive && <FavoriteAccount isMobileActive={false} />}
-                {lists[3].isActive && <AccountAddress isMobileActive={false} />}
-                {lists[5].isActive && <ChangePassword isMobileActive={false} />}
+                {lists[0].isActive && <AccountDetailsForm isMobileActive={false}/>}
+                {lists[1].isActive && <OrdersListContainer isMobileActive={false}/>}
+                {lists[2].isActive && <FavoriteAccount isMobileActive={false}/>}
+                {lists[3].isActive && <AccountAddress isMobileActive={false}/>}
+                {lists[5].isActive && <ChangePassword isMobileActive={false}/>}
             </Grid>
 
             <div style={{marginBottom: '50px'}}></div>

@@ -2,7 +2,7 @@ $summer-sale-font: normal normal bold 60px/74px Century Gothic;
 $percentage-font: normal normal bold 200px/245px Century Gothic;
 $link-font: normal normal normal 14px/17px Century Gothic;
 
-@mixin linkHover($background , $border , $color){
+@mixin linkHover($background , $border , $color) {
   background-color: $background;
   border: 1px solid $border;
   color: $color;
@@ -13,7 +13,7 @@ $link-font: normal normal normal 14px/17px Century Gothic;
   width: 100%;
   margin-bottom: 75px;
 
-  a{
+  a {
     font: $link-font !important;
     transition: background-color 500ms;
   }
@@ -99,8 +99,9 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         text-align: center;
         cursor: pointer;
       }
-      a:hover{
-        @include linkHover(#fff,#000,#000);
+
+      a:hover {
+        @include linkHover(#fff, #000, #000);
       }
     }
   }
@@ -110,19 +111,19 @@ $link-font: normal normal normal 14px/17px Century Gothic;
     background-size: 100% 100%;
   }
 
-  .watchessec{
+  .watchessec {
     margin-top: 26px;
     background: url("/src/assets/img/tamara-bellis-IwVRO3TLjLc-unsplash.png") no-repeat top center;
     background-size: 100% 100%;
   }
 
-  .eyewearsec{
+  .eyewearsec {
     margin-top: 26px;
     background: url("/src/assets/img/futuristic-hologram-smartwatch-wearable-technology.jpg") no-repeat top center;
     background-size: 100% 100%;
   }
 
-  .watchessec , .eyewearsec , .womensec{
+  .watchessec, .eyewearsec, .womensec {
 
     width: 100%;
     height: 600px;
@@ -157,8 +158,9 @@ $link-font: normal normal normal 14px/17px Century Gothic;
       text-align: center;
       cursor: pointer;
     }
-    a:hover{
-      @include linkHover(#fff,#fff,#000);
+
+    a:hover {
+      @include linkHover(#fff, #fff, #000);
     }
   }
 
@@ -198,8 +200,9 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         color: white;
         background-color: black;
       }
-      a:hover{
-        @include linkHover(#fff,#000,#000);
+
+      a:hover {
+        @include linkHover(#fff, #000, #000);
       }
     }
   }
@@ -225,21 +228,24 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         display: flex;
         justify-content: center;
         align-items: center;
+
         &.women {
           color: white;
           border: 1px solid white;
           height: 38px;
         }
+
         &.women:hover {
-          @include linkHover(#000,#000,#fff)
+          @include linkHover(#000, #000, #fff)
         }
 
         &.men {
           color: black;
           background-color: #fff;
         }
+
         &.men:hover {
-          @include linkHover(#000,#000,#fff)
+          @include linkHover(#000, #000, #fff)
         }
       }
     }
@@ -257,9 +263,11 @@ $link-font: normal normal normal 14px/17px Century Gothic;
       position: relative;
       margin-left: 101px;
       margin-top: 30px;
-      img{
+
+      img {
         width: 100%;
       }
+
       h4 {
         font-size: 48px;
         font-weight: normal;
@@ -285,16 +293,17 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         cursor: pointer;
       }
 
-      a:hover{
-        @include linkHover(#fff,#000,#000);
+      a:hover {
+        @include linkHover(#fff, #000, #000);
       }
 
     }
 
-    .snapshotcontainer{
+    .snapshotcontainer {
       width: 372px;
       height: 548px;
       margin-right: 101px;
+
       .snapshot {
         width: 100%;
         height: 100%;
@@ -348,8 +357,8 @@ $link-font: normal normal normal 14px/17px Century Gothic;
       margin-bottom: 26px;
     }
 
-    a:hover{
-      @include linkHover(#fff,#000,#000);
+    a:hover {
+      @include linkHover(#fff, #000, #000);
     }
   }
 
@@ -389,8 +398,8 @@ $link-font: normal normal normal 14px/17px Century Gothic;
       cursor: pointer;
     }
 
-    a:hover{
-      @include linkHover(#000,#000,#fff);
+    a:hover {
+      @include linkHover(#000, #000, #fff);
     }
 
   }
@@ -422,8 +431,9 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         height: 40px;
         border-radius: 0;
       }
-      a:hover{
-        @include linkHover(#fff,#fff,#000);
+
+      a:hover {
+        @include linkHover(#fff, #fff, #000);
       }
     }
 
@@ -460,14 +470,14 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 }
 
 @media only screen and (min-width: 900px) {
-  .goldcard{
-    h1{
+  .goldcard {
+    h1 {
       font: $summer-sale-font;
     }
   }
 }
 
-@media only screen and (min-width: 960px) and (max-width: 1280px){
+@media only screen and (min-width: 960px) and (max-width: 1280px) {
 
   .followussec {
     img {
@@ -543,13 +553,16 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 
       .fabcsec {
         margin-left: 0;
+
         a {
           position: relative;
         }
       }
-      .snapshotcontainer{
+
+      .snapshotcontainer {
         margin: auto;
         width: 90%;
+
         .snapshot {
           margin-top: 30px;
           margin-right: 0;
@@ -568,8 +581,9 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         a {
           width: 170px;
         }
-        a:hover{
-          @include linkHover(#fff,#fff,#000);
+
+        a:hover {
+          @include linkHover(#fff, #fff, #000);
         }
       }
 
@@ -589,6 +603,7 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 
       .fabcsec {
         margin-right: 0;
+
         a {
           position: relative;
         }
@@ -597,9 +612,11 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 
       .snapshot {
         padding: 0 10px;
-        img{
+
+        img {
           width: 100%;
         }
+
         margin-top: 0;
         margin-left: 0;
       }
@@ -608,9 +625,11 @@ $link-font: normal normal normal 14px/17px Century Gothic;
     .skullwatchsec {
       width: 100%;
       padding: 10px;
-      img{
+
+      img {
         width: 100%;
       }
+
       .angle {
         width: 18px;
 
@@ -642,6 +661,7 @@ $link-font: normal normal normal 14px/17px Century Gothic;
         font-size: 30px;
       }
     }
+
     .eyewearsec {
       height: 430px;
       background-size: cover;
@@ -655,6 +675,7 @@ $link-font: normal normal normal 14px/17px Century Gothic;
     .followussec {
       height: 350px;
       text-align: center;
+
       img {
         margin-right: 5px;
         width: 100%;

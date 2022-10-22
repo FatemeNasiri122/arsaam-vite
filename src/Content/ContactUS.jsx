@@ -53,13 +53,20 @@ const useDescriptionStyle = makeStyles({
     }
 });
 
-export default function  ContactUS  () {
+export default function ContactUS() {
 
     const outlinedInputStyles = useOutlinedInputStyles();
     const DescriptionStyle = useDescriptionStyle();
 
-    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
-        validCountry, validCity, validPhoneNumber, validmessage, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
+    const {
+        handleChange,
+        handleSubmit,
+        values,
+        validFirstName,
+        validEmail,
+        validPhoneNumber,
+        validmessage,
+    } = useContext(FormContext);
 
     return (
         <>
@@ -73,7 +80,7 @@ export default function  ContactUS  () {
 
                 <h1>CONTACT US</h1>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} lg={6} >
+                    <Grid item xs={12} lg={6}>
                         <div className={classes.callUsContainer}>
                             <div className={classes.content}>
                                 <div className={classes.top}>
@@ -127,55 +134,57 @@ export default function  ContactUS  () {
                 <Grid item xs={12}>
                     <div className={classes.writeUS}>
                         <h2>WRITE US</h2>
-                        <p>Be the first to receive information about new arrivals, latest trends, events, brand news and more</p>
+                        <p>Be the first to receive information about new arrivals, latest trends, events, brand news and
+                            more</p>
                     </div>
                 </Grid>
                 <form action="" className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6} >
+                        <Grid item xs={12} sm={6}>
                             <label htmlFor="first-name" className={classes.inputLabel}>Name *</label>
                             <TextField
-                                
+
                                 id="first-name"
                                 placeholder="Enter your name"
                                 value={values.firstName}
                                 onChange={handleChange('firstName')}
                                 fullWidth
-                                error={validFirstName ? false: true}
+                                error={validFirstName ? false : true}
                                 classes={outlinedInputStyles}
                             />
-                            <p className={classes.error}>{validFirstName ? '': 'please enter valid name'}</p>
+                            <p className={classes.error}>{validFirstName ? '' : 'please enter valid name'}</p>
                         </Grid>
-                        <Grid item xs={12} sm={6} >
+                        <Grid item xs={12} sm={6}>
                             <label htmlFor="email" className={classes.inputLabel}>Email *</label>
                             <TextField
-                                
+
                                 id="email"
                                 placeholder="Enter your email"
                                 value={values.email}
                                 onChange={handleChange('email')}
                                 fullWidth
-                                error={validEmail ? false: true}
+                                error={validEmail ? false : true}
                                 classes={outlinedInputStyles}
                             />
-                            <p className={classes.error}>{validEmail ? '': 'please enter valid email'}</p>
+                            <p className={classes.error}>{validEmail ? '' : 'please enter valid email'}</p>
                         </Grid>
-                        <Grid item xs={12} sm={6} >
+                        <Grid item xs={12} sm={6}>
                             <label htmlFor="confirm-email" className={classes.inputLabel}>Phone Number</label>
                             <TextField
-                                
+
                                 id="confirm-email"
                                 placeholder="Enter your email"
                                 value={values.phoneNumber}
                                 onChange={handleChange('phoneNumber')}
                                 fullWidth
-                                error={validPhoneNumber ? false: true}
+                                error={validPhoneNumber ? false : true}
                                 classes={outlinedInputStyles}
                             />
-                            <p className={classes.error}>{validPhoneNumber ? '': 'please enter phone number'}</p>
+                            <p className={classes.error}>{validPhoneNumber ? '' : 'please enter phone number'}</p>
                         </Grid>
-                        <Grid item xs={12} sm={6} >
-                            <label htmlFor="first-name" className={classes.inputLabel} style={{display: 'block',marginBottom: '5px'}}>Type of request *</label>
+                        <Grid item xs={12} sm={6}>
+                            <label htmlFor="first-name" className={classes.inputLabel}
+                                   style={{display: 'block', marginBottom: '5px'}}>Type of request *</label>
                             <SelectItems initialSelect='Select type of request' label='city'/>
                         </Grid>
                         <Grid item xs={12}>
@@ -188,17 +197,18 @@ export default function  ContactUS  () {
                                 rows={3}
                                 value={values.message}
                                 onChange={handleChange('description')}
-                                error={validmessage ? false: true}
+                                error={validmessage ? false : true}
                                 fullWidth
                             />
-                            <p className={classes.error}>{validmessage ? '': 'please write message'}</p>
+                            <p className={classes.error}>{validmessage ? '' : 'please write message'}</p>
                         </Grid>
 
                         <Grid item xs={12} sx={{display: 'flex', justifyContent: 'space-between'}}>
                             <div>
                                 recaptcha
                             </div>
-                            <LinkButton isOnClicked={true}  width='176px' height='40px' color='#fff' background='#000' linkText="SAVE DATA" marginTop='0'/>
+                            <LinkButton isOnClicked={true} width='176px' height='40px' color='#fff' background='#000'
+                                        linkText="SAVE DATA" marginTop='0'/>
                         </Grid>
 
                     </Grid>

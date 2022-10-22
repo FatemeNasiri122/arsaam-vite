@@ -7,14 +7,14 @@ $summary-content-font: normal normal normal 14px/30px Century Gothic;
 $summary-bold-font: normal normal normal 14px/30px Century Gothic;
 $related-font: normal normal normal 24px/29px Century Gothic;
 
-h1{
+h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 30px;
   margin-bottom: 40px;
 }
 
-.summaryContainer{
+.summaryContainer {
   background-color: $summary-color;
   width: 100%;
   height: 323px;
@@ -22,29 +22,32 @@ h1{
   flex-direction: column;
   padding: 0 30px;
 
-  h4{
+  h4 {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 20px;
     font: $summary-title-font;
   }
-  p{
+
+  p {
     width: 100%;
     display: flex;
     justify-content: space-between;
     font: $summary-content-font;
   }
-  .order{
+
+  .order {
     padding-top: 20px;
     font: $summary-bold-font;
   }
 }
-.related{
+
+.related {
   width: 100%;
   padding: 20px 0;
   font: $related-font;
 
-  h2{
+  h2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 36px;

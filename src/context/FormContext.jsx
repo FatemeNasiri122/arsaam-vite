@@ -4,23 +4,23 @@ import {ActiveDetails} from "../Content/ActiveDetails";
 
 const FormContext = createContext()
 
-export const FormProvider = ({children}) =>{
+export const FormProvider = ({children}) => {
 
-    const [validFirstName,setValidFirstName] = useState(true)
-    const [validLastName,setValidLastName] = useState(true)
-    const [validEmail,setValidEmail] = useState(true)
-    const [validSelect,setValidSelect] = useState(true)
-    const [validCountry,setValidCountry] = useState(true)
-    const [validCity,setValidCity] = useState(true)
-    const [validPhoneNumber,setValidPhoneNumber] = useState(true)
-    const [validAddress,setValidAddress] = useState(true)
-    const [validPostalCode,setValidPostalCode] = useState(true)
-    const [validcurrentPassword,setValidcurrentPassword] = useState(true)
-    const [validnewPassword,setValidnewPassword] = useState(true)
-    const [validconfirmnewPassword,setvalidconfirmnewPassword] = useState(true)
-    const [validConfirmEmail,setvalidConfirmEmail] = useState(true)
-    const [validmessage,setvalidmessage] = useState(true)
-    const [validSelectCity,setSelectCity] = useState(false)
+    const [validFirstName, setValidFirstName] = useState(true)
+    const [validLastName, setValidLastName] = useState(true)
+    const [validEmail, setValidEmail] = useState(true)
+    const [validSelect, setValidSelect] = useState(true)
+    const [validCountry, setValidCountry] = useState(true)
+    const [validCity, setValidCity] = useState(true)
+    const [validPhoneNumber, setValidPhoneNumber] = useState(true)
+    const [validAddress, setValidAddress] = useState(true)
+    const [validPostalCode, setValidPostalCode] = useState(true)
+    const [validcurrentPassword, setValidcurrentPassword] = useState(true)
+    const [validnewPassword, setValidnewPassword] = useState(true)
+    const [validconfirmnewPassword, setvalidconfirmnewPassword] = useState(true)
+    const [validConfirmEmail, setvalidConfirmEmail] = useState(true)
+    const [validmessage, setvalidmessage] = useState(true)
+    const [validSelectCity, setSelectCity] = useState(false)
 
     const [values, setValues] = useState({
         firstName: '',
@@ -64,78 +64,98 @@ export const FormProvider = ({children}) =>{
     };
 
     const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-        setValues({ ...values, [prop]: event.target.value });
+        setValues({...values, [prop]: event.target.value});
+        setValues({...values, [prop]: event.target.value});
     };
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault()
-        const {email , firstName , lastName , country , city, message,savedAddress, phoneNumber , address, postalCode,newPassword , currentPassword , confirmnewPassword ,confirmEmail} = values
+        const {
+            email,
+            firstName,
+            lastName,
+            country,
+            city,
+            message,
+            savedAddress,
+            phoneNumber,
+            address,
+            postalCode,
+            newPassword,
+            currentPassword,
+            confirmnewPassword,
+            confirmEmail
+        } = values
         const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 
-        if (savedAddress === ''){
+        if (savedAddress === '') {
             setValidSelect(false)
-        }else {
+        } else {
             setValidSelect(true)
         }
-        if (firstName === ''){
+        if (firstName === '') {
             setValidFirstName(false)
-        }else {
+        } else {
             setValidFirstName(true)
         }
-        if (lastName === ''){
+        if (lastName === '') {
             setValidLastName(false)
-        }else {
+        } else {
             setValidLastName(true)
-        }if (country === ''){
+        }
+        if (country === '') {
             setValidCountry(false)
-        }else {
+        } else {
             setValidCountry(true)
-        }if (city === ''){
+        }
+        if (city === '') {
             setValidCity(false)
-        }else {
+        } else {
             setValidCity(true)
-        }if (phoneNumber === ''){
+        }
+        if (phoneNumber === '') {
             setValidPhoneNumber(false)
-        }else {
+        } else {
             setValidPhoneNumber(true)
-        }if (postalCode === ''){
+        }
+        if (postalCode === '') {
             setValidPostalCode(false)
-        }else {
+        } else {
             setValidPostalCode(true)
         }
-        if (address === ''){
+        if (address === '') {
             setValidAddress(false)
-        }else {
+        } else {
             setValidAddress(true)
-        }if (email === '' || regexEmail === false){
+        }
+        if (email === '' || regexEmail === false) {
             setValidEmail(false)
-        }else {
+        } else {
             setValidEmail(true)
         }
-        if (newPassword === ''){
+        if (newPassword === '') {
             setValidnewPassword(false)
-        }else {
+        } else {
             setValidnewPassword(true)
         }
-        if (currentPassword === ''){
+        if (currentPassword === '') {
             setValidcurrentPassword(false)
-        }else {
+        } else {
             setValidcurrentPassword(true)
         }
-        if (confirmnewPassword === ''){
+        if (confirmnewPassword === '') {
             setvalidconfirmnewPassword(false)
-        }else {
+        } else {
             setvalidconfirmnewPassword(true)
         }
-        if (confirmEmail === ''){
+        if (confirmEmail === '') {
             setvalidConfirmEmail(false)
-        }else {
+        } else {
             setvalidConfirmEmail(true)
         }
-        if (message === ''){
+        if (message === '') {
             setvalidmessage(false)
-        }else {
+        } else {
             setvalidmessage(true)
         }
     }
@@ -144,9 +164,30 @@ export const FormProvider = ({children}) =>{
         event.preventDefault();
     };
 
-    return(
-        <FormContext.Provider value={{ handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
-            validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword, validConfirmEmail, validmessage, validSelectCity,
+    return (
+        <FormContext.Provider value={{
+            handleChange,
+            handleSubmit,
+            handleClickshowCurrentPassword,
+            handleClickShowNewPassword,
+            handleClickShowConfirmPassword,
+            handleMouseDownPassword,
+            values,
+            validFirstName,
+            validLastName,
+            validEmail,
+            validSelect,
+            validCountry,
+            validCity,
+            validPhoneNumber,
+            validAddress,
+            validPostalCode,
+            validcurrentPassword,
+            validnewPassword,
+            validconfirmnewPassword,
+            validConfirmEmail,
+            validmessage,
+            validSelectCity,
         }}>
             {children}
         </FormContext.Provider>

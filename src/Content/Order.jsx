@@ -14,7 +14,7 @@ export default function  Order  ({data}) {
                     <div className={classes.grayLine}></div>
                     <div className={classes.imgsContainer}>
                         {data.imgs.map((img) =>{
-                            return <div className={classes.imgContainer}><img src={img} alt=""/></div>
+                            return <div className={classes.imgContainer} ><img src={img} alt=""/></div>
                         })}
                     </div>
                 </div>

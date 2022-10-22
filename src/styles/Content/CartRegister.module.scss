@@ -5,24 +5,24 @@ $link-text-color: #fff;
 $label-font: normal normal bold 14px/17px Century Gothic;
 $last-child-label-font: normal normal normal 14px/17px Century Gothic;
 
-.inputLabel{
+.inputLabel {
   font: $label-font;
   margin-bottom: 5px;
   display: block;
 }
 
 
-.error{
+.error {
   color: $error-color;
   margin-top: 5px;
   font-size: 12px;
 }
 
-[type="checkbox"]{
+[type="checkbox"] {
   display: none;
 }
 
-[type="checkbox"] + label{
+[type="checkbox"] + label {
   font-size: 14px;
   position: relative;
   padding-left: 30px;
@@ -31,7 +31,7 @@ $last-child-label-font: normal normal normal 14px/17px Century Gothic;
   line-height: 25px;
 }
 
-[type="checkbox"] + label::before{
+[type="checkbox"] + label::before {
   content: '';
   position: absolute;
   left: 0;
@@ -43,7 +43,7 @@ $last-child-label-font: normal normal normal 14px/17px Century Gothic;
 }
 
 
-[type="checkbox"]:checked + label::after{
+[type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
   left: 0;
@@ -54,34 +54,36 @@ $last-child-label-font: normal normal normal 14px/17px Century Gothic;
 }
 
 
-.form{
+.form {
   margin-top: 40px;
-  em{
+
+  em {
     color: #808080;
   }
+
   margin-bottom: 50px;
 }
 
-.statusContainer{
+.statusContainer {
   margin-top: 20px;
 }
 
-@media only screen and (min-width: 960px){
+@media only screen and (min-width: 960px) {
 
-  .link{
+  .link {
     width: 326px;
   }
 }
 
-@media only screen and (max-width: 960px){
-  .form{
+@media only screen and (max-width: 960px) {
+  .form {
     padding: 0 20px;
 
   }
   .statusContainer {
     padding-bottom: 15px;
   }
-  .link{
+  .link {
     width: 100%;
   }
 }

@@ -1,19 +1,19 @@
 $text-color: #fff;
-$gold-background-color: linear-gradient(#EFE27C,#A6872D);
+$gold-background-color: linear-gradient(#EFE27C, #A6872D);
 $strike-color: #808080;
-$deactive-color:#BFBFBF;
+$deactive-color: #BFBFBF;
 $active-color: #000;
 $summary-color: #F7F7F7;
 $content-color: #F7F7F7;
 $error-color: #c62828;
 $title-font: normal normal bold 30px/37px Century Gothic;
-$call-us-font:normal normal bold 24px/29px Century Gothic;
+$call-us-font: normal normal bold 24px/29px Century Gothic;
 $phone-number-font: normal normal normal 24px/29px Century Gothic;
 $text-font: normal normal normal 16px/21px Century Gothic;
 $label-font: normal normal bold 14px/17px Century Gothic;
 $write-us-font: normal normal normal 14px/17px Century Gothic;
 
-@mixin container($height){
+@mixin container($height) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,92 +22,98 @@ $write-us-font: normal normal normal 14px/17px Century Gothic;
   background-color: $content-color;
 }
 
-.inputLabel{
+.inputLabel {
   display: block;
   margin-bottom: 5px;
 }
 
-h1{
+h1 {
   text-transform: uppercase;
   text-align: center;
   font: $title-font;
   margin-bottom: 40px;
 }
 
-.imgContainer{
+.imgContainer {
   width: 40px;
   height: 40px;
 
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
 }
 
-.callUsContainer{
+.callUsContainer {
   @include container(372px);
-  .content{
-    p{
+
+  .content {
+    p {
       text-align: center;
     }
-    .top{
+
+    .top {
       display: flex;
       justify-content: center;
 
-      strong{
+      strong {
         font-size: 24px;
         padding-left: 10px;
         align-self: center;
         font: $call-us-font;
       }
     }
-    .phoneNumber{
+
+    .phoneNumber {
       margin-top: 30px;
       font: $phone-number-font;
     }
   }
 }
 
-.writeUS{
+.writeUS {
   text-align: center;
   margin-top: 40px;
 
-  h2{
+  h2 {
     font: $title-font;
 
   }
-  p{
+
+  p {
     font: $write-us-font;
     margin-top: 10px;
   }
 }
 
-.form{
+.form {
   margin-top: 20px;
 
-  label{
+  label {
     font: $label-font;
 
   }
+
   margin-bottom: 64px;
 }
 
-.error{
+.error {
   color: $error-color;
   margin-top: 5px;
   font-size: 12px;
 }
 
-.cartContainer{
+.cartContainer {
   @include container(176px);
-  p{
+
+  p {
     margin-top: 20px;
     font: $text-font;
   }
 }
 
-@media only screen and (min-width: 960px){
-  .form{
+@media only screen and (min-width: 960px) {
+  .form {
     padding: 0 112px;
   }
 }

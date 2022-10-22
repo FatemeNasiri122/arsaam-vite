@@ -1,7 +1,7 @@
 $nav-link-font: normal normal normal 14px/17px Century Gothic;
 
-.limited{
-  .limitedFixed{
+.limited {
+  .limitedFixed {
     position: fixed;
     width: 100%;
     padding: 0 102px;
@@ -11,10 +11,12 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
 
     z-index: 10;
     align-items: center;
-    svg{
+
+    svg {
       justify-self: end;
     }
-    a{
+
+    a {
       text-decoration: none;
       color: white;
       margin: auto;
@@ -25,25 +27,28 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
 }
 
 
-
 .header-main {
   text-transform: uppercase;
   width: 100%;
   display: flex;
   flex-direction: column;
+
   .nav {
     align-self: center;
 
-    ul{
+    ul {
       display: flex;
-      .nav-item{
+
+      .nav-item {
         padding-left: 30px;
         padding-bottom: 25px;
       }
     }
-    li{
+
+    li {
       list-style-type: none;
     }
+
     a {
       font: $nav-link-font;
       text-decoration: none;
@@ -57,7 +62,7 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
     .mega-menu {
       overflow: hidden;
 
-      .mega-menu-content{
+      .mega-menu-content {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
@@ -67,68 +72,80 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
         top: 110px;
         z-index: 10;
         background-color: #fff;
-        li{
+
+        li {
           padding: 0 15px;
         }
-        .triangle-container{
+
+        .triangle-container {
           width: 100%;
           display: flex;
           justify-content: center;
           padding: 0;
           margin: 0;
-          ul{
+
+          ul {
             display: flex;
             flex-direction: row;
             transform: translateX(20px);
-            li{
+
+            li {
               padding: 0 42px;
-              .item-1{
+
+              .item-1 {
                 width: 10px;
                 height: 2px;
                 transform: rotate(-45deg) translateY(-20px) translateX(-8px);
                 background-color: #A6872D;
               }
-              .item-2{
+
+              .item-2 {
                 width: 10px;
                 height: 2px;
                 transform: rotate(45deg) translateX(-17px) translateY(1px);
                 background-color: #A6872D;
               }
-              .item-3{
+
+              .item-3 {
                 width: 11px;
                 height: 10px;
                 border-radius: 4px;
                 transform: translateY(-10px) translateX(-17px);
                 background-color: white;
               }
+
               color: white;
             }
           }
         }
-        .list-container{
+
+        .list-container {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
         }
 
       }
-      ul{
+
+      ul {
         display: flex;
         flex-direction: column;
 
-        li:first-child a{
+        li:first-child a {
           font-weight: 900;
         }
-        li{
+
+        li {
           margin-bottom: 10px;
-          a{
+
+          a {
             font: $nav-link-font;
           }
         }
       }
     }
 
-    .menu-items li:hover .mega-menu-content{
+    .menu-items li:hover .mega-menu-content {
       top: 120px;
       opacity: 1;
       visibility: visible;
@@ -142,6 +159,7 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
     justify-content: center;
     height: 100%;
     padding: 20px 0;
+
     .topsec {
       display: flex;
       width: 85%;
@@ -184,7 +202,8 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
           user-select: none;
           width: 18px;
         }
-        svg{
+
+        svg {
           margin-left: 15px;
           cursor: pointer;
         }
@@ -199,92 +218,109 @@ $nav-link-font: normal normal normal 14px/17px Century Gothic;
     background: transparent linear-gradient(90deg, #A6872D 0%, #EFE27C 100%) 0% 0% no-repeat padding-box;
     margin-bottom: 5px;
   }
-  .item{
+
+  .item {
     background-color: dodgerblue;
     position: absolute;
   }
-  .line-item-1{
+
+  .line-item-1 {
     width: 10px;
     height: 2px;
-    background-color:  #A6872D;
+    background-color: #A6872D;
   }
-  .line-item-2{
+
+  .line-item-2 {
     width: 10px;
     height: 2px;
-    background-color:  #A6872D;
+    background-color: #A6872D;
   }
-  .line-item-3{
+
+  .line-item-3 {
 
     width: 12px;
     height: 10px;
-    background-color:  green;
+    background-color: green;
   }
 
 }
 
 @media only screen and (min-width: 600px) {
-  .hamburger-button , .mobile-menu{
+  .hamburger-button, .mobile-menu {
     display: none;
   }
 
 }
+
 @media only screen and (max-width: 600px) {
-  .limitedFixed{
+  .limitedFixed {
     padding: 0 10px !important;
-    a{
+
+    a {
       font-size: 10px !important;
     }
   }
   .header-main {
-    .contact-search-sec{
+    .contact-search-sec {
       display: none !important;
     }
-    .profile-sec{
+
+    .profile-sec {
       display: none !important;
     }
-    .nav{
+
+    .nav {
       display: none;
     }
-    .topsec{
+
+    .topsec {
       justify-content: center !important;
       width: 100% !important;
     }
-    .hamburger-button{
+
+    .hamburger-button {
       border: none;
       outline: none;
       background-color: transparent;
     }
-    .mobile-menu{
-     .mobile-menu-wrapper{
+
+    .mobile-menu {
+      .mobile-menu-wrapper {
         min-height: 90vh;
       }
 
-      li{
-        .link-container{
+      li {
+        .link-container {
           display: flex;
           justify-content: space-between;
           padding: 1rem;
         }
-        li:last-child{
+
+        li:last-child {
           border-bottom: none;
         }
+
         list-style-type: none;
         border-bottom: 1px solid black;
-        li{
-          a{
+
+        li {
+          a {
             padding: 0 1rem;
           }
-          li{
+
+          li {
             padding: 1rem 2rem;
             background-color: black;
             border-bottom: 1px solid white;
-            a{
+
+            a {
               color: white;
             }
           }
         }
       }
-      a{
+
+      a {
         color: black;
         text-decoration: none;
       }

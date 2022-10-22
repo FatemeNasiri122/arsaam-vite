@@ -1,21 +1,22 @@
 $strike-color: #808080;
 $status-font: normal normal normal 12px/15px Century Gothic;
 
-.statusContainer{
+.statusContainer {
   padding: 20px 0;
   text-transform: uppercase;
 
-  p{
+  p {
     font: $status-font;
   }
 
-  span{
+  span {
     color: $strike-color;
   }
 }
-@media only screen and (max-width: 600px){
 
-  .statusContainer{
+@media only screen and (max-width: 600px) {
+
+  .statusContainer {
     padding: 5px 0;
 
   }

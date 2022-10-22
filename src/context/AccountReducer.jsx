@@ -1,7 +1,7 @@
-const todoReducer= (state,action) =>{
+const todoReducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE-ACTIVE':
-            return{
+            return {
                 ...state,
                 lists: action.payload.lists,
             }

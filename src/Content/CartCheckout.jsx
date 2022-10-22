@@ -49,13 +49,16 @@ const useDescriptionStyle = makeStyles({
 });
 
 
-export default function CartCheckout(){
+export default function CartCheckout() {
 
     const outlinedInputStyles = useOutlinedInputStyles();
     const DescriptionStyle = useDescriptionStyle();
 
-    const {handleChange , handleSubmit , handleClickshowCurrentPassword , handleClickShowNewPassword, handleClickShowConfirmPassword, handleMouseDownPassword,values, validFirstName , validLastName , validEmail, validSelect,
-        validCountry, validCity, validPhoneNumber, validAddress, validPostalCode, validcurrentPassword, validnewPassword, validconfirmnewPassword,} = useContext(FormContext);
+    const {
+        handleChange,
+        values,
+        validEmail,
+    } = useContext(FormContext);
 
     return <>
         <div className={containerClass.container}>
@@ -75,11 +78,12 @@ export default function CartCheckout(){
                         value={values.email}
                         onChange={handleChange('email')}
                         fullWidth
-                        error={validEmail ? false: true}
+                        error={validEmail ? false : true}
                     />
                 </Grid>
                 <Grid item xs={2}>
-                    <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="APPLY" marginTop='22px' marginButtom='10px' />
+                    <LinkButton width='100%' height='40px' color='#fff' background='#000' linkText="APPLY"
+                                marginTop='22px' marginButtom='10px'/>
                 </Grid>
                 <Grid item xs={12}>
                     <div className={classes.finalContainer}>
@@ -106,8 +110,9 @@ export default function CartCheckout(){
                         fullWidth
                     />
                 </Grid>
-                <Grid item xs={12} sx={{marginTop: '21px',display: 'flex',justifyContent: 'center'}}>
-                    <LinkButton width='215px' height='55px' color='#fff' background='#000' linkText="BILL PAYMENT" marginTop='0' marginButtom='0'/>
+                <Grid item xs={12} sx={{marginTop: '21px', display: 'flex', justifyContent: 'center'}}>
+                    <LinkButton width='215px' height='55px' color='#fff' background='#000' linkText="BILL PAYMENT"
+                                marginTop='0' marginButtom='0'/>
                 </Grid>
             </Grid>
         </div>

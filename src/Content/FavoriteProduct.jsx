@@ -8,7 +8,7 @@ import {AnimatePresence, motion} from "framer-motion";
 export default function  FavoriteProduct  ({isMobileActive}) {
 
     return (
-        <Grid item xs={12} md={8} display={isMobileActive && {xs: 'none',md: 'block'}}paddingLeft={{md: '20px'}} marginTop={'18px'}>
+        <Grid item xs={12} md={8} display={isMobileActive && {xs: 'none',md: 'block'}} paddingLeft={{md: '20px'}} marginTop={'18px'}>
             <AnimatePresence>
 
                 <motion.div initial={{y: -100 }}

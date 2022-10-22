@@ -3,7 +3,7 @@ $title-text-font: normal normal normal 14px/30px Century Gothic;
 $col-title-font: normal normal bold 18px/30px Century Gothic;
 $copy-right-font: normal normal normal 12px/15px Century Gothic;
 
-@mixin linkHover($background , $border , $color){
+@mixin linkHover($background , $border , $color) {
   transition: 500ms;
   background-color: $background;
   border: 1px solid $border;
@@ -131,8 +131,9 @@ $copy-right-font: normal normal normal 12px/15px Century Gothic;
           color: white;
           background-color: black;
         }
-        a:hover{
-          @include linkHover(#fff,#000,#000);
+
+        a:hover {
+          @include linkHover(#fff, #000, #000);
         }
       }
 
@@ -153,45 +154,50 @@ $copy-right-font: normal normal normal 12px/15px Century Gothic;
   }
 }
 
-@media only screen and (max-width: 600px){
-    .footer-main{
-      .content{
-        .footer-top{
-          flex-direction: column;
-          align-items: center;
+@media only screen and (max-width: 600px) {
+  .footer-main {
+    .content {
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
 
-          .singup-txt{
-            text-align: center;
-            padding: 20px 0;
-
-            h3{
-              font-size: 25px;
-            }
-            p{
-              font-size: 15px;
-              padding: 10px 0;
-            }
-          }
-          .signup-input{
-            width: 280px;
-          }
-        }
-        .footer-links{
-          flex-direction: column;
-          align-items: center;
+        .singup-txt {
           text-align: center;
-        }
-        .copyright{
+          padding: 20px 0;
+
+          h3 {
+            font-size: 25px;
+          }
+
           p {
-            font-size: 10px !important;
+            font-size: 15px;
+            padding: 10px 0;
           }
-          img{
-            margin-left: 1px;
-          }
+        }
+
+        .signup-input {
+          width: 280px;
         }
       }
 
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .copyright {
+        p {
+          font-size: 10px !important;
+        }
+
+        img {
+          margin-left: 1px;
+        }
+      }
     }
+
+  }
 
 
 }

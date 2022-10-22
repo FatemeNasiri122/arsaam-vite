@@ -3,7 +3,7 @@ import containerClass from '../styles/Content/Container.module.scss';
 import cross from '../assets/img/cross.svg'
 import SigninContainer from "./SignInContainer";
 
-export default function  SigninOrRegister  () {
+export default function SigninOrRegister() {
     return (
         <div className={containerClass.widerContainer}>
             <div className={classes.closeContainer}>
@@ -11,7 +11,7 @@ export default function  SigninOrRegister  () {
                     <img src={cross} alt=""/>
                 </div>
             </div>
-            <SigninContainer />
+            <SigninContainer/>
         </div>
     );
 };

@@ -1,34 +1,36 @@
 $strike-color: #808080;
 $link-color: #000;
 $border-color: #D9D9D9;
-$gold-background-color: linear-gradient(#EFE27C,#A6872D);
+$gold-background-color: linear-gradient(#EFE27C, #A6872D);
 $active-color: #fff;
 $li-fonts: normal normal normal 14px/30px Century Gothic;
 
-.containerTitles{
+.containerTitles {
   margin-top: 20px;
 
-  ul{
-    li{
+  ul {
+    li {
       list-style-type: none;
       font-size: 14px;
       display: flex;
       align-items: center;
-      padding:  0 20px;
+      padding: 0 20px;
       border-bottom: 1px solid $border-color;
       font: $li-fonts;
       height: 50px;
       cursor: pointer;
 
     }
-    li:first-child{
+
+    li:first-child {
       border-top: 1px solid $border-color;
     }
-    .active{
+
+    .active {
       color: $active-color;
       background: $gold-background-color;
 
-      a{
+      a {
         color: inherit;
       }
     }

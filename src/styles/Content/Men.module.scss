@@ -4,7 +4,7 @@ $top-text-color: #fff;
 $card-font: normal normal bold 24px/29px Century Gothic;
 $link-font: normal normal normal 14px/17px Century Gothic;
 
-@mixin card($padding,$height){
+@mixin card($padding,$height) {
   width: 100%;
   height: $height;
   background-size: cover;
@@ -15,7 +15,7 @@ $link-font: normal normal normal 14px/17px Century Gothic;
 
 }
 
-.men{
+.men {
   width: 100%;
   height: 600px;
   background: url("/src/assets/img/1448061.jpg") no-repeat top center;
@@ -24,67 +24,73 @@ $link-font: normal normal normal 14px/17px Century Gothic;
   justify-content: center;
   align-items: center;
 
-  .topTitle{
+  .topTitle {
     display: flex;
     flex-direction: column;
     color: $top-text-color;
     text-transform: uppercase;
     align-items: center;
-    h1{
+
+    h1 {
       font-size: 72px;
       font: $tile-font;
     }
-    p{
+
+    p {
       font: $top-title-font;
     }
   }
 
 }
 
-.mainTitle{
+.mainTitle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  h2{
+
+  h2 {
     text-transform: uppercase;
     font: $card-font;
   }
-  a{
+
+  a {
     text-decoration: underline;
     font: $link-font;
   }
-  a:last-child{
+
+  a:last-child {
     //margin-bottom: 21px;
   }
 }
 
-.clothing{
+.clothing {
   margin: 16px 0;
   padding: 16px 0;
   background: url("/src/assets/img/men_clothing_desktop.jpg") no-repeat top center;
-  @include card(31px,406px)
+  @include card(31px, 406px)
 }
 
-.sportswear{
+.sportswear {
   background: url("/src/assets/img/men_jogging.jpg") no-repeat top center;
-  @include card(16px,372px)
+  @include card(16px, 372px)
 }
 
-.shoes{
+.shoes {
   background: url("/src/assets/img/men_shoes.jpg") no-repeat top center;
-  @include card(16px,372px)
+  @include card(16px, 372px)
 }
 
-.tshirt{
+.tshirt {
   background: url("/src/assets/img/men_tshirt.jpg") no-repeat top center;
-  @include card(16px,372px)
+  @include card(16px, 372px)
 }
 
-.outfit{
+.outfit {
   background: url("/src/assets/img/men_OUTFIT.jpg") no-repeat top center;
-  @include card(21px,568px)
+  @include card(21px, 568px)
 }
-.empty{
+
+.empty {
   background: url("/src/assets/img/business-casual-style-guide-men-luxe-digital.jpg") no-repeat 16%;
-  @include card(0,568px)
+  @include card(0, 568px)
 }

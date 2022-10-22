@@ -4,7 +4,7 @@ import TopCart from "./TopCart";
 import React from "react";
 import containerClass from "../styles/Content/Container.module.scss";
 
-export default function Cart2(){
+export default function Cart2() {
     return <>
         <div className={containerClass.container}>
             <div className={status.statusContainer}>
@@ -16,7 +16,7 @@ export default function Cart2(){
         </div>
         <div className={containerClass.widerContainer}>
             <div style={{marginTop: '40px'}}></div>
-            <SigninOrContainer />
+            <SigninOrContainer/>
         </div>
     </>
 }

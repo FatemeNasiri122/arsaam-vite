@@ -3,8 +3,8 @@ import containerClass from "../styles/Content/Container.module.scss";
 import Grid from '@mui/material/Grid';
 import Fade from 'react-reveal/Fade';
 
-export default function  Men  () {
-    return(
+export default function Men() {
+    return (
         <>
             <div className={classes.men}>
                 <div className={classes.topTitle}>

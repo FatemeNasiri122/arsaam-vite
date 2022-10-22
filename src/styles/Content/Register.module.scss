@@ -1,37 +1,37 @@
 $home-text-color: #808080;
 $error-color: #c62828;
 $title-font: normal normal bold 30px/37px Century Gothic;
-$label-font: normal normal bold 14px/17px Century Gothic;;
+$label-font: normal normal bold 14px/17px Century Gothic;
 
-.titleContainer{
+.titleContainer {
   width: 100%;
   display: flex;
   justify-content: center;
 
-  h1{
+  h1 {
     text-transform: uppercase;
     margin-bottom: 20px;
     font: $title-font;
   }
 }
 
-.error{
+.error {
   color: $error-color;
   margin-top: 5px;
   font-size: 12px;
 }
 
-.inputLabel{
+.inputLabel {
   font: $label-font;
   margin-bottom: 5px;
   display: block;
 }
 
-[type="checkbox"]{
+[type="checkbox"] {
   display: none;
 }
 
-[type="checkbox"] + label{
+[type="checkbox"] + label {
   font-size: 14px;
   position: relative;
   padding-left: 30px;
@@ -40,7 +40,7 @@ $label-font: normal normal bold 14px/17px Century Gothic;;
   line-height: 25px;
 }
 
-[type="checkbox"] + label::before{
+[type="checkbox"] + label::before {
   content: '';
   position: absolute;
   left: 0;
@@ -52,7 +52,7 @@ $label-font: normal normal bold 14px/17px Century Gothic;;
 }
 
 
-[type="checkbox"]:checked + label::after{
+[type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
   left: 0;
@@ -62,13 +62,13 @@ $label-font: normal normal bold 14px/17px Century Gothic;;
   background: url("/src/assets/img/checkmark.png") no-repeat center;
 }
 
-.form{
+.form {
   margin-bottom: 160px;
 }
 
-@media only screen and (min-width: 960px){
+@media only screen and (min-width: 960px) {
 
-  .link{
+  .link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,11 +76,11 @@ $label-font: normal normal bold 14px/17px Century Gothic;;
   }
 }
 
-@media only screen and (max-width: 960px){
-  .form{
+@media only screen and (max-width: 960px) {
+  .form {
     padding: 0 20px;
   }
-  .link{
+  .link {
     width: 100%;
   }
 }

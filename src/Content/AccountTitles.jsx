@@ -8,32 +8,33 @@ import FavoriteAccount from "./FavoriteProduct";
 import AccountAddress from "./AccountAddress";
 import ChangePassword from "./ChangePassword";
 
-export default function  AccountTitles  () {
-    const {lists,changeActive,changeMobileActive} = useContext(AccountContext)
+export default function AccountTitles() {
+    const {lists, changeActive, changeMobileActive} = useContext(AccountContext)
 
     return (
         <div className={classes.containerTitles}>
             <Grid container>
-                <Grid item xs={12} display={{xs: 'none',md: 'block'}}>
-                    <ul onClick={(e) => changeActive(e.target)} >
-                        {lists.map((list) =>{
-                            return <li data-number={list.id} className={list.isActive && classes.active}>{list.name}</li>
+                <Grid item xs={12} display={{xs: 'none', md: 'block'}}>
+                    <ul onClick={(e) => changeActive(e.target)}>
+                        {lists.map((list) => {
+                            return <li data-number={list.id}
+                                       className={list.isActive ? classes.active : ''}>{list.name}</li>
                         })}
                     </ul>
                 </Grid>
-                <Grid item xs={12} display={{xs: 'block',md: 'none'}}>
+                <Grid item xs={12} display={{xs: 'block', md: 'none'}}>
                     <ul onClick={
-                        (e) =>
-                        {changeActive(e.target)
+                        (e) => {
+                            changeActive(e.target)
                         }}>
-                        {lists.map((list) =>{
+                        {lists.map((list) => {
                             return <>
                                 <li data-id={list.id} className={list.isActive && classes.active}>{list.name}</li>
-                                    {lists[0].isActive && <AccountDetailsForm isMobileActive={true}/>}
-                                    {lists[1].isActive && <OrdersListContainer isMobileActive={true}/>}
-                                    {lists[2].isActive && <FavoriteAccount isMobileActive={true}/>}
-                                    {lists[3].isActive && <AccountAddress isMobileActive={true}/>}
-                                    {lists[5].isActive && <ChangePassword isMobileActive={true}/>}
+                                {lists[0].isActive && <AccountDetailsForm isMobileActive={true}/>}
+                                {lists[1].isActive && <OrdersListContainer isMobileActive={true}/>}
+                                {lists[2].isActive && <FavoriteAccount isMobileActive={true}/>}
+                                {lists[3].isActive && <AccountAddress isMobileActive={true}/>}
+                                {lists[5].isActive && <ChangePassword isMobileActive={true}/>}
 
                             </>
                         })}

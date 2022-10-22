@@ -1,6 +1,11 @@
 [
   {
-    "imgs": ["/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg","/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg","/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg","/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"],
+    "imgs": [
+      "/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg",
+      "/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg",
+      "/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg",
+      "/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"
+    ],
     "orderCode": "123456789",
     "orderDate": "7/6/2022",
     "totalPrice": "€ 4.000,00",
@@ -8,7 +13,12 @@
     "id": 1
   },
   {
-    "imgs": ["/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg","/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg","/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg","/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"],
+    "imgs": [
+      "/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg",
+      "/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg",
+      "/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg",
+      "/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"
+    ],
     "orderCode": "123456789",
     "orderDate": "7/6/2022",
     "totalPrice": "€ 4.000,00",
@@ -16,7 +26,12 @@
     "id": 2
   },
   {
-    "imgs": ["/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg","/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg","/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg","/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"],
+    "imgs": [
+      "/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg",
+      "/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg",
+      "/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg",
+      "/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"
+    ],
     "orderCode": "123456789",
     "orderDate": "7/6/2022",
     "totalPrice": "€ 4.000,00",
@@ -24,7 +39,12 @@
     "id": 3
   },
   {
-    "imgs": ["/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg","/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg","/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg","/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"],
+    "imgs": [
+      "/src/assets/img/FABC-MTK5624-PJY002N_13_sf.jpg",
+      "/src/assets/img/FABC-MTK5606-PJY002N_02_sf.jpg",
+      "/src/assets/img/FABC-MTK5621-PJY002N_0121_sf.jpg",
+      "/src/assets/img/FABC-MTK5647-PJY002N_09_sf.jpg"
+    ],
     "orderCode": "123456789",
     "orderDate": "7/6/2022",
     "totalPrice": "€ 4.000,00",
