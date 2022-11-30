@@ -1,3 +1,4 @@
+import image1 from "../assets/img/FABC-MTK5624-PJY002N_13_sf.jpg";
 import image2 from "../assets/img/FABC-MTK5624-PJY002N_13_mf.jpg";
 import image3 from "../assets/img/FABC-MTK5624-PJY002N_13_mb.jpg";
 import image4 from "../assets/img/FABC-MTK5624-PJY002N_13_mf.jpg";
